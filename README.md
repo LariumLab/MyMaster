@@ -6,7 +6,7 @@
 
 ### Статус
 В разработке.
-Текущая команда:  [Aksiniya](https://github.com/Aksiniya)
+Текущая команда:  [Aksiniya](https://github.com/Aksiniya), [Nightslide](https://github.com/nightslide)
 
 ### Первоочередные задачи
 * Создать окно регистрации
