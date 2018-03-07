@@ -1,4 +1,4 @@
-### version 0.0.2 (06.03.2018)
+### [version 0.0.2 (06.03.2018)](e9e9681ba1f221c7dbdc3c6663ac48dc0ca52cb8)
 
 ### client:
 ##### removed:
@@ -14,5 +14,3 @@
     * TimeTable
     * DayInTable
     * NoteInTable
-        
-    
