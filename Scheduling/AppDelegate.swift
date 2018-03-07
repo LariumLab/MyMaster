@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        MondayForKostyaTable.addAppointment(appointment: NoteInTable1)
+        TuesdayForKostyaTable.addAppointment(appointment: NoteInTable2)
+        ThursdayForKostyaTable.addAppointment(appointment: NoteInTable3)
+        
+        TestSalon1.addService(service: Service1)
+        Service1.addMaster(master: MasterKostya)
+        
         return true
     }
 

@@ -14,6 +14,8 @@
 		FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */; };
 		FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */; };
 		FA0C84B32041E9F8000BA2F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */; };
+		FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A82204EB10E00AE14C7 /* test classes.swift */; };
+		FAAE1A85204EB76A00AE14C7 /* test data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A84204EB76A00AE14C7 /* test data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FAAE1A82204EB10E00AE14C7 /* test classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test classes.swift"; sourceTree = "<group>"; };
+		FAAE1A84204EB76A00AE14C7 /* test data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE1A81204EB0D400AE14C7 /* test files */,
 				FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */,
 				FA0C84A02041B2D5000BA2F5 /* Main.storyboard */,
 				FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */,
@@ -68,6 +73,15 @@
 				FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */,
 			);
 			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		FAAE1A81204EB0D400AE14C7 /* test files */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE1A82204EB10E00AE14C7 /* test classes.swift */,
+				FAAE1A84204EB76A00AE14C7 /* test data.swift */,
+			);
+			path = "test files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE1A85204EB76A00AE14C7 /* test data.swift in Sources */,
+				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */,
 				FA0C84B32041E9F8000BA2F5 /* ProfileViewController.swift in Sources */,
