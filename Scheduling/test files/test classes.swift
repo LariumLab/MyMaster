@@ -8,6 +8,8 @@
 
 import Foundation
 
+var cities : [String] = [] // необходимо добавить удаление повторяющихся городов
+
 class Profile{
     var nickname : String
     var name : String

@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TestSalon1.addService(service: Service1)
         Service1.addMaster(master: MasterKostya)
         
+        cities.append(TestSalon1.city)
+        
         return true
     }
 
