@@ -22,9 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ThursdayForKostyaTable.addAppointment(appointment: NoteInTable3)
         
         TestSalon1.addService(service: Service1)
+        TestSalon1.addMasterToMastersList(master: MasterKostya)
         Service1.addMaster(master: MasterKostya)
         
         cities.append(TestSalon1.city)
+        
+        loadData(profileType: true)
         
         return true
     }

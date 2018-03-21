@@ -20,6 +20,12 @@ class Profile{
         self.name = name
         self.phoneNumber = phoneNumber
     }
+    
+    init() {
+        nickname = ""
+        name = ""
+        phoneNumber = ""
+    }
 }
 
 class Salon : Profile{
@@ -27,6 +33,7 @@ class Salon : Profile{
     var city: String
     var adress: String
     var services : [Service]
+    var masters : [Master] = []
     
     init(nickname: String, name: String, phoneNumber: String, description: String, city: String, adress: String, services: [Service]) {
         self.description = description
@@ -36,8 +43,20 @@ class Salon : Profile{
         super.init(nickname: nickname, name: name, phoneNumber: phoneNumber)
     }
     
+    override init(){
+        description = ""
+        city = ""
+        adress = ""
+        services = []
+        super.init()
+    }
+    
     func addService(service: Service){
         self.services.append(service)
+    }
+    
+    func addMasterToMastersList(master: Master){
+        masters.append(master)
     }
     
 }
@@ -48,6 +67,11 @@ class Client: Profile{
     init(nickname: String, name: String, phoneNumber: String, appointments: [ClientAppointment]) {
         self.appointments = appointments
         super.init(nickname: nickname, name: name, phoneNumber: phoneNumber)
+    }
+    
+    override init() {
+        appointments = []
+        super.init()
     }
     
     func addAppointment(appointment: ClientAppointment){

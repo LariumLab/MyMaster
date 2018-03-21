@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0570B3205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0570B2205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift */; };
 		FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */; };
 		FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A02041B2D5000BA2F5 /* Main.storyboard */; };
 		FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */; };
 		FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A52041B2D7000BA2F5 /* LaunchScreen.storyboard */; };
 		FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */; };
 		FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */; };
-		FA0C84B32041E9F8000BA2F5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */; };
+		FA909539205F8E4E004C60A5 /* ProfileAddNewServiceHatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA909538205F8E4E004C60A5 /* ProfileAddNewServiceHatTableViewController.swift */; };
+		FA9A172B2062B300005F4D46 /* ProfileMastersListForAddServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A172A2062B300005F4D46 /* ProfileMastersListForAddServiceTableViewController.swift */; };
 		FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A82204EB10E00AE14C7 /* test classes.swift */; };
 		FAAE1A85204EB76A00AE14C7 /* test data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A84204EB76A00AE14C7 /* test data.swift */; };
+		FAAEDCED2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDCEB2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift */; };
+		FAAEDCEE2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAEDCEC2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.xib */; };
+		FAC19438205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC19437205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift */; };
+		FAC1943B20600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1943920600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift */; };
+		FAC1943C20600F6900188BDA /* MasterCellInAddServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC1943A20600F6900188BDA /* MasterCellInAddServiceTableViewCell.xib */; };
+		FAC1943E20601ED300188BDA /* loadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1943D20601ED300188BDA /* loadData.swift */; };
+		FAF9EF0A205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9EF09205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0570B2205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonServicesTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84972041B2D5000BA2F5 /* Scheduling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0C84A12041B2D5000BA2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -27,9 +37,17 @@
 		FA0C84A82041B2D7000BA2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
-		FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA909538205F8E4E004C60A5 /* ProfileAddNewServiceHatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewServiceHatTableViewController.swift; sourceTree = "<group>"; };
+		FA9A172A2062B300005F4D46 /* ProfileMastersListForAddServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMastersListForAddServiceTableViewController.swift; sourceTree = "<group>"; };
 		FAAE1A82204EB10E00AE14C7 /* test classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test classes.swift"; sourceTree = "<group>"; };
 		FAAE1A84204EB76A00AE14C7 /* test data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test data.swift"; sourceTree = "<group>"; };
+		FAAEDCEB2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellInSalonProfileTableViewCell.swift; sourceTree = "<group>"; };
+		FAAEDCEC2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCellInSalonProfileTableViewCell.xib; sourceTree = "<group>"; };
+		FAC19437205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewServiceMastersTableViewController.swift; sourceTree = "<group>"; };
+		FAC1943920600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCellInAddServiceTableViewCell.swift; sourceTree = "<group>"; };
+		FAC1943A20600F6900188BDA /* MasterCellInAddServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterCellInAddServiceTableViewCell.xib; sourceTree = "<group>"; };
+		FAC1943D20601ED300188BDA /* loadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadData.swift; sourceTree = "<group>"; };
+		FAF9EF09205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonHatTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +80,24 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				FAAEDCE520599CC900FC4E2A /* Application */,
 				FAAE1A81204EB0D400AE14C7 /* test files */,
-				FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */,
-				FA0C84A02041B2D5000BA2F5 /* Main.storyboard */,
-				FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */,
-				FA0C84A52041B2D7000BA2F5 /* LaunchScreen.storyboard */,
-				FA0C84A82041B2D7000BA2F5 /* Info.plist */,
-				FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */,
-				FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */,
-				FA0C84B22041E9F8000BA2F5 /* ProfileViewController.swift */,
+				FAAEDCE620599D3600FC4E2A /* Search */,
+				FAAEDCE720599D7300FC4E2A /* Messages */,
+				FAAEDCE820599D7D00FC4E2A /* Profile */,
 			);
 			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		FA6712B42062231F00E219FB /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				FAAEDCEB2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift */,
+				FAAEDCEC2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.xib */,
+				FAC1943920600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift */,
+				FAC1943A20600F6900188BDA /* MasterCellInAddServiceTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		FAAE1A81204EB0D400AE14C7 /* test files */ = {
@@ -82,6 +107,48 @@
 				FAAE1A84204EB76A00AE14C7 /* test data.swift */,
 			);
 			path = "test files";
+			sourceTree = "<group>";
+		};
+		FAAEDCE520599CC900FC4E2A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */,
+				FA0C84A02041B2D5000BA2F5 /* Main.storyboard */,
+				FA0C84A52041B2D7000BA2F5 /* LaunchScreen.storyboard */,
+				FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */,
+				FA0C84A82041B2D7000BA2F5 /* Info.plist */,
+				FAC1943D20601ED300188BDA /* loadData.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FAAEDCE620599D3600FC4E2A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FAAEDCE720599D7300FC4E2A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		FAAEDCE820599D7D00FC4E2A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FAF9EF09205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift */,
+				FA0570B2205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift */,
+				FA909538205F8E4E004C60A5 /* ProfileAddNewServiceHatTableViewController.swift */,
+				FAC19437205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift */,
+				FA9A172A2062B300005F4D46 /* ProfileMastersListForAddServiceTableViewController.swift */,
+				FA6712B42062231F00E219FB /* TableCells */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAEDCEE2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.xib in Resources */,
+				FAC1943C20600F6900188BDA /* MasterCellInAddServiceTableViewCell.xib in Resources */,
 				FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */,
 				FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */,
 				FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */,
@@ -156,11 +225,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF9EF0A205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift in Sources */,
+				FAC1943B20600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift in Sources */,
+				FAAEDCED2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift in Sources */,
 				FAAE1A85204EB76A00AE14C7 /* test data.swift in Sources */,
+				FA0570B3205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift in Sources */,
+				FAC19438205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift in Sources */,
 				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
+				FAC1943E20601ED300188BDA /* loadData.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */,
-				FA0C84B32041E9F8000BA2F5 /* ProfileViewController.swift in Sources */,
+				FA9A172B2062B300005F4D46 /* ProfileMastersListForAddServiceTableViewController.swift in Sources */,
+				FA909539205F8E4E004C60A5 /* ProfileAddNewServiceHatTableViewController.swift in Sources */,
 				FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WS633S2WV;
-				INFOPLIST_FILE = Scheduling/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Scheduling/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.Scheduling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -321,7 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WS633S2WV;
-				INFOPLIST_FILE = Scheduling/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Scheduling/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.Scheduling;
 				PRODUCT_NAME = "$(TARGET_NAME)";

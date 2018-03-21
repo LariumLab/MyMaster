@@ -8,6 +8,8 @@
 
 import Foundation
 
+var profileType : Bool = true
+
 let TestSalon1 = Salon(nickname: "T2000", name: "Tattoo2000", phoneNumber: "8-800-555-35-35", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])
 
 //var mastersOfSalon1 : [Master] = []
