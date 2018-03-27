@@ -9,8 +9,13 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
-    override func viewDidLoad() {
+	@IBOutlet weak var login: UITextField!
+	
+	@IBOutlet weak var password: UITextField!
+	
+	@IBOutlet weak var passwordConfirmation: UITextField!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -21,7 +26,12 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+	@IBAction func signUpButtonPresed(_ sender: Any) {
+		if (users[login.text!] == nil && (password.text! == passwordConfirmation.text!)) {
+			users[login.text!] = password.text!
+		}
+	}
+	
     /*
     // MARK: - Navigation
 

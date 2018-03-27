@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
+		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
 		FA0570B3205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0570B2205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift */; };
 		FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */; };
 		FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A02041B2D5000BA2F5 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA0570B2205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonServicesTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84972041B2D5000BA2F5 /* Scheduling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8F129B7206A649000AD8594 /* AuthGroup */ = {
+			isa = PBXGroup;
+			children = (
+				F8F129B8206A64AF00AD8594 /* LoginViewController.swift */,
+				F8F129BA206A667B00AD8594 /* RegisterViewController.swift */,
+			);
+			path = AuthGroup;
+			sourceTree = "<group>";
+		};
 		FA0C848E2041B2D4000BA2F5 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +93,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				F8F129B7206A649000AD8594 /* AuthGroup */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
 				FAAE1A81204EB0D400AE14C7 /* test files */,
 				FAAEDCE620599D3600FC4E2A /* Search */,
@@ -225,11 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */,
 				FAF9EF0A205EF4A40063E6CF /* ProfileSalonHatTableViewController.swift in Sources */,
 				FAC1943B20600F6900188BDA /* MasterCellInAddServiceTableViewCell.swift in Sources */,
 				FAAEDCED2059A2D200FC4E2A /* ServiceCellInSalonProfileTableViewCell.swift in Sources */,
 				FAAE1A85204EB76A00AE14C7 /* test data.swift in Sources */,
 				FA0570B3205F02FD00B4CCCC /* ProfileSalonServicesTableViewController.swift in Sources */,
+				F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */,
 				FAC19438205FD78000188BDA /* ProfileAddNewServiceMastersTableViewController.swift in Sources */,
 				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
 				FAC1943E20601ED300188BDA /* loadData.swift in Sources */,
@@ -383,6 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WS633S2WV;
 				INFOPLIST_FILE = "$(SRCROOT)/Scheduling/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.Scheduling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,6 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WS633S2WV;
 				INFOPLIST_FILE = "$(SRCROOT)/Scheduling/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.Scheduling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
