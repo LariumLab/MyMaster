@@ -15,9 +15,9 @@ let TestSalon1 = Salon(nickname: "T2000", name: "Tattoo2000", phoneNumber: "8-80
 //var mastersOfSalon1 : [Master] = []
 //var mastersOfSalon2 : [Master] = []
 
-var Service1 = Service(name: "Пирсинг", description: "Пирсинг любой сложности. От прокола мочки уха до плоскостного пирсинга. Стаж наших мастеров от 3х лет", masters: [])
+let Service1 = Service(name: "Пирсинг", description: "Пирсинг любой сложности. От прокола мочки уха до плоскостного пирсинга. Стаж наших мастеров от 3х лет", masters: [], priceFrom: "500", priceTo: "1200")
 
-let Service2 = Service(name: "Художественная тату", description: "Наши мастера сделают тату в любом стиле: олдскул, акварель, трешполька и многое другое. Работа производится в полностью стерильных помещениях, все инструменты дезинфецируются в специальных камерах, а расходные материалы вскрываются при Вас.", masters: [])
+let Service2 = Service(name: "Художественная тату", description: "Наши мастера сделают тату в любом стиле: олдскул, акварель, трешполька и многое другое. Работа производится в полностью стерильных помещениях, все инструменты дезинфецируются в специальных камерах, а расходные материалы вскрываются при Вас.", masters: [], priceFrom: "2000", priceTo: "5000")
 
 let NoteInTable1 = NoteInTable(timeFrom: "12:00", timeTo: "13:00")
 let NoteInTable2 = NoteInTable(timeFrom: "13:15", timeTo: "15:00")
@@ -41,5 +41,5 @@ let MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable)
 
 //TestSalon1.addService(service: Service1)
 //Service1.addMaster(master: MasterKostya)
-
 var users: [String : String] = ["Test" : "Test"]
+

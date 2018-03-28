@@ -83,11 +83,23 @@ class Service{
     var name : String
     var description: String
     var masters : [Master]
+    var priceFrom : String
+    var priceTo : String
     
-    init(name: String, description: String, masters: [Master]) {
+    init(name: String, description: String, masters: [Master], priceFrom : String, priceTo : String) {
         self.name = name
         self.description = description
         self.masters = masters
+        self.priceFrom = priceFrom
+        self.priceTo = priceTo
+    }
+    
+    init() {
+        name = ""
+        description = ""
+        masters = []
+        priceFrom = ""
+        priceTo = ""
     }
     
     func addMaster(master: Master){
