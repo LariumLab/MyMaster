@@ -43,3 +43,4 @@ let MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable)
 //Service1.addMaster(master: MasterKostya)
 var users: [String : String] = ["Test" : "Test"]
 
+
