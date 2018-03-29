@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
 	@IBAction func signIn(_ sender: Any) {
 		if users[login.text!] != nil && users[login.text!] == password.text! {
 			testLabel.text = "OK"
+            let TabBarC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                present(TabBarC, animated: false, completion: nil)
 		} else {
 			testLabel.text = "Fail"
 		}

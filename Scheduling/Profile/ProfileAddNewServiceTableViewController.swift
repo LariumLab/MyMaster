@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewServiceTableViewController: UITableViewController {
+class ProfileAddNewServiceTableViewController: UITableViewController {
 
     var creatingService = Service()
     

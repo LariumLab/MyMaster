@@ -29,9 +29,11 @@
 		FA8A23E3206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A23E1206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift */; };
 		FA8A23E4206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A23E2206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib */; };
 		FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A23E5206A8C18000C4EEA /* ProfileSalonTableViewController.swift */; };
+		FA9BDE59206C14890068A86E /* ProfileMastersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */; };
+		FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */; };
 		FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A82204EB10E00AE14C7 /* test classes.swift */; };
 		FAC1943E20601ED300188BDA /* loadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1943D20601ED300188BDA /* loadData.swift */; };
-		FADADAFF2066CBAB00956F15 /* AddNewServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADADAFE2066CBAB00956F15 /* AddNewServiceTableViewController.swift */; };
+		FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +61,11 @@
 		FA8A23E1206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		FA8A23E2206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSalonDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		FA8A23E5206A8C18000C4EEA /* ProfileSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonTableViewController.swift; sourceTree = "<group>"; };
+		FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMastersListTableViewController.swift; sourceTree = "<group>"; };
+		FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewMasterTableViewController.swift; sourceTree = "<group>"; };
 		FAAE1A82204EB10E00AE14C7 /* test classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test classes.swift"; sourceTree = "<group>"; };
 		FAC1943D20601ED300188BDA /* loadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadData.swift; sourceTree = "<group>"; };
-		FADADAFE2066CBAB00956F15 /* AddNewServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewServiceTableViewController.swift; sourceTree = "<group>"; };
+		FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewServiceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +108,9 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
-				F8F129B7206A649000AD8594 /* AuthGroup */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
 				FAAE1A81204EB0D400AE14C7 /* test files */,
+				F8F129B7206A649000AD8594 /* AuthGroup */,
 				FAAEDCE620599D3600FC4E2A /* Search */,
 				FAAEDCE720599D7300FC4E2A /* Messages */,
 				FAAEDCE820599D7D00FC4E2A /* Profile */,
@@ -182,7 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				FA8A23E5206A8C18000C4EEA /* ProfileSalonTableViewController.swift */,
-				FADADAFE2066CBAB00956F15 /* AddNewServiceTableViewController.swift */,
+				FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */,
+				FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */,
+				FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */,
 				FA6712B42062231F00E219FB /* TableCells */,
 			);
 			path = Profile;
@@ -277,8 +283,10 @@
 				FA571DFF2066856E0078DF9A /* PriceTableViewCell.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */,
-				FADADAFF2066CBAB00956F15 /* AddNewServiceTableViewController.swift in Sources */,
+				FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */,
 				FA571E032066862A0078DF9A /* ListAndAddTableViewCell.swift in Sources */,
+				FA9BDE59206C14890068A86E /* ProfileMastersListTableViewController.swift in Sources */,
+				FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */,
 				FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */,
 				FA8A23E3206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift in Sources */,
 				FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */,

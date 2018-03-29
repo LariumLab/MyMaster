@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qwb-ym-yKd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14101" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qwb-ym-yKd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,7 +43,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="gt0-KH-etO">
             <objects>
-                <tabBarController id="HMA-nX-3w9" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="HMA-nX-3w9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sfV-ht-VnZ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8QQ-JG-WB6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -320,7 +321,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9t-yK-Vzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1002" y="788"/>
+            <point key="canvasLocation" x="-1002" y="878"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f6G-ts-8pf">
@@ -336,7 +337,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ8-Vh-yqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1506" y="1575"/>
+            <point key="canvasLocation" x="-2065" y="27"/>
         </scene>
         <!--Login-->
         <scene sceneID="NGR-ja-52c">
@@ -410,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWn-zE-iNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-685.60000000000002" y="1574.6626686656673"/>
+            <point key="canvasLocation" x="-1386" y="27"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ibb-b2-laS">
@@ -482,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfh-Q4-Y1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149.59999999999999" y="1579.1604197901052"/>
+            <point key="canvasLocation" x="-678" y="27"/>
         </scene>
         <!--Поиск: NC к услуге-->
         <scene sceneID="cru-7d-qC3">
@@ -1248,10 +1249,10 @@
             </objects>
             <point key="canvasLocation" x="3294" y="2649"/>
         </scene>
-        <!--Профиль: список мастеров-->
+        <!--Мастера:-->
         <scene sceneID="hRv-MF-MD4">
             <objects>
-                <tableViewController storyboardIdentifier="ChooseMasterInAddService" title="Профиль: список мастеров" id="6LZ-mR-HGm" customClass="ProfileMastersListForAddServiceTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileMastersList" title="Мастера:" id="6LZ-mR-HGm" customClass="ProfileMastersListTableViewController" customModule="Scheduling" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XFQ-Jp-Bg6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1515,10 +1516,10 @@
             </objects>
             <point key="canvasLocation" x="1966" y="1314"/>
         </scene>
-        <!--Профиль: добавление сервиса-->
+        <!--Услуга-->
         <scene sceneID="sov-2q-FYJ">
             <objects>
-                <tableViewController storyboardIdentifier="ProfileAddService" title="Профиль: добавление сервиса" id="m0B-Bp-izI" customClass="AddNewServiceTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileAddService" title="Услуга" id="m0B-Bp-izI" customClass="ProfileAddNewServiceTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iiR-IH-hj4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1575,10 +1576,10 @@
             </objects>
             <point key="canvasLocation" x="2633" y="1314"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Мастер-->
         <scene sceneID="sG8-yb-vpY">
             <objects>
-                <tableViewController id="mBl-Fn-xDv" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileAddNewMaster" title="Мастер" id="mBl-Fn-xDv" customClass="ProfileAddNewMasterTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UPh-2V-SRV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
