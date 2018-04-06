@@ -129,6 +129,11 @@ class Master{
         self.name = name
         self.timeTable = timeTable
     }
+    
+    init() {
+        name = ""
+        timeTable = TimeTable()
+    }
 }
 
 class TimeTable{
@@ -136,6 +141,10 @@ class TimeTable{
     
     init(DaysInTable: [DayInTable]) {
         self.DaysInTable = DaysInTable
+    }
+    
+    init() {
+        DaysInTable = []
     }
 }
 

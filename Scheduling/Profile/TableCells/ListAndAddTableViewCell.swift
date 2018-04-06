@@ -41,13 +41,13 @@ class ListAndAddTableViewCell: UITableViewCell {
             
             let addFromListAlertAction = UIAlertAction(title: "Добавить из списка", style: .default) { (alert) in
                 let MastersListTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileMastersList") as! ProfileMastersListTableViewController
-                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
+//                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
                 CurrentAddNewServiceVC.navigationController?.pushViewController(MastersListTableVC, animated: true)
             }
             let addNewMasterAlertAction = UIAlertAction(title: "Создать нового", style: .default) { (alert) in
                 
                 let addNewMasterTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileAddNewMaster") as! ProfileAddNewMasterTableViewController
-                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
+//                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
                 CurrentAddNewServiceVC.navigationController?.pushViewController(addNewMasterTableVC, animated: true)
             }
             alertC.addAction(addFromListAlertAction)

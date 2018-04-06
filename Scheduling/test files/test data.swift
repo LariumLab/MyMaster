@@ -12,9 +12,6 @@ var profileType : Bool = true
 
 let TestSalon1 = Salon(nickname: "T2000", name: "Tattoo2000", phoneNumber: "8-800-555-35-35", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])
 
-//var mastersOfSalon1 : [Master] = []
-//var mastersOfSalon2 : [Master] = []
-
 let Service1 = Service(name: "Пирсинг", description: "Пирсинг любой сложности. От прокола мочки уха до плоскостного пирсинга. Стаж наших мастеров от 3х лет", masters: [], priceFrom: "500", priceTo: "1200")
 
 let Service2 = Service(name: "Художественная тату", description: "Наши мастера сделают тату в любом стиле: олдскул, акварель, трешполька и многое другое. Работа производится в полностью стерильных помещениях, все инструменты дезинфецируются в специальных камерах, а расходные материалы вскрываются при Вас.", masters: [], priceFrom: "2000", priceTo: "5000")

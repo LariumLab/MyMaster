@@ -67,9 +67,12 @@ class ProfileSalonTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let addNewServiceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
-        addNewServiceVC.creatingService = salon.services[indexPath.row-2]
-        self.navigationController?.pushViewController(addNewServiceVC, animated: true)
+        
+        if indexPath.row >= 2 {
+            let addNewServiceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
+            addNewServiceVC.creatingService = salon.services[indexPath.row-2]
+            self.navigationController?.pushViewController(addNewServiceVC, animated: true)
+        }
     }
     
     /*
