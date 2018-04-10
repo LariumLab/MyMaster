@@ -25,13 +25,30 @@ class LoginViewController: UIViewController {
     }
     
 	@IBAction func signIn(_ sender: Any) {
-		if users[login.text!] != nil && users[login.text!] == password.text! {
-			testLabel.text = "OK"
-            let TabBarC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+//        if users[login.text!] != nil && users[login.text!] == password.text! {
+//            testLabel.text = "OK"
+//            let TabBarC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+//                present(TabBarC, animated: false, completion: nil)
+//        }
+
+        for user in users {
+            if user.login == login.text && user.password == password.text {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                
+                if user.profileType == true {
+                    let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
+                    TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                }
+                else {
+                    let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
+                    TabBarC.viewControllers?.append(ClientProfileNavigationC)
+                }
+                loadData(acc: user)
                 present(TabBarC, animated: false, completion: nil)
-		} else {
+            }
+        }
 			testLabel.text = "Fail"
-		}
 	}
 	
 

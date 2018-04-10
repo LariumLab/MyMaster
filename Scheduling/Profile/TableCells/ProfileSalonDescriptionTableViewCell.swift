@@ -16,6 +16,8 @@ class ProfileSalonDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var fullAdressButton: UIButton!
     
+    let CellHeigh = CGFloat(253)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

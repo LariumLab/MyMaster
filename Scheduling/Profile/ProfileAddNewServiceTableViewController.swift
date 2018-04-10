@@ -26,6 +26,10 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: servicePriceCellIdentifier)
         tableView.register(UINib(nibName: "ListAndAddTableViewCell", bundle: nil), forCellReuseIdentifier: serviceListNameCellIdentifier)
         tableView.register(UINib(nibName: "NameWithDisclosureIndicatorTableViewCell", bundle: nil), forCellReuseIdentifier: serviceMasterInListCellIdentifier)
+        
+//        let backItem = UIBarButtonItem()
+//        backItem.title = "Профиль"
+//        self.navigationItem.backBarButtonItem = backItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,7 +100,8 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 1:
-            return 160
+            let DescrCell = DescriptionTableViewCell()
+            return DescrCell.CellHeigh
         default:
             return 44
         }

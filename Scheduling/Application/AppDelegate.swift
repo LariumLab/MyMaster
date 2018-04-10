@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Service1.addMaster(master: MasterKostya)
         
         cities.append(TestSalon1.city)
-        
-        loadData(profileType: true)
-        
+        nicknames.append(TestSalon1.nickname)
+        Client1.appointments.append(Client1Appointment1)
+
         return true
     }
 

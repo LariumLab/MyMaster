@@ -8,9 +8,9 @@
 
 import Foundation
 
-var profileType : Bool = true
+// MARK: - SALON
 
-let TestSalon1 = Salon(nickname: "T2000", name: "Tattoo2000", phoneNumber: "8-800-555-35-35", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])
+let TestSalon1 = Salon( name: "Tattoo2000", phoneNumber: "8-800-555-35-35", nickname: "T2000", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])
 
 let Service1 = Service(name: "Пирсинг", description: "Пирсинг любой сложности. От прокола мочки уха до плоскостного пирсинга. Стаж наших мастеров от 3х лет", masters: [], priceFrom: "500", priceTo: "1200")
 
@@ -28,14 +28,20 @@ let FridayForKostyaTable = DayInTable(dayName: WeekDays[4], dayOff: false, timeF
 let SaturdayForKostyaTable = DayInTable(dayName: WeekDays[5], dayOff: true, timeFrom: "", timeTo: "", appointments: [])
 let SundayForKostyaTable = DayInTable(dayName: WeekDays[6], dayOff: true, timeFrom: "", timeTo: "", appointments: [])
 
-//MondayForKostyaTable.addAppointment(appointment: NoteInTable1)
-//TuesdayForKostyaTable.addAppointment(appointment: NoteInTable2)
-//ThursdayForKostyaTable.addAppointment(appointment: NoteInTable3)
-
 let KostyaTimeTable = TimeTable(DaysInTable: [MondayForKostyaTable, TuesdayForKostyaTable])
-
 let MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable)
 
-//TestSalon1.addService(service: Service1)
-//Service1.addMaster(master: MasterKostya)
-var users: [String : String] = ["Test" : "Test", "":""]
+// MARK: - CLIENT
+
+let Client1 = Client(name: "Ольга", phoneNumber: "8-888-88-88", appointments: [])
+let Client1Appointment1 = ClientAppointment(salonName: TestSalon1.name, serviceName: TestSalon1.services[0].name, price: "1000", timeAndDate: "10:00, 04.05", telephoneNumberOfSalon: TestSalon1.phoneNumber, salonAdress: TestSalon1.adress)
+// MARK: - ACCOUNT
+
+let salonAccount = Account(login: "salon", password: "salon", profileType: true)
+let clientAccount = Account(login: "client", password: "client", profileType: false)
+let emptySalonAccount = Account(login: "", password: "", profileType: true)
+
+var users = [salonAccount, clientAccount, emptySalonAccount]
+
+//var users: [String : String] = ["Test" : "Test", "":"", "client" : "client", "salon" : "salon" ]
+

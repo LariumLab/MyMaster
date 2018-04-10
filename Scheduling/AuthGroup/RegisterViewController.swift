@@ -27,9 +27,9 @@ class RegisterViewController: UIViewController {
     }
     
 	@IBAction func signUpButtonPresed(_ sender: Any) {
-		if (users[login.text!] == nil && (password.text! == passwordConfirmation.text!)) {
-			users[login.text!] = password.text!
-		}
+//        if (users[login.text!] == nil && (password.text! == passwordConfirmation.text!)) {
+//            users[login.text!] = password.text!
+//        }
 	}
 	
     /*

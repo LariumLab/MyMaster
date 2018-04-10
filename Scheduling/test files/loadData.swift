@@ -8,6 +8,9 @@
 
 import Foundation
 
+// MARK: - Common data
+var profileType : Bool = Bool() // true - салон, false - клиент
+var nicknames : [String] = []
 
 // MARK: - Salon data if profileType == true
 var salon = Salon()
@@ -19,13 +22,15 @@ var client = Client()
 
 // MARK: - loading data
 
-func loadData(profileType : Bool){
-    if profileType == true {
-        salon = TestSalon1  // ЗАГРУЗКА
+func loadData(acc: Account){
+    if acc.profileType == true {
+        salon = TestSalon1  // ЗАГРУЗКА - запрос логин/пароль, ответ - салон
         servicesList = salon.services
         mastersList = salon.masters
+        profileType = true
             }
     else {
-        
+        client = Client1 // аналогично
+        profileType = false
     }
 }

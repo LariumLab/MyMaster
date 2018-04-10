@@ -17,6 +17,7 @@
 		FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */; };
 		FA487BF1206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA487BEF206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift */; };
 		FA487BF2206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA487BF0206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib */; };
+		FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52964A207BC09400668FDA /* ProfileSettingsTableViewController.swift */; };
 		FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA571DF5206684D40078DF9A /* TextFieldTableViewCell.swift */; };
 		FA571DF8206684D40078DF9A /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA571DF6206684D40078DF9A /* TextFieldTableViewCell.xib */; };
 		FA571DFB206685110078DF9A /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA571DF9206685110078DF9A /* DescriptionTableViewCell.swift */; };
@@ -41,6 +42,11 @@
 		FA9BDE67206DF2390068A86E /* SegmentedControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BDE65206DF2390068A86E /* SegmentedControlTableViewCell.xib */; };
 		FA9BDE6A206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BDE68206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.swift */; };
 		FA9BDE6B206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9BDE69206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.xib */; };
+		FAA11D92207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA11D90207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift */; };
+		FAA11D93207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA11D91207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib */; };
+		FAA11D95207C7A0600B42B66 /* ProfileClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA11D94207C7A0600B42B66 /* ProfileClientTableViewController.swift */; };
+		FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA11D96207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift */; };
+		FAA11D99207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA11D97207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib */; };
 		FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A82204EB10E00AE14C7 /* test classes.swift */; };
 		FAC1943E20601ED300188BDA /* loadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1943D20601ED300188BDA /* loadData.swift */; };
 		FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */; };
@@ -59,6 +65,7 @@
 		FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		FA487BEF206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkTimeForDayTableViewCell.swift; sourceTree = "<group>"; };
 		FA487BF0206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetWorkTimeForDayTableViewCell.xib; sourceTree = "<group>"; };
+		FA52964A207BC09400668FDA /* ProfileSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTableViewController.swift; sourceTree = "<group>"; };
 		FA571DF5206684D40078DF9A /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		FA571DF6206684D40078DF9A /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		FA571DF9206685110078DF9A /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,6 +90,11 @@
 		FA9BDE65206DF2390068A86E /* SegmentedControlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlTableViewCell.xib; sourceTree = "<group>"; };
 		FA9BDE68206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeOfWorkDayTableViewCell.swift; sourceTree = "<group>"; };
 		FA9BDE69206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetTimeOfWorkDayTableViewCell.xib; sourceTree = "<group>"; };
+		FAA11D90207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClientDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		FAA11D91207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileClientDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		FAA11D94207C7A0600B42B66 /* ProfileClientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClientTableViewController.swift; sourceTree = "<group>"; };
+		FAA11D96207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		FAA11D97207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		FAAE1A82204EB10E00AE14C7 /* test classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test classes.swift"; sourceTree = "<group>"; };
 		FAC1943D20601ED300188BDA /* loadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadData.swift; sourceTree = "<group>"; };
 		FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewServiceTableViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +182,10 @@
 				FA9BDE69206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.xib */,
 				FA487BEF206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift */,
 				FA487BF0206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib */,
+				FAA11D90207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift */,
+				FAA11D91207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib */,
+				FAA11D96207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift */,
+				FAA11D97207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -219,6 +235,8 @@
 				FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */,
 				FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */,
 				FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */,
+				FA52964A207BC09400668FDA /* ProfileSettingsTableViewController.swift */,
+				FAA11D94207C7A0600B42B66 /* ProfileClientTableViewController.swift */,
 				FA6712B42062231F00E219FB /* TableCells */,
 			);
 			path = Profile;
@@ -287,7 +305,9 @@
 				FA571DF8206684D40078DF9A /* TextFieldTableViewCell.xib in Resources */,
 				FA9BDE67206DF2390068A86E /* SegmentedControlTableViewCell.xib in Resources */,
 				FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */,
+				FAA11D99207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib in Resources */,
 				FA571E08206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib in Resources */,
+				FAA11D93207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib in Resources */,
 				FA571E042066862A0078DF9A /* ListAndAddTableViewCell.xib in Resources */,
 				FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */,
 				FA571E002066856E0078DF9A /* PriceTableViewCell.xib in Resources */,
@@ -318,6 +338,7 @@
 				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
 				FAC1943E20601ED300188BDA /* loadData.swift in Sources */,
 				FA571DFF2066856E0078DF9A /* PriceTableViewCell.swift in Sources */,
+				FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA9BDE62206DF1550068A86E /* NameWithSwitchTableViewCell.swift in Sources */,
 				FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */,
@@ -327,8 +348,11 @@
 				FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */,
 				FA9BDE66206DF2390068A86E /* SegmentedControlTableViewCell.swift in Sources */,
 				FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */,
+				FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */,
 				FA9BDE5E206DEE510068A86E /* NameLabelTableViewCell.swift in Sources */,
+				FAA11D92207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift in Sources */,
 				FA8A23E3206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift in Sources */,
+				FAA11D95207C7A0600B42B66 /* ProfileClientTableViewController.swift in Sources */,
 				FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

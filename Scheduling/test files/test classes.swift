@@ -10,40 +10,52 @@ import Foundation
 
 var cities : [String] = [] // необходимо добавить удаление повторяющихся городов
 
+class Account{
+    var login : String
+    var password : String
+    var profileType : Bool
+    
+    init(login: String, password: String, profileType: Bool) {
+        self.login = login
+        self.password = password
+        self.profileType = profileType
+    }
+}
+
 class Profile{
-    var nickname : String
     var name : String
     var phoneNumber: String
     
-    init(nickname: String, name: String, phoneNumber: String) {
-        self.nickname = nickname
+    init(name: String, phoneNumber: String) {
         self.name = name
         self.phoneNumber = phoneNumber
     }
     
     init() {
-        nickname = ""
         name = ""
         phoneNumber = ""
     }
 }
 
 class Salon : Profile{
+    var nickname : String
     var description: String
     var city: String
     var adress: String
     var services : [Service]
     var masters : [Master] = []
     
-    init(nickname: String, name: String, phoneNumber: String, description: String, city: String, adress: String, services: [Service]) {
+    init(name: String, phoneNumber: String, nickname: String, description: String, city: String, adress: String, services: [Service]) {
+        self.nickname = nickname
         self.description = description
         self.city = city
         self.adress = adress
         self.services = services
-        super.init(nickname: nickname, name: name, phoneNumber: phoneNumber)
+        super.init(name: name, phoneNumber: phoneNumber)
     }
     
     override init(){
+        nickname = ""
         description = ""
         city = ""
         adress = ""
@@ -64,9 +76,9 @@ class Salon : Profile{
 class Client: Profile{
     var appointments: [ClientAppointment]
     
-    init(nickname: String, name: String, phoneNumber: String, appointments: [ClientAppointment]) {
+    init(name: String, phoneNumber: String, appointments: [ClientAppointment]) {
         self.appointments = appointments
-        super.init(nickname: nickname, name: name, phoneNumber: phoneNumber)
+        super.init(name: name, phoneNumber: phoneNumber)
     }
     
     override init() {
@@ -110,14 +122,18 @@ class Service{
 class ClientAppointment{
     var salonName : String
     var serviceName : String
+    var price : String
     var timeAndDate : String // or : date? hh:mm dd (число)
     var telephoneNumberOfSalon : String
+    var salonAdress : String
     
-    init(salonName : String, serviceName: String, timeAndDate: String, telephoneNumberOfSalon : String) {
+    init(salonName : String, serviceName: String, price: String, timeAndDate: String, telephoneNumberOfSalon : String, salonAdress: String) {
         self.salonName = salonName
         self.serviceName = serviceName
+        self.price = price
         self.timeAndDate = timeAndDate
         self.telephoneNumberOfSalon = telephoneNumberOfSalon
+        self.salonAdress = salonAdress
     }
 }
 

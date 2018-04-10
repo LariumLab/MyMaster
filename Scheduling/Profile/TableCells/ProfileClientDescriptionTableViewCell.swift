@@ -1,18 +1,18 @@
 //
-//  DescriptionTableViewCell.swift
+//  ProfileClientTableViewCell.swift
 //  Scheduling
 //
-//  Created by macbook on 24.03.2018.
+//  Created by macbook on 10.04.2018.
 //  Copyright © 2018 Aksiniya. All rights reserved.
 //
 
 import UIKit
 
-class DescriptionTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var descriptionTextView: UITextView!
+class ProfileClientDescriptionTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
-    let CellHeigh : CGFloat = 160
+    let CellHeigh = CGFloat(98.5)
     
     override func awakeFromNib() {
         super.awakeFromNib()
