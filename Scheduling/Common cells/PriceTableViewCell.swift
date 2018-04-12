@@ -1,5 +1,5 @@
 //
-//  NameTableViewCell.swift
+//  PriceTableViewCell.swift
 //  Scheduling
 //
 //  Created by macbook on 24.03.2018.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class NameWithDisclosureIndicatorTableViewCell : UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
+class PriceTableViewCell: UITableViewCell {
+    @IBOutlet weak var priceToTextField: UITextField!
+    @IBOutlet weak var priceFromTextField: UITextField!
+    let CellHeight = CGFloat(44)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

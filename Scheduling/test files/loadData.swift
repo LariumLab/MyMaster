@@ -11,6 +11,8 @@ import Foundation
 // MARK: - Common data
 var profileType : Bool = Bool() // true - салон, false - клиент
 var nicknames : [String] = []
+var salons : [Salon] = []
+var cities : [String] = [] // необходимо добавить удаление повторяющихся городов
 
 // MARK: - Salon data if profileType == true
 var salon = Salon()

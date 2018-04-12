@@ -1,5 +1,5 @@
 //
-//  PriceTableViewCell.swift
+//  TextFieldTableViewCell.swift
 //  Scheduling
 //
 //  Created by macbook on 24.03.2018.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class PriceTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var priceToTextField: UITextField!
-    @IBOutlet weak var priceFromTextField: UITextField!
+class TextFieldTableViewCell: UITableViewCell {
+    @IBOutlet weak var textField: UITextField!
+    let cellHeight = CGFloat(44)
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,8 +18,5 @@ class PriceTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

@@ -9,10 +9,8 @@
 import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {
-
     @IBOutlet weak var descriptionTextView: UITextView!
-    
-    let CellHeigh : CGFloat = 160
+    let CellHeight = CGFloat(160)
     
     override func awakeFromNib() {
         super.awakeFromNib()

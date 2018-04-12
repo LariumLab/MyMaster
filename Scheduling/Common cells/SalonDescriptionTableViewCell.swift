@@ -8,15 +8,13 @@
 
 import UIKit
 
-class ProfileSalonDescriptionTableViewCell: UITableViewCell {
-
+class SalonDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var telephoneNumberLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var fullAdressButton: UIButton!
-    
-    let CellHeigh = CGFloat(253)
+    let CellHeight = CGFloat(253)
     
     override func awakeFromNib() {
         super.awakeFromNib()

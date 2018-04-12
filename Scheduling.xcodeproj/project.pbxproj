@@ -15,6 +15,9 @@
 		FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A52041B2D7000BA2F5 /* LaunchScreen.storyboard */; };
 		FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */; };
 		FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */; };
+		FA46A6C8207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */; };
+		FA46A6C9207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */; };
+		FA46A6CB207E79860094FF0C /* SearchSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */; };
 		FA487BF1206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA487BEF206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift */; };
 		FA487BF2206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA487BF0206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib */; };
 		FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52964A207BC09400668FDA /* ProfileSettingsTableViewController.swift */; };
@@ -29,8 +32,12 @@
 		FA571E07206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA571E05206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift */; };
 		FA571E08206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA571E06206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib */; };
 		FA5B30B2206BF7D50083BFA9 /* test data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5B30B1206BF7D50083BFA9 /* test data.swift */; };
-		FA8A23E3206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A23E1206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift */; };
-		FA8A23E4206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A23E2206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib */; };
+		FA655334207E591F00171326 /* SearchSalonsInCityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655333207E591F00171326 /* SearchSalonsInCityTableViewController.swift */; };
+		FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655335207E6F3500171326 /* SearchSalonTableViewCell.swift */; };
+		FA655338207E6F3500171326 /* SearchSalonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA655336207E6F3500171326 /* SearchSalonTableViewCell.xib */; };
+		FA77C97E207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77C97D207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift */; };
+		FA8A23E3206A865B000C4EEA /* SalonDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A23E1206A865B000C4EEA /* SalonDescriptionTableViewCell.swift */; };
+		FA8A23E4206A865B000C4EEA /* SalonDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8A23E2206A865B000C4EEA /* SalonDescriptionTableViewCell.xib */; };
 		FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A23E5206A8C18000C4EEA /* ProfileSalonTableViewController.swift */; };
 		FA9BDE59206C14890068A86E /* ProfileMastersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */; };
 		FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */; };
@@ -63,6 +70,9 @@
 		FA0C84A82041B2D7000BA2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		FA0C84B02041E9AE000BA2F5 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceInSalonCellTableViewCell.swift; sourceTree = "<group>"; };
+		FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchServiceInSalonCellTableViewCell.xib; sourceTree = "<group>"; };
+		FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSalonTableViewController.swift; sourceTree = "<group>"; };
 		FA487BEF206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkTimeForDayTableViewCell.swift; sourceTree = "<group>"; };
 		FA487BF0206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetWorkTimeForDayTableViewCell.xib; sourceTree = "<group>"; };
 		FA52964A207BC09400668FDA /* ProfileSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -77,8 +87,12 @@
 		FA571E05206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameWithDisclosureIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		FA571E06206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameWithDisclosureIndicatorTableViewCell.xib; sourceTree = "<group>"; };
 		FA5B30B1206BF7D50083BFA9 /* test data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test data.swift"; sourceTree = "<group>"; };
-		FA8A23E1206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonDescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		FA8A23E2206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSalonDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		FA655333207E591F00171326 /* SearchSalonsInCityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSalonsInCityTableViewController.swift; sourceTree = "<group>"; };
+		FA655335207E6F3500171326 /* SearchSalonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSalonTableViewCell.swift; sourceTree = "<group>"; };
+		FA655336207E6F3500171326 /* SearchSalonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSalonTableViewCell.xib; sourceTree = "<group>"; };
+		FA77C97D207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceInSalonTableViewController.swift; sourceTree = "<group>"; };
+		FA8A23E1206A865B000C4EEA /* SalonDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		FA8A23E2206A865B000C4EEA /* SalonDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		FA8A23E5206A8C18000C4EEA /* ProfileSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSalonTableViewController.swift; sourceTree = "<group>"; };
 		FA9BDE58206C14890068A86E /* ProfileMastersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMastersListTableViewController.swift; sourceTree = "<group>"; };
 		FA9BDE5A206C17220068A86E /* ProfileAddNewMasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewMasterTableViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +154,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				FA655332207E52E700171326 /* Common cells */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
 				FAAE1A81204EB0D400AE14C7 /* test files */,
 				F8F129B7206A649000AD8594 /* AuthGroup */,
@@ -157,21 +172,39 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		FA655332207E52E700171326 /* Common cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA571E05206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift */,
+				FA571E06206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib */,
+				FA8A23E1206A865B000C4EEA /* SalonDescriptionTableViewCell.swift */,
+				FA8A23E2206A865B000C4EEA /* SalonDescriptionTableViewCell.xib */,
+				FA571DF9206685110078DF9A /* DescriptionTableViewCell.swift */,
+				FA571DFA206685110078DF9A /* DescriptionTableViewCell.xib */,
+				FA571DF5206684D40078DF9A /* TextFieldTableViewCell.swift */,
+				FA571DF6206684D40078DF9A /* TextFieldTableViewCell.xib */,
+				FA571DFD2066856E0078DF9A /* PriceTableViewCell.swift */,
+				FA571DFE2066856E0078DF9A /* PriceTableViewCell.xib */,
+			);
+			path = "Common cells";
+			sourceTree = "<group>";
+		};
+		FA655339207E6F3B00171326 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA655335207E6F3500171326 /* SearchSalonTableViewCell.swift */,
+				FA655336207E6F3500171326 /* SearchSalonTableViewCell.xib */,
+				FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */,
+				FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		FA6712B42062231F00E219FB /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				FA571DF5206684D40078DF9A /* TextFieldTableViewCell.swift */,
-				FA571DF6206684D40078DF9A /* TextFieldTableViewCell.xib */,
-				FA571DF9206685110078DF9A /* DescriptionTableViewCell.swift */,
-				FA571DFA206685110078DF9A /* DescriptionTableViewCell.xib */,
-				FA571DFD2066856E0078DF9A /* PriceTableViewCell.swift */,
-				FA571DFE2066856E0078DF9A /* PriceTableViewCell.xib */,
 				FA571E012066862A0078DF9A /* ListAndAddTableViewCell.swift */,
 				FA571E022066862A0078DF9A /* ListAndAddTableViewCell.xib */,
-				FA571E05206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift */,
-				FA571E06206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib */,
-				FA8A23E1206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift */,
-				FA8A23E2206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib */,
 				FA9BDE5C206DEE510068A86E /* NameLabelTableViewCell.swift */,
 				FA9BDE5D206DEE510068A86E /* NameLabelTableViewCell.xib */,
 				FA9BDE60206DF1550068A86E /* NameWithSwitchTableViewCell.swift */,
@@ -216,6 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */,
+				FA655333207E591F00171326 /* SearchSalonsInCityTableViewController.swift */,
+				FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */,
+				FA77C97D207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift */,
+				FA655339207E6F3B00171326 /* TableCells */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -301,7 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA8A23E4206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.xib in Resources */,
+				FA8A23E4206A865B000C4EEA /* SalonDescriptionTableViewCell.xib in Resources */,
 				FA571DF8206684D40078DF9A /* TextFieldTableViewCell.xib in Resources */,
 				FA9BDE67206DF2390068A86E /* SegmentedControlTableViewCell.xib in Resources */,
 				FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */,
@@ -310,10 +347,12 @@
 				FAA11D93207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib in Resources */,
 				FA571E042066862A0078DF9A /* ListAndAddTableViewCell.xib in Resources */,
 				FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */,
+				FA655338207E6F3500171326 /* SearchSalonTableViewCell.xib in Resources */,
 				FA571E002066856E0078DF9A /* PriceTableViewCell.xib in Resources */,
 				FA9BDE6B206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.xib in Resources */,
 				FA9BDE63206DF1550068A86E /* NameWithSwitchTableViewCell.xib in Resources */,
 				FA9BDE5F206DEE510068A86E /* NameLabelTableViewCell.xib in Resources */,
+				FA46A6C9207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib in Resources */,
 				FA487BF2206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib in Resources */,
 				FA571DFC206685110078DF9A /* DescriptionTableViewCell.xib in Resources */,
 				FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */,
@@ -327,13 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */,
 				FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */,
+				FA46A6CB207E79860094FF0C /* SearchSalonTableViewController.swift in Sources */,
 				FA571DFB206685110078DF9A /* DescriptionTableViewCell.swift in Sources */,
 				FA571E07206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift in Sources */,
 				F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */,
 				F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */,
 				FA5B30B2206BF7D50083BFA9 /* test data.swift in Sources */,
 				FA487BF1206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift in Sources */,
+				FA655334207E591F00171326 /* SearchSalonsInCityTableViewController.swift in Sources */,
+				FA77C97E207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift in Sources */,
 				FA9BDE6A206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.swift in Sources */,
 				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
 				FAC1943E20601ED300188BDA /* loadData.swift in Sources */,
@@ -349,9 +392,10 @@
 				FA9BDE66206DF2390068A86E /* SegmentedControlTableViewCell.swift in Sources */,
 				FA0C84B12041E9AE000BA2F5 /* MessagesTableViewController.swift in Sources */,
 				FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */,
+				FA46A6C8207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift in Sources */,
 				FA9BDE5E206DEE510068A86E /* NameLabelTableViewCell.swift in Sources */,
 				FAA11D92207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.swift in Sources */,
-				FA8A23E3206A865B000C4EEA /* ProfileSalonDescriptionTableViewCell.swift in Sources */,
+				FA8A23E3206A865B000C4EEA /* SalonDescriptionTableViewCell.swift in Sources */,
 				FAA11D95207C7A0600B42B66 /* ProfileClientTableViewController.swift in Sources */,
 				FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */,
 			);

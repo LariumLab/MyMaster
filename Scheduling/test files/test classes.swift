@@ -8,8 +8,6 @@
 
 import Foundation
 
-var cities : [String] = [] // необходимо добавить удаление повторяющихся городов
-
 class Account{
     var login : String
     var password : String
