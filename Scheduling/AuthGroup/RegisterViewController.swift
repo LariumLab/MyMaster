@@ -1,16 +1,21 @@
 //
-//  ProfileViewController.swift
+//  RegisterViewController.swift
 //  Scheduling
 //
-//  Created by macbook on 24.02.2018.
+//  Created by Виталий Рамазанов on 27.03.2018.
 //  Copyright © 2018 Aksiniya. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
+class RegisterViewController: UIViewController {
+	@IBOutlet weak var login: UITextField!
+	
+	@IBOutlet weak var password: UITextField!
+	
+	@IBOutlet weak var passwordConfirmation: UITextField!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -21,7 +26,12 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+	@IBAction func signUpButtonPresed(_ sender: Any) {
+//        if (users[login.text!] == nil && (password.text! == passwordConfirmation.text!)) {
+//            users[login.text!] = password.text!
+//        }
+	}
+	
     /*
     // MARK: - Navigation
 

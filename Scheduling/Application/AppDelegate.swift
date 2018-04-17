@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+	
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        MondayForKostyaTable.addAppointment(appointment: NoteInTable1)
+        TuesdayForKostyaTable.addAppointment(appointment: NoteInTable2)
+        ThursdayForKostyaTable.addAppointment(appointment: NoteInTable3)
+        
+        TestSalon1.addService(service: Service1)
+        TestSalon1.addService(service: Service2)
+        TestSalon1.addMasterToMastersList(master: MasterKostya)
+        Service1.addMaster(master: MasterKostya)
+        
+        cities.append(TestSalon1.city)
+        nicknames.append(TestSalon1.nickname)
+        Client1.appointments.append(Client1Appointment1)
+
         return true
     }
 
