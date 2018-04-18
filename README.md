@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/LariumLab/Scheduling.svg?branch=dev)](https://travis-ci.org/LariumLab/Scheduling)
 # Приложение "Запись"
 
 ### Описание
