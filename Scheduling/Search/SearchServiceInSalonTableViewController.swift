@@ -23,7 +23,7 @@ class SearchServiceInSalonTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: ServiceDescriptionCellIdentidier)
         tableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: ServicePriceCellIdentifier)
         tableView.register(UINib(nibName: "NameWithDisclosureIndicatorTableViewCell", bundle: nil), forCellReuseIdentifier: MasterCellIdentifier)
-
+        self.title = service.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,6 +106,13 @@ class SearchServiceInSalonTableViewController: UITableViewController {
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            let scheduleTVC = ScheduleTableViewController()
+            self.navigationController?.pushViewController(scheduleTVC, animated: true)
         }
     }
 }

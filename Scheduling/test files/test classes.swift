@@ -138,15 +138,36 @@ class ClientAppointment{
 class Master{
     var name : String
     var timeTable : TimeTable
+    var appointments : [NoteInTable]
 
-    init(name: String, timeTable:TimeTable) {
+    init(name: String, timeTable: TimeTable, appointments: [NoteInTable]) {
         self.name = name
         self.timeTable = timeTable
+        self.appointments = appointments
     }
     
     init() {
         name = ""
         timeTable = TimeTable()
+        appointments = []
+    }
+    
+    func addAppointment(appointment: NoteInTable){
+        self.appointments.append(appointment)
+    }
+}
+
+class NoteInTable : Equatable{
+    var DateFrom : Date
+    var DateTo : Date
+    
+    init(dateFrom : Date, dateTo : Date ) {
+        self.DateFrom = dateFrom
+        self.DateTo = dateTo
+    }
+    
+    static func == (l: NoteInTable, r: NoteInTable) -> Bool {
+        return l.DateFrom == r.DateFrom && l.DateTo == r.DateTo
     }
 }
 
@@ -162,34 +183,25 @@ class TimeTable{
     }
 }
 
-var WeekDays = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+var WeekDays = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
 
-class DayInTable{
+class DayInTable : Equatable{
     var dayName : String // from WeekDays[]
     var dayOff : Bool // выходной
     var timeFrom : String
     var timeTo : String
-    var appointments : [NoteInTable]
     
-    init(dayName : String, dayOff : Bool, timeFrom : String, timeTo : String, appointments : [NoteInTable]) {
+    init(dayName : String, dayOff : Bool, timeFrom : String, timeTo : String) {
         self.dayName = dayName
         self.dayOff = dayOff
         self.timeFrom = timeFrom
         self.timeTo = timeTo
-        self.appointments = appointments
     }
     
-    func addAppointment(appointment: NoteInTable){
-        self.appointments.append(appointment)
-    }
-}
-
-class NoteInTable{
-    var timeFrom : String
-    var timeTo : String
-    
-    init(timeFrom : String, timeTo : String ) {
-        self.timeFrom = timeFrom
-        self.timeTo = timeTo
+    static func == (l: DayInTable, r: DayInTable) -> Bool{
+        return l.dayName == r.dayName &&
+               l.dayOff == r.dayOff &&
+               l.timeFrom == r.timeFrom &&
+               l.timeTo == r.timeTo
     }
 }

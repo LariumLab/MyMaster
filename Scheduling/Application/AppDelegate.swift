@@ -15,10 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+
+        NoteDate1Start = formatter.date(from: "16.04.2018 12:00")!
+        NoteDate1End = formatter.date(from: "16.04.2018 13:30")!
+        NoteDate2Start = formatter.date(from: "16.04.2018 16:00")!
+        NoteDate2End = formatter.date(from: "16.04.2018 17:00")!
+        NoteDate3Start = formatter.date(from: "17.04.2018 14:00")!
+        NoteDate3End = formatter.date(from: "17.04.2018 16:00")!
+        NoteDate4Start = formatter.date(from: "18.04.2018 11:00")!
+        NoteDate4End = formatter.date(from: "18.04.2018 11:30")!
+        NoteDate5Start = formatter.date(from: "19.04.2018 13:15")!
+        NoteDate5End = formatter.date(from: "19.04.2018 14:45")!
+        NoteDate6Start = formatter.date(from: "20.04.2018 15:10")!
+        NoteDate6End = formatter.date(from: "20.04.2018 16:40")!
+
+        let NoteInTable1 = NoteInTable(dateFrom: NoteDate1Start, dateTo: NoteDate1End)
+        let NoteInTable2 = NoteInTable(dateFrom: NoteDate2Start, dateTo: NoteDate2End)
+        let NoteInTable3 = NoteInTable(dateFrom: NoteDate3Start, dateTo: NoteDate3End)
+        let NoteInTable4 = NoteInTable(dateFrom: NoteDate4Start, dateTo: NoteDate4End)
+        let NoteInTable5 = NoteInTable(dateFrom: NoteDate5Start, dateTo: NoteDate5End)
+        let NoteInTable6 = NoteInTable(dateFrom: NoteDate6Start, dateTo: NoteDate6End)
         
-        MondayForKostyaTable.addAppointment(appointment: NoteInTable1)
-        TuesdayForKostyaTable.addAppointment(appointment: NoteInTable2)
-        ThursdayForKostyaTable.addAppointment(appointment: NoteInTable3)
+        MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable, appointments: [NoteInTable1, NoteInTable2, NoteInTable3, NoteInTable4, NoteInTable5, NoteInTable6])
         
         TestSalon1.addService(service: Service1)
         TestSalon1.addService(service: Service2)
@@ -28,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cities.append(TestSalon1.city)
         nicknames.append(TestSalon1.nickname)
         Client1.appointments.append(Client1Appointment1)
-
+        
         return true
     }
 

@@ -16,20 +16,31 @@ let Service1 = Service(name: "Пирсинг", description: "Пирсинг лю
 
 let Service2 = Service(name: "Художественная тату", description: "Наши мастера сделают тату в любом стиле: олдскул, акварель, трешполька и многое другое. Работа производится в полностью стерильных помещениях, все инструменты дезинфецируются в специальных камерах, а расходные материалы вскрываются при Вас.", masters: [], priceFrom: "2000", priceTo: "5000")
 
-let NoteInTable1 = NoteInTable(timeFrom: "12:00", timeTo: "13:00")
-let NoteInTable2 = NoteInTable(timeFrom: "13:15", timeTo: "15:00")
-let NoteInTable3 = NoteInTable(timeFrom: "16:30", timeTo: "17:30")
+var NoteDate1Start = Date()
+var NoteDate1End = Date()
+var NoteDate2Start = Date()
+var NoteDate2End = Date()
+var NoteDate3Start = Date()
+var NoteDate3End = Date()
+var NoteDate4Start = Date()
+var NoteDate4End = Date()
+var NoteDate5Start = Date()
+var NoteDate5End = Date()
+var NoteDate6Start = Date()
+var NoteDate6End = Date()
 
-let MondayForKostyaTable = DayInTable(dayName: WeekDays[0], dayOff: false, timeFrom: "10:00", timeTo: "18:00", appointments: [])
-let TuesdayForKostyaTable = DayInTable(dayName: WeekDays[1], dayOff: false, timeFrom: "10:00", timeTo: "18:00", appointments: [])
-let WednesdayForKostyaTable = DayInTable(dayName: WeekDays[2], dayOff: false, timeFrom: "10:00", timeTo: "18:00", appointments: [])
-let ThursdayForKostyaTable = DayInTable(dayName: WeekDays[3], dayOff: false, timeFrom: "10:00", timeTo: "18:00", appointments: [])
-let FridayForKostyaTable = DayInTable(dayName: WeekDays[4], dayOff: false, timeFrom: "10:00", timeTo: "18:00", appointments: [])
-let SaturdayForKostyaTable = DayInTable(dayName: WeekDays[5], dayOff: true, timeFrom: "", timeTo: "", appointments: [])
-let SundayForKostyaTable = DayInTable(dayName: WeekDays[6], dayOff: true, timeFrom: "", timeTo: "", appointments: [])
 
-let KostyaTimeTable = TimeTable(DaysInTable: [MondayForKostyaTable, TuesdayForKostyaTable])
-let MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable)
+let MondayForKostyaTable = DayInTable(dayName: WeekDays[0], dayOff: false, timeFrom: "10:00", timeTo: "18:00")
+let TuesdayForKostyaTable = DayInTable(dayName: WeekDays[1], dayOff: false, timeFrom: "10:00", timeTo: "18:00")
+let WednesdayForKostyaTable = DayInTable(dayName: WeekDays[2], dayOff: false, timeFrom: "10:00", timeTo: "18:00")
+let ThursdayForKostyaTable = DayInTable(dayName: WeekDays[3], dayOff: false, timeFrom: "10:00", timeTo: "18:00")
+let FridayForKostyaTable = DayInTable(dayName: WeekDays[4], dayOff: false, timeFrom: "10:00", timeTo: "18:00")
+let SaturdayForKostyaTable = DayInTable(dayName: WeekDays[5], dayOff: true, timeFrom: "", timeTo: "")
+let SundayForKostyaTable = DayInTable(dayName: WeekDays[6], dayOff: true, timeFrom: "", timeTo: "")
+
+let KostyaTimeTable = TimeTable(DaysInTable: [MondayForKostyaTable, TuesdayForKostyaTable, WednesdayForKostyaTable, ThursdayForKostyaTable, FridayForKostyaTable, SaturdayForKostyaTable, SundayForKostyaTable])
+
+var MasterKostya = Master()
 
 // MARK: - CLIENT
 
