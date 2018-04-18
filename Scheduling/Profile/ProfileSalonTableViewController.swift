@@ -17,7 +17,7 @@ class ProfileSalonTableViewController: UITableViewController {
     let ServiceCellIdentifier = "ProfileSalonServiceCell"
     
     @objc func SettingsButtonSelected(){
-        let SettingsVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileSettings") as! ProfileSettingsTableViewController
+        let SettingsVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileSettings") as! ProfileSettingsTableViewController
         SettingsVC.profile = registeredSalon
         self.navigationController?.pushViewController(SettingsVC, animated: true)
     }
@@ -84,7 +84,7 @@ class ProfileSalonTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row >= 2 {
-            let addNewServiceVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
+            let addNewServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
             addNewServiceVC.creatingService = registeredSalon.services[indexPath.row-2]
             self.navigationController?.pushViewController(addNewServiceVC, animated: true)
         }

@@ -27,7 +27,7 @@ class ListAndAddTableViewCell: UITableViewCell {
     }
     
     @IBAction func addAction(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         
         guard AddFunction != nil else { print("Тип функции не инициилизирован -> кнопка не работает"); return }
         

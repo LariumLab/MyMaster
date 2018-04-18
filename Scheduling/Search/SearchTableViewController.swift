@@ -35,7 +35,7 @@ class SearchTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cities[indexPath.row]
-        let SalonsInCityVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchSalonsInCityTable") as! SearchSalonsInCityTableViewController
+        let SalonsInCityVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalonsInCityTable") as! SearchSalonsInCityTableViewController
      //   SalonsInCityVC.salonsInSity = get запрос на сервер
         SalonsInCityVC.city = city
         self.navigationController?.pushViewController(SalonsInCityVC, animated: true)

@@ -46,7 +46,7 @@ class SearchSalonsInCityTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let SalonVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchSalon") as! SearchSalonTableViewController
+        let SalonVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalon") as! SearchSalonTableViewController
 //        SalonVC.currentSalon = salonsInSity[indexPath.row]
         self.navigationController?.pushViewController(SalonVC, animated: true)
     }

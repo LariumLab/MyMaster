@@ -32,7 +32,7 @@ class ProfileClientTableViewController: UITableViewController {
     }
 
     @objc func settingsButtonSelected() {
-        let settingsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileSettings") as! ProfileSettingsTableViewController
+        let settingsVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileSettings") as! ProfileSettingsTableViewController
         settingsVC.profile = self.registeredClient
         self.navigationController?.pushViewController(settingsVC, animated: true)
     }

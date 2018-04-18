@@ -32,7 +32,7 @@ class SearchSalonTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            let ServiceVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchServiceInSalon") as! SearchServiceInSalonTableViewController
+            let ServiceVC = UIStoryboard.init(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchServiceInSalon") as! SearchServiceInSalonTableViewController
             // ЗАГРУЗКА -> GetService(salon: Salon, index: Int)
             let selectedService = currentSalon.services[indexPath.row]
             ServiceVC.service = selectedService
