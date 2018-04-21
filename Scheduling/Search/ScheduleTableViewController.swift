@@ -18,15 +18,16 @@ class ScheduleTableViewController: UITableViewController {
     
     var appointmentsByDayVector : [[NoteInTable]] = []
     
-    let TimeCellIdentifier = "timeCell"
+    let WeekDescriptionCellIdentifier = "weekDescriptionCell"
     let WorkDayDescriptionCellIdentifier = "dayDescriptionCell"
+    let TimeCellIdentifier = "timeCell"
     let NameLabelCellIdentifier = "nameLabelCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(UINib(nibName: "ScheduleTimeTableViewCell", bundle: nil), forCellReuseIdentifier: TimeCellIdentifier)
+        tableView.register(UINib(nibName: "WeekDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: WeekDescriptionCellIdentifier)
         tableView.register(UINib(nibName: "WorkDayDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: WorkDayDescriptionCellIdentifier)
+        tableView.register(UINib(nibName: "ScheduleTimeTableViewCell", bundle: nil), forCellReuseIdentifier: TimeCellIdentifier)
         tableView.register(UINib(nibName: "NameLabelTableViewCell", bundle: nil), forCellReuseIdentifier: NameLabelCellIdentifier)
         sectionHeight = 28
         
@@ -108,28 +109,29 @@ class ScheduleTableViewController: UITableViewController {
     
     func setAppointmentsViews() {
 //        let sectionHeight = CGFloat(28)
-        let descriptionCell = WorkDayDescriptionTableViewCell()
-        let descriptionHeight = descriptionCell.cellHeight
+        let weekDescriptionCell = WeekDescriptionTableViewCell()
+        let weekDescriptionHeight = weekDescriptionCell.cellHeight
+        let dayDescriptionCell = WorkDayDescriptionTableViewCell()
+        let dayDescriptionHeight = dayDescriptionCell.cellHeight
         let timecell = ScheduleTimeTableViewCell()
         let timeHeight = timecell.CellHeight
         let nameLabelCell = NameLabelTableViewCell()
         let nameLabelHeight = nameLabelCell.cellHeight
         
         let daysInTable = timeTable.DaysInTable
-        
         var dayIndex = 0
-        var CellsHeightsSumBeforeCurrentSection : CGFloat = 0
+        var CellsHeightsSumBeforeCurrentSection : CGFloat = weekDescriptionHeight
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
 
         for day in daysInTable {
-            
             if day.dayOff == true {
                 CellsHeightsSumBeforeCurrentSection += nameLabelHeight + sectionHeight
             }
             else{
-                CellsHeightsSumBeforeCurrentSection += descriptionHeight + sectionHeight
+                CellsHeightsSumBeforeCurrentSection += dayDescriptionHeight + sectionHeight
             }
             
             let appointmentsInDay : [NoteInTable] = appointmentsByDayVector[dayIndex]
@@ -168,20 +170,33 @@ class ScheduleTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return WeekDays.count
+        return 1 + WeekDays.count
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return WeekDays[section]
+        if section == 0 {
+            return ""
+        }
+        else {
+            return WeekDays[section-1]
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor(red:1.00, green:0.51, blue:0.06, alpha:1.0)
+        if section > 0 {
+            view.tintColor = UIColor(red:1.00, green:0.51, blue:0.06, alpha:1.0)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            let weekDescrCell = WeekDescriptionTableViewCell()
+            return weekDescrCell.cellHeight
+        }
+        
         if indexPath.row == 0 {
-            if timeTable.DaysInTable[indexPath.section].dayOff == false {
+            if timeTable.DaysInTable[indexPath.section-1].dayOff == false {
                 let DayDescr = WorkDayDescriptionTableViewCell()
                 return DayDescr.cellHeight
             }
@@ -198,8 +213,10 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0...(WeekDays.count - 1):
-            return Int(infoForDays[section].0 + 1) // количичество рабочих часов в день
+        case 0:
+            return 1
+        case 1...(WeekDays.count):
+            return Int(infoForDays[section-1].0) + 1 // количичество рабочих часов в день
         default:
             return 0
         }
@@ -208,19 +225,27 @@ class ScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "dd.MM"
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
 
-        let currentDay = timeTable.DaysInTable[indexPath.section]
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: WeekDescriptionCellIdentifier, for: indexPath) as! WeekDescriptionTableViewCell
+            let weekStartString = formatter.string(from: WeekStartOn)
+            let weekEndDate = Calendar.current.date(byAdding: .day, value: 6, to: WeekStartOn)
+            let weekEndString = formatter.string(from: weekEndDate!)
+            cell.weekDateLabel.text = "Неделя: " + weekStartString + " - " + weekEndString
+            return cell
+        }
+        
+        let currentDay = timeTable.DaysInTable[indexPath.section-1]
 
         if indexPath.row == 0 {
             if currentDay.dayOff == false {
                 let cell = tableView.dequeueReusableCell(withIdentifier: WorkDayDescriptionCellIdentifier, for: indexPath) as! WorkDayDescriptionTableViewCell
                 cell.timeFromLabel.text = currentDay.timeFrom
                 cell.timeToLabel.text = currentDay.timeTo
-                cell.appointmentsNumberLabel.text = String(appointmentsByDayVector[indexPath.section].count)
-                formatter.dateFormat = "dd.MM"
-                let dayDateString = formatter.string(from: infoForDays[indexPath.section].1)
+                cell.appointmentsNumberLabel.text = String(appointmentsByDayVector[indexPath.section-1].count)
+                let dayDateString = formatter.string(from: infoForDays[indexPath.section-1].1)
                 cell.dayDateLabel.text = dayDateString
                 return cell
             }
@@ -232,12 +257,12 @@ class ScheduleTableViewController: UITableViewController {
             }
         }
         
-        let start : String = timeTable.DaysInTable[indexPath.section].timeFrom
-        let startDate = formatter.date(from: start)
-        let addHours = Calendar.current.date(byAdding: .hour, value: ( indexPath.row - 1 ), to: startDate!)
-        
+        formatter.dateFormat = "HH:mm"
+        let dayStartString : String = timeTable.DaysInTable[indexPath.section-1].timeFrom
+        let dayStartDate = formatter.date(from: dayStartString)
+        let timeForCell = Calendar.current.date(byAdding: .hour, value: ( indexPath.row - 1 ), to: dayStartDate!)
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeCellIdentifier, for: indexPath) as! ScheduleTimeTableViewCell
-        cell.timeLabel.text = formatter.string(from: addHours!)
+        cell.timeLabel.text = formatter.string(from: timeForCell!)
         return cell
     }
     
