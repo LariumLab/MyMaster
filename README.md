@@ -1,4 +1,14 @@
+[![Build Status](https://travis-ci.org/LariumLab/Scheduling.svg?branch=master)](https://travis-ci.org/LariumLab/Scheduling)
+
 # Приложение "Запись"
+
+### Комментарий:
+В ветку master заливаются основные этапы. Для проверки ДЗ смотреть ветку dev.
+Ориентировочное следующее слияние:
+* После описания всех контроллеров
+
+Логин и пароль для входа: salon - salon для входа в аккаунт салона и client - client для входа в аккаунт клиента. Пустые поля для входа в тот же самый аккаунт салона (для более быстрого тестирования).
+Добавление constraint'ов и дизайна будет, но не сейчас.
 
 ### Описание
 * Приложение позволит записываться в различные салоны (парикмахерские, тату, красоты и проч.) в режиме онлайн со своего телефона.
@@ -6,4 +16,4 @@
 
 ### Статус
 В разработке.
-Текущая команда:  [Aksiniya](https://github.com/Aksiniya), [Nightslide](https://github.com/nightslide), [Vetas-R](https://github.com/Vetas-R)
+Команда:  [Aksiniya](https://github.com/Aksiniya), [Nightslide](https://github.com/nightslide), [Vetas-R](https://github.com/Vetas-R)
