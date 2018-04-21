@@ -36,13 +36,16 @@ class LoginViewController: UIViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
                 
-                if user.profileType == true {
+                switch user.profileType{
+                case .salon:
                     let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
-                    TabBarC.viewControllers?.append(SalonProfileNavigationC)
-                }
-                else {
+                TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                case .client:
                     let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
                     TabBarC.viewControllers?.append(ClientProfileNavigationC)
+                case .view:
+                    let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
+                    TabBarC.viewControllers?.append(ViewProfileNavigationC)
                 }
                 loadData(acc: user)
                 present(TabBarC, animated: false, completion: nil)

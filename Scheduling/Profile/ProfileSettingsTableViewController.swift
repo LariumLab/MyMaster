@@ -23,7 +23,16 @@ class ProfileSettingsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: textFieldCellIdentifier)
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: descriptionCellIdentifier)
         
-        if profileType == true {
+        switch profileType! {
+        case .salon:
+            profile = salon
+        case .client:
+            profile = client
+        default:
+            break
+        }
+        
+        if profileType == ProfileType.salon {
             profile = salon
         }
         else {
@@ -38,8 +47,9 @@ class ProfileSettingsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if profileType == true { return 6 }
-        else { return 2 }
+        if profileType == ProfileType.salon { return 6 }
+        else if profileType == ProfileType.client { return 2 }
+        else { return 0 }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,8 +59,9 @@ class ProfileSettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            if profileType == true { return "Имя салона" }
-            else{ return "Имя" }
+            if profileType == ProfileType.salon { return "Имя салона" }
+            else if profileType == ProfileType.client { return "Имя" }
+            else { return " " }
         case 1:
             return "Номер телефона"
         case 2:

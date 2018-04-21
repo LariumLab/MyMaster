@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rey-YM-Jd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="1371"/>
+            <point key="canvasLocation" x="1966" y="1267"/>
         </scene>
         <!--Профиль: Настройки-->
         <scene sceneID="91D-fS-YKl">
@@ -133,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2g-dY-xE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="646"/>
+            <point key="canvasLocation" x="1966" y="573"/>
         </scene>
         <!--Мастера:-->
         <scene sceneID="m37-Cr-kdX">
@@ -161,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMN-nK-gTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="2110"/>
+            <point key="canvasLocation" x="2662" y="1953"/>
         </scene>
         <!--Услуга-->
         <scene sceneID="7ru-sH-TCe">
@@ -221,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6X-yg-ibm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="1371"/>
+            <point key="canvasLocation" x="2662" y="1266"/>
         </scene>
         <!--Мастер-->
         <scene sceneID="0YP-je-ReQ">
@@ -281,7 +282,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYx-sQ-JaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2825" y="1371"/>
+            <point key="canvasLocation" x="3348" y="1266"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qFH-nz-ybS">
+            <objects>
+                <viewController storyboardIdentifier="ProfileView" id="cK3-CM-bZF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJ8-LV-nrT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buV-Dp-cpR">
+                                <rect key="frame" x="129" y="341" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Войти в аккаунт"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-YP-o7c">
+                                <rect key="frame" x="113" y="379" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Зарегистрироваться"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIq-uo-c86">
+                                <rect key="frame" x="67" y="205" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Для того, чтобы иметь возможность записываться в салон и добавлять понравившиеся салоны в список избранного, необходимо зарегистрироваться.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="w6X-C3-njs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xtj-wM-l3a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26F-zs-N3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966" y="-763"/>
         </scene>
     </scenes>
 </document>

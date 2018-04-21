@@ -48,11 +48,11 @@ let Client1 = Client(name: "Ольга", phoneNumber: "8-888-88-88", appointment
 let Client1Appointment1 = ClientAppointment(salonName: TestSalon1.name, serviceName: TestSalon1.services[0].name, price: "1000", timeAndDate: "10:00, 04.05", telephoneNumberOfSalon: TestSalon1.phoneNumber, salonAdress: TestSalon1.adress)
 // MARK: - ACCOUNT
 
-let salonAccount = Account(login: "salon", password: "salon", profileType: true)
-let clientAccount = Account(login: "client", password: "client", profileType: false)
-let emptySalonAccount = Account(login: "", password: "", profileType: true)
+let salonAccount = Account(login: "salon", password: "salon", profileType: .salon)
+let clientAccount = Account(login: "client", password: "client", profileType: .client)
+let viewAccount = Account(login: "", password: "", profileType: .view)
 
-var users = [salonAccount, clientAccount, emptySalonAccount]
+var users : [Account] = [salonAccount, clientAccount, viewAccount]
 
 //var users: [String : String] = ["Test" : "Test", "":"", "client" : "client", "salon" : "salon" ]
 

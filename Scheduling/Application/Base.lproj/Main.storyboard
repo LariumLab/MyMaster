@@ -240,6 +240,32 @@
             </objects>
             <point key="canvasLocation" x="1113" y="441"/>
         </scene>
+        <!--Профиль-->
+        <scene sceneID="exv-Lb-eth">
+            <objects>
+                <navigationController storyboardIdentifier="ViewProfileNavigationController" title="Профиль" id="0Oc-jd-2bz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uwW-UE-E9D">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t2v-Yb-6kY" kind="relationship" relationship="rootViewController" id="miB-HB-DNz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYa-fu-YJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="1129"/>
+        </scene>
+        <!--ProfileView-->
+        <scene sceneID="Y8R-b7-nvh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileView" id="t2v-Yb-6kY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9rY-tj-SZt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2is-3I-ma4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="1128"/>
+        </scene>
         <!--Search-->
         <scene sceneID="oTY-gs-lpg">
             <objects>

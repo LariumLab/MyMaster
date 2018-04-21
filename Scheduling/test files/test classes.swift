@@ -8,12 +8,19 @@
 
 import Foundation
 
+enum ProfileType {
+    case salon
+    case client
+    case view
+}
+
 class Account{
+
     var login : String
     var password : String
-    var profileType : Bool
+    var profileType : ProfileType
     
-    init(login: String, password: String, profileType: Bool) {
+    init(login: String, password: String, profileType: ProfileType) {
         self.login = login
         self.password = password
         self.profileType = profileType
