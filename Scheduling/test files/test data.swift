@@ -8,6 +8,9 @@
 
 import Foundation
 
+// FOR KEYCHAIN.
+let appTag = "com.Technopark.Scheduling.keys".data(using: .utf8)!
+
 // MARK: - SALON
 
 let TestSalon1 = Salon( name: "Tattoo2000", phoneNumber: "8-800-555-35-35", nickname: "T2000", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])

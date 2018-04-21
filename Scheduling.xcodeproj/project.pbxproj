@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
 		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
 		FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA0C84972041B2D5000BA2F5 /* Scheduling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			children = (
 				F8F129B8206A64AF00AD8594 /* LoginViewController.swift */,
 				F8F129BA206A667B00AD8594 /* RegisterViewController.swift */,
+				F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */,
 			);
 			path = AuthGroup;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				FA9BDE59206C14890068A86E /* ProfileMastersListTableViewController.swift in Sources */,
 				FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */,
 				FA9BDE66206DF2390068A86E /* SegmentedControlTableViewCell.swift in Sources */,
+				F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */,
 				FA77C98920820CC200580352 /* ScheduleTimeTableViewCell.swift in Sources */,
 				FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */,
 				FA46A6C8207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift in Sources */,
