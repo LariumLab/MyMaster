@@ -111,8 +111,16 @@ class SearchServiceInSalonTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 {
-            let scheduleTVC = ScheduleTableViewController()
-            self.navigationController?.pushViewController(scheduleTVC, animated: true)
+            let PageVC =  UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "PageVC") as! SearchScheduleOfMasterPageViewController
+            // ============
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+            let firstWeekStartOn = formatter.date(from: "16.04.2018")!
+            // ============
+            PageVC.master = MasterKostya
+            PageVC.firstWeekStartOn = firstWeekStartOn
+            self.navigationController?.pushViewController(PageVC, animated: true)
         }
     }
 }

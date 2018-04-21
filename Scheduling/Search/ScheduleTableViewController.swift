@@ -10,14 +10,18 @@ import UIKit
 
 class ScheduleTableViewController: UITableViewController {
 
+    // MARK - Инициализация извне
     var timeTable = KostyaTimeTable
-    var MastersAppointmentsInThisWeek : [NoteInTable] = []
+    var masterAppointments : [NoteInTable] = []
     var WeekStartOn = Date()
+    var appointmentsByDayVector : [[NoteInTable]] = [] // пока что внутри (viewDidLoad)
+
+    // MARK - инициализация в viewDidLoad
     var infoForDays : [ (Double, Date) ] = [] // раб.часы для каждого дня 0...6 и дата дня (dd.MM)
+//    var MastersAppointmentsInThisWeek : [NoteInTable] = []
+    
     var sectionHeight : CGFloat = 0
-    
-    var appointmentsByDayVector : [[NoteInTable]] = []
-    
+
     let WeekDescriptionCellIdentifier = "weekDescriptionCell"
     let WorkDayDescriptionCellIdentifier = "dayDescriptionCell"
     let TimeCellIdentifier = "timeCell"
@@ -31,28 +35,18 @@ class ScheduleTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "NameLabelTableViewCell", bundle: nil), forCellReuseIdentifier: NameLabelCellIdentifier)
         sectionHeight = 28
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
-        WeekStartOn = formatter.date(from: "16.04.2018")!
-        infoForDays = setInfoForDays()
+        // ======================
+        masterAppointments = MasterKostya.appointments
+        // ======================
         
-        MastersAppointmentsInThisWeek = getMastersAppointmentsForWeek(weekStart: WeekStartOn, fromMaster: MasterKostya)
-        appointmentsByDayVector = getAppointmentsByDaysVector(mastersAppointmentsInWeek: MastersAppointmentsInThisWeek)
-    }
-
-    func getMastersAppointmentsForWeek(weekStart startDay: Date, fromMaster master: Master) -> [NoteInTable] {
-        var appointmentsInWeekVector : [NoteInTable] = []
-        let calendar = Calendar.current
-        let EndDay = calendar.date(byAdding: .day, value: 7, to: startDay)
-        for appointment in master.appointments {
-            
-            if appointment.DateFrom >= startDay && appointment.DateFrom <= EndDay! {
-                appointmentsInWeekVector.append(appointment)
-            }
-        }
-        appointmentsInWeekVector.sort(by: { $0.DateFrom < $1.DateFrom})
-        return appointmentsInWeekVector
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "dd.MM.yyyy"
+//        formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+//        WeekStartOn = formatter.date(from: "16.04.2018")!
+        
+        infoForDays = setInfoForDays()
+//        MastersAppointmentsInThisWeek = getMastersAppointmentsForWeek(weekStart: WeekStartOn, fromMaster: MasterKostya)
+        appointmentsByDayVector = getAppointmentsByDaysVector()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,24 +81,40 @@ class ScheduleTableViewController: UITableViewController {
     }
     
     
-    func getAppointmentsByDaysVector(mastersAppointmentsInWeek appointments : [NoteInTable]) -> [ [NoteInTable] ] {
-        var vector : [[NoteInTable]] = [ [], [], [], [], [], [], [] ]
+    func getAppointmentsByDaysVector() -> [ [NoteInTable] ] {
+        var appointmentsByDaysVector : [[NoteInTable]] = [ [], [], [], [], [], [], [] ]
         let calendar = Calendar.current
         
-        for appointment in appointments {
+        let appointmentsInThisWeek = getMastersAppointmentsForWeek(weekStart: WeekStartOn, fromMasterAppointments: masterAppointments)
+        
+        for appointment in appointmentsInThisWeek {
             let appointmentDay = calendar.dateComponents([.day], from: appointment.DateFrom)
             
             var dayIndex = 0
             for dayInfo in infoForDays {
                 let dayDay = calendar.dateComponents([.day], from: dayInfo.1)
                 if appointmentDay == dayDay {
-                    vector[dayIndex].append(appointment)
+                    appointmentsByDaysVector[dayIndex].append(appointment)
                     break
                 }
                 dayIndex = dayIndex + 1
             }
         }
-        return vector
+        return appointmentsByDaysVector
+    }
+    
+    func getMastersAppointmentsForWeek(weekStart startDay: Date, fromMasterAppointments appointments: [NoteInTable]) -> [NoteInTable] {
+        var appointmentsInWeekVector : [NoteInTable] = []
+        let calendar = Calendar.current
+        let EndDay = calendar.date(byAdding: .day, value: 7, to: startDay)
+        for appointment in appointments {
+            
+            if appointment.DateFrom >= startDay && appointment.DateFrom <= EndDay! {
+                appointmentsInWeekVector.append(appointment)
+            }
+        }
+        appointmentsInWeekVector.sort(by: { $0.DateFrom < $1.DateFrom})
+        return appointmentsInWeekVector
     }
     
     func setAppointmentsViews() {

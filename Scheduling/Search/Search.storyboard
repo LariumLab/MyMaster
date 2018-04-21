@@ -42,7 +42,6 @@
         <!--Поиск: Салоны в городе-->
         <scene sceneID="Y5w-Na-WfQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="71u-uR-gCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="SearchSalonsInCityTable" id="Gya-d6-svd" userLabel="Поиск: Салоны в городе" customClass="SearchSalonsInCityTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="29z-9v-KIi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -65,13 +64,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="ovD-0l-8jE"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71u-uR-gCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="-775"/>
         </scene>
         <!--Поиск: Салон-->
         <scene sceneID="ZVG-fe-GLl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qsp-66-2ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="SearchSalon" title="Салон" id="jRd-DE-JVj" userLabel="Поиск: Салон" customClass="SearchSalonTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pln-DP-uaV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -101,13 +100,13 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qsp-66-2ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="-774"/>
         </scene>
         <!--Поиск: Услуга в салоне-->
         <scene sceneID="Yzq-bP-Hc7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kcF-In-RxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="SearchServiceInSalon" id="WtE-eJ-uGS" userLabel="Поиск: Услуга в салоне" customClass="SearchServiceInSalonTableViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchServiceInSalon" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x7I-eD-ZhC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -153,18 +152,19 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcF-In-RxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1426" y="-774"/>
         </scene>
-        <!--Поиск: Расписание мастера-->
+        <!--Расписание мастера-->
         <scene sceneID="mBO-eD-c3c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Azo-Lv-qAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Поиск: Расписание мастера" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Yt9-Wd-jwi" customClass="SearchScheduleOfMasterPageViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageVC" autoresizesArchivedViewToFullSize="NO" title="Расписание мастера" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Yt9-Wd-jwi" customClass="SearchScheduleOfMasterPageViewController" customModule="Scheduling" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="amC-FB-NKo"/>
                 </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azo-Lv-qAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="-774"/>
+            <point key="canvasLocation" x="2097" y="-774"/>
         </scene>
     </scenes>
 </document>
