@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F868BB96208E078100D53921 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F868BB95208E078100D53921 /* Keychain.swift */; };
 		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
 		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F868BB95208E078100D53921 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F868BB94208E076300D53921 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				F868BB95208E078100D53921 /* Keychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		F8F129B7206A649000AD8594 /* AuthGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				F868BB94208E076300D53921 /* Keychain */,
 				FA655332207E52E700171326 /* Common cells */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
 				FAAE1A81204EB0D400AE14C7 /* test files */,
@@ -404,6 +415,7 @@
 				F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */,
 				FA5B30B2206BF7D50083BFA9 /* test data.swift in Sources */,
 				FA77C980208127B500580352 /* SearchScheduleOfMasterPageViewController.swift in Sources */,
+				F868BB96208E078100D53921 /* Keychain.swift in Sources */,
 				FA487BF1206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift in Sources */,
 				FA655334207E591F00171326 /* SearchSalonsInCityTableViewController.swift in Sources */,
 				FA77C97E207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift in Sources */,
