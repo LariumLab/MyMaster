@@ -11,7 +11,8 @@ import UIKit
 class InitialViewController: UIViewController {
 	
 	var token: SecKey!
-
+    var TabBar: UIViewController = UIViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -45,10 +46,14 @@ class InitialViewController: UIViewController {
 			loadData(acc: user)
 			
 		}
-        present(TabBarC, animated: false, completion: nil)
+//        present(TabBarC, animated: true, completion: nil)
+        TabBar = TabBarC
     }
-	
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        present(TabBar, animated: false, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
