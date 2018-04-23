@@ -199,21 +199,21 @@
 				FAAE1A81204EB0D400AE14C7 /* test files */,
 				F8F129B7206A649000AD8594 /* AuthGroup */,
 				FAAEDCE620599D3600FC4E2A /* Search */,
-				FA1B74B8208DE8CE009A10C8 /* Заявки */,
+				FA1B74B8208DE8CE009A10C8 /* Requests */,
 				FAAEDCE820599D7D00FC4E2A /* Profile */,
 			);
 			path = Scheduling;
 			sourceTree = "<group>";
 		};
-		FA1B74B8208DE8CE009A10C8 /* Заявки */ = {
+		FA1B74B8208DE8CE009A10C8 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				FA1B74B9208DEAD3009A10C8 /* RequestsTableViewController.swift */,
 				FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */,
+				FA1B74B9208DEAD3009A10C8 /* RequestsTableViewController.swift */,
 				FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */,
 				FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */,
 			);
-			path = "Заявки";
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		FA5B30B0206BEFAC0083BFA9 /* Recovered References */ = {
