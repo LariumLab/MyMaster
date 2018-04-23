@@ -212,3 +212,19 @@ class DayInTable : Equatable{
                l.timeTo == r.timeTo
     }
 }
+
+class SalonRequest {
+    var client : Client
+    var serviceName : String
+    var master : Master
+    var time : Date
+    var description : String
+    
+    init(client: Client, serviceName: String, master: Master, time: Date, description: String) {
+        self.client = client
+        self.serviceName = serviceName
+        self.master = master
+        self.time = time
+        self.description = description
+    }
+}

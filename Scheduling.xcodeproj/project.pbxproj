@@ -15,6 +15,10 @@
 		FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */; };
 		FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A52041B2D7000BA2F5 /* LaunchScreen.storyboard */; };
 		FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */; };
+		FA1B74BA208DEAD3009A10C8 /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B74B9208DEAD3009A10C8 /* RequestsTableViewController.swift */; };
+		FA1B74BC208DEAE7009A10C8 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */; };
+		FA1B74C1208DEB43009A10C8 /* SalonRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */; };
+		FA1B74C2208DEB43009A10C8 /* SalonRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */; };
 		FA46A6C8207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */; };
 		FA46A6C9207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */; };
 		FA46A6CB207E79860094FF0C /* SearchSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */; };
@@ -80,6 +84,10 @@
 		FA0C84A62041B2D7000BA2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0C84A82041B2D7000BA2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0C84AE2041E95B000BA2F5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		FA1B74B9208DEAD3009A10C8 /* RequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
+		FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonRequestTableViewCell.swift; sourceTree = "<group>"; };
+		FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonRequestTableViewCell.xib; sourceTree = "<group>"; };
 		FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceInSalonCellTableViewCell.swift; sourceTree = "<group>"; };
 		FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchServiceInSalonCellTableViewCell.xib; sourceTree = "<group>"; };
 		FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSalonTableViewController.swift; sourceTree = "<group>"; };
@@ -180,9 +188,21 @@
 				FAAE1A81204EB0D400AE14C7 /* test files */,
 				F8F129B7206A649000AD8594 /* AuthGroup */,
 				FAAEDCE620599D3600FC4E2A /* Search */,
+				FA1B74B8208DE8CE009A10C8 /* Заявки */,
 				FAAEDCE820599D7D00FC4E2A /* Profile */,
 			);
 			path = Scheduling;
+			sourceTree = "<group>";
+		};
+		FA1B74B8208DE8CE009A10C8 /* Заявки */ = {
+			isa = PBXGroup;
+			children = (
+				FA1B74B9208DEAD3009A10C8 /* RequestsTableViewController.swift */,
+				FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */,
+				FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */,
+				FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */,
+			);
+			path = "Заявки";
 			sourceTree = "<group>";
 		};
 		FA5B30B0206BEFAC0083BFA9 /* Recovered References */ = {
@@ -367,6 +387,7 @@
 				FA7DC8062087C3630017892A /* Search.storyboard in Resources */,
 				FABC54C4208AF1ED00FBF17F /* WeekDescriptionTableViewCell.xib in Resources */,
 				FAA11D99207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib in Resources */,
+				FA1B74C2208DEB43009A10C8 /* SalonRequestTableViewCell.xib in Resources */,
 				FA571E08206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.xib in Resources */,
 				FAA11D93207C76CC00B42B66 /* ProfileClientDescriptionTableViewCell.xib in Resources */,
 				FA571E042066862A0078DF9A /* ListAndAddTableViewCell.xib in Resources */,
@@ -382,6 +403,7 @@
 				FAE3C30C208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib in Resources */,
 				FA487BF2206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.xib in Resources */,
 				FA571DFC206685110078DF9A /* DescriptionTableViewCell.xib in Resources */,
+				FA1B74BC208DEAE7009A10C8 /* Requests.storyboard in Resources */,
 				FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +436,9 @@
 				FA571DFF2066856E0078DF9A /* PriceTableViewCell.swift in Sources */,
 				FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
+				FA1B74BA208DEAD3009A10C8 /* RequestsTableViewController.swift in Sources */,
 				FA9BDE62206DF1550068A86E /* NameWithSwitchTableViewCell.swift in Sources */,
+				FA1B74C1208DEB43009A10C8 /* SalonRequestTableViewCell.swift in Sources */,
 				FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */,
 				FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */,
 				FA571E032066862A0078DF9A /* ListAndAddTableViewCell.swift in Sources */,
