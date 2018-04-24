@@ -9,7 +9,13 @@
 import UIKit
 
 class SalonRequestTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var clientNameLabel: UILabel!
+    @IBOutlet weak var clientNumberLabel: UILabel!
+    @IBOutlet weak var serviceNameLabel: UILabel!
+    @IBOutlet weak var masterNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

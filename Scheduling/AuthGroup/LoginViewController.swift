@@ -49,9 +49,12 @@ class LoginViewController: UIViewController {
                 }
                 loadData(acc: user)
                 present(TabBarC, animated: false, completion: nil)
+                testLabel.text = "OK"
+            }
+            else {
+                testLabel.text = "Fail"
             }
         }
-			testLabel.text = "Fail"
 	}
     
     

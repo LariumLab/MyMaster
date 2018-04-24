@@ -10,10 +10,29 @@ import UIKit
 
 class RequestsTableViewController: UITableViewController {
 
-//    let testRequest = []
-    
+    var testRequests : [SalonRequest] = []
+    let reguestCellIdentifier = "RequestCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "SalonRequestTableViewCell", bundle: nil), forCellReuseIdentifier: reguestCellIdentifier)
+        
+        // ================
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:HH dd.MM.yyyy"
+        formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+        let date1 = formatter.date(from: "12:00 17.04.2018")
+        let date2 = formatter.date(from: "16:00 18.04.2018")
+        let date3 = formatter.date(from: "13:00 19.04.2018")
+
+        let salonRequest1 = SalonRequest(client: Client1, serviceName: "Tattoo", master: MasterKostya, time: date1!, description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        let salonRequest2 = SalonRequest(client: Client1, serviceName: "Piersing", master: MasterKostya, time: date2!, description: "bbbbbbbbbbbbb")
+        let salonRequest3 = SalonRequest(client: Client1, serviceName: "Dreadlocks", master: MasterKostya, time: date3!, description: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+        testRequests = [salonRequest1, salonRequest2, salonRequest3]
+        // ================
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,25 +42,30 @@ class RequestsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return testRequests.count
     }
 
-    /*
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: reguestCellIdentifier, for: indexPath) as! SalonRequestTableViewCell
+        
+        let request = testRequests[indexPath.row]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:HH dd.MM.yyyy"
+        formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+        cell.clientNameLabel.text = request.client.name
+        cell.clientNumberLabel.text = request.client.phoneNumber
+        cell.masterNameLabel.text = request.master.name
+        cell.timeLabel.text = formatter.string(from: request.time)
+        cell.descriptionLabel.text = request.description
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
