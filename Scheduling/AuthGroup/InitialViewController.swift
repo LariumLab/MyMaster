@@ -41,6 +41,7 @@ class InitialViewController: UIViewController {
 		} else { // else we can present the registration view (now it's just a ViewProfileNavigationController)
 			
 			let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
+            ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
 			TabBarC.viewControllers?.append(ViewProfileNavigationC)
 			let user = Account(login: "", password: "", profileType: .view)
 			loadData(acc: user)

@@ -38,11 +38,16 @@ class LoginViewController: UIViewController {
                 
                 switch user.profileType{
                 case .salon:
+                    let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
+                    TabBarC.viewControllers?.append(SalonRequestsNavigationC)
+                    SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
                     let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
                 TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                    SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
                 case .client:
                     let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
                     TabBarC.viewControllers?.append(ClientProfileNavigationC)
+                    ClientProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
                 case .view:
                     let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
                     TabBarC.viewControllers?.append(ViewProfileNavigationC)

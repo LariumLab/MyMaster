@@ -14,7 +14,7 @@
         <scene sceneID="RI2-WR-7z1">
             <objects>
                 <navigationController id="WzS-ic-nKA" userLabel="Поиск: Навигация" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Поиск" id="gSm-ez-oPy"/>
+                    <tabBarItem key="tabBarItem" title="Поиск" image="search" id="gSm-ez-oPy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EfE-q8-Nqj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,7 +153,7 @@
         <!--Item-->
         <scene sceneID="UMF-yP-0kX">
             <objects>
-                <navigationController id="Cr6-p1-MSl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SalonRequestsNavigationController" id="Cr6-p1-MSl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="nRm-lv-iAe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pSg-rC-Pwv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -339,4 +339,7 @@
             <point key="canvasLocation" x="1824" y="441"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="30" height="30"/>
+    </resources>
 </document>
