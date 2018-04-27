@@ -59,8 +59,7 @@ class InitialViewController: UIViewController {
 			}
 			//        present(TabBarC, animated: true, completion: nil)
 			self.TabBar = TabBarC
-			
-			sleep(5)
+			sleep(3)
 			DispatchQueue.main.async {
 				self.view.removeBlurLoader()
 			}
