@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */; };
 		F868BB96208E078100D53921 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F868BB95208E078100D53921 /* Keychain.swift */; };
 		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtrnsions.swift; sourceTree = "<group>"; };
 		F868BB95208E078100D53921 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F85AF2B12091EB4F009387BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F868BB94208E076300D53921 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				F85AF2B12091EB4F009387BD /* Extensions */,
 				F868BB94208E076300D53921 /* Keychain */,
 				FA655332207E52E700171326 /* Common cells */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
@@ -430,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE3C30B208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift in Sources */,
+				F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */,
 				FA77C986208209AF00580352 /* ScheduleTableViewController.swift in Sources */,
 				FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */,
 				FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */,
