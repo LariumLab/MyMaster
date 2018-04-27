@@ -29,8 +29,10 @@ extension UIView{
 	}
 	
 	func removeBlurLoader(){
-		self.subviews.flatMap {  $0 as? UIVisualEffectView }.forEach {
-			$0.removeFromSuperview()
+		self.subviews.compactMap {
+			$0 as? UIVisualEffectView
+			}.forEach {
+				$0.removeFromSuperview()
 		}
 	}
 }
