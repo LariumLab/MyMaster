@@ -27,10 +27,10 @@ class SearchScheduleOfMasterPageViewController: UIPageViewController, UIPageView
         self.setViewControllers([ pages[0] ], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
         
-//        if profileType == ProfileType.client {
+        if profileType == ProfileType.client {
             let AddItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addRequest))
             self.navigationItem.rightBarButtonItem = AddItem
-//        }
+        }
     }
     
     @objc func addRequest() {
