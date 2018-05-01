@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */; };
 		F868BB96208E078100D53921 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F868BB95208E078100D53921 /* Keychain.swift */; };
 		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
@@ -77,9 +78,11 @@
 		FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */; };
 		FAE3C30B208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3C309208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift */; };
 		FAE3C30C208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE3C30A208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib */; };
+		FAE829CD20964DE700D34DB7 /* CreateRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE829CC20964DE700D34DB7 /* CreateRequestTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtrnsions.swift; sourceTree = "<group>"; };
 		F868BB95208E078100D53921 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		FADADAFE2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAddNewServiceTableViewController.swift; sourceTree = "<group>"; };
 		FAE3C309208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDayDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		FAE3C30A208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkDayDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		FAE829CC20964DE700D34DB7 /* CreateRequestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F85AF2B12091EB4F009387BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F868BB94208E076300D53921 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 		FA0C84992041B2D5000BA2F5 /* Scheduling */ = {
 			isa = PBXGroup;
 			children = (
+				F85AF2B12091EB4F009387BD /* Extensions */,
 				F868BB94208E076300D53921 /* Keychain */,
 				FA655332207E52E700171326 /* Common cells */,
 				FAAEDCE520599CC900FC4E2A /* Application */,
@@ -326,6 +339,7 @@
 				FA77C97D207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift */,
 				FA77C97F208127B500580352 /* SearchScheduleOfMasterPageViewController.swift */,
 				FA77C985208209AF00580352 /* ScheduleTableViewController.swift */,
+				FAE829CC20964DE700D34DB7 /* CreateRequestTableViewController.swift */,
 				FA655339207E6F3B00171326 /* TableCells */,
 			);
 			path = Search;
@@ -444,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE3C30B208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift in Sources */,
+				F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */,
 				FA77C986208209AF00580352 /* ScheduleTableViewController.swift in Sources */,
 				FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */,
 				FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */,
@@ -486,6 +501,7 @@
 				FA8A23E3206A865B000C4EEA /* SalonDescriptionTableViewCell.swift in Sources */,
 				FAA11D95207C7A0600B42B66 /* ProfileClientTableViewController.swift in Sources */,
 				FA0C84AF2041E95B000BA2F5 /* SearchTableViewController.swift in Sources */,
+				FAE829CD20964DE700D34DB7 /* CreateRequestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

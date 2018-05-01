@@ -119,6 +119,7 @@ class SearchServiceInSalonTableViewController: UITableViewController {
             let firstWeekStartOn = formatter.date(from: "16.04.2018")!
             // ============
             PageVC.master = MasterKostya
+            PageVC.serviceName = service.name
             PageVC.firstWeekStartOn = firstWeekStartOn
             self.navigationController?.pushViewController(PageVC, animated: true)
         }

@@ -9,10 +9,12 @@
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
-
+    
     // MARK - Инициализация извне
-    var timeTable = KostyaTimeTable
-    var masterAppointments : [NoteInTable] = []
+    var master = Master()
+//    var master.timeTable = KostyaTimeTable
+//    var master.appointments : [NoteInTable] = []
+    
     var WeekStartOn = Date()
     var appointmentsByDayVector : [[NoteInTable]] = [] // пока что внутри (viewDidLoad)
 
@@ -36,7 +38,7 @@ class ScheduleTableViewController: UITableViewController {
         sectionHeight = 28
         
         // ======================
-        masterAppointments = MasterKostya.appointments
+        master.appointments = MasterKostya.appointments
         // ======================
         
 //        let formatter = DateFormatter()
@@ -60,7 +62,7 @@ class ScheduleTableViewController: UITableViewController {
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
         var date : Date = WeekStartOn
     
-        for day in timeTable.DaysInTable {
+        for day in master.timeTable.DaysInTable {
             let currentInterval : Double
             
             if day.dayOff == false {
@@ -85,7 +87,7 @@ class ScheduleTableViewController: UITableViewController {
         var appointmentsByDaysVector : [[NoteInTable]] = [ [], [], [], [], [], [], [] ]
         let calendar = Calendar.current
         
-        let appointmentsInThisWeek = getMastersAppointmentsForWeek(weekStart: WeekStartOn, fromMasterAppointments: masterAppointments)
+        let appointmentsInThisWeek = getMastersAppointmentsForWeek(weekStart: WeekStartOn, fromMasterAppointments: master.appointments)
         
         for appointment in appointmentsInThisWeek {
             let appointmentDay = calendar.dateComponents([.day], from: appointment.DateFrom)
@@ -128,7 +130,7 @@ class ScheduleTableViewController: UITableViewController {
         let nameLabelCell = NameLabelTableViewCell()
         let nameLabelHeight = nameLabelCell.cellHeight
         
-        let daysInTable = timeTable.DaysInTable
+        let daysInTable = master.timeTable.DaysInTable
         var dayIndex = 0
         var CellsHeightsSumBeforeCurrentSection : CGFloat = weekDescriptionHeight
         
@@ -206,7 +208,7 @@ class ScheduleTableViewController: UITableViewController {
         }
         
         if indexPath.row == 0 {
-            if timeTable.DaysInTable[indexPath.section-1].dayOff == false {
+            if master.timeTable.DaysInTable[indexPath.section-1].dayOff == false {
                 let DayDescr = WorkDayDescriptionTableViewCell()
                 return DayDescr.cellHeight
             }
@@ -247,7 +249,7 @@ class ScheduleTableViewController: UITableViewController {
             return cell
         }
         
-        let currentDay = timeTable.DaysInTable[indexPath.section-1]
+        let currentDay = master.timeTable.DaysInTable[indexPath.section-1]
 
         if indexPath.row == 0 {
             if currentDay.dayOff == false {
@@ -268,7 +270,7 @@ class ScheduleTableViewController: UITableViewController {
         }
         
         formatter.dateFormat = "HH:mm"
-        let dayStartString : String = timeTable.DaysInTable[indexPath.section-1].timeFrom
+        let dayStartString : String = master.timeTable.DaysInTable[indexPath.section-1].timeFrom
         let dayStartDate = formatter.date(from: dayStartString)
         let timeForCell = Calendar.current.date(byAdding: .hour, value: ( indexPath.row - 1 ), to: dayStartDate!)
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeCellIdentifier, for: indexPath) as! ScheduleTimeTableViewCell

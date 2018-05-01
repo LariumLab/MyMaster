@@ -10,6 +10,9 @@ import UIKit
 
 class AddRequestDescriptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var serviceLabel: UILabel!
+    @IBOutlet weak var masterLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

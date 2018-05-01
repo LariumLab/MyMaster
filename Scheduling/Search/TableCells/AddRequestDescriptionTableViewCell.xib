@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,23 +20,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Запись на услугу:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-3L-LYZ">
-                        <rect key="frame" x="16" y="11" width="142" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Запись на услугу:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFY-3L-LYZ">
+                        <rect key="frame" x="16" y="11" width="288" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="К мастеру:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blq-dq-PLC">
-                        <rect key="frame" x="16" y="40" width="87" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="К мастеру:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blq-dq-PLC">
+                        <rect key="frame" x="16" y="40" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="blq-dq-PLC" firstAttribute="top" secondItem="ZFY-3L-LYZ" secondAttribute="bottom" constant="8" id="92R-xY-5Eq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZFY-3L-LYZ" secondAttribute="trailing" id="9wr-Gy-rtz"/>
+                    <constraint firstItem="ZFY-3L-LYZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Byi-O9-7Mc"/>
+                    <constraint firstItem="blq-dq-PLC" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="CAe-R2-mYB"/>
+                    <constraint firstItem="ZFY-3L-LYZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="L8E-Mc-CIb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="blq-dq-PLC" secondAttribute="trailing" id="XqL-pc-VAu"/>
+                    <constraint firstItem="blq-dq-PLC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dDh-OQ-Jt2"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="masterLabel" destination="blq-dq-PLC" id="WLU-dI-thh"/>
+                <outlet property="serviceLabel" destination="ZFY-3L-LYZ" id="UeW-Zu-RhM"/>
+            </connections>
             <point key="canvasLocation" x="34" y="68"/>
         </tableViewCell>
     </objects>

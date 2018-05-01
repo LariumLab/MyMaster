@@ -12,6 +12,7 @@ class SearchScheduleOfMasterPageViewController: UIPageViewController, UIPageView
 
     // MARK - Инициализация извне
     var master = Master()
+    var serviceName = ""
     var firstWeekStartOn = Date()
     
     // MARK - Инизиализация внутри
@@ -24,6 +25,20 @@ class SearchScheduleOfMasterPageViewController: UIPageViewController, UIPageView
         
         pages = pagesInit(forMaster: master, numberOfWeeksToCreate: 4, firstWeekStartOn: firstWeekStartOn)
         self.setViewControllers([ pages[0] ], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
+        
+//        if profileType == ProfileType.client {
+            let AddItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addRequest))
+            self.navigationItem.rightBarButtonItem = AddItem
+//        }
+    }
+    
+    @objc func addRequest() {
+        let addRequestTableVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchCreateRequest") as! CreateRequestTableViewController
+        addRequestTableVC.master = master
+        addRequestTableVC.serviceName = serviceName
+        self.navigationController?.viewControllers.append(addRequestTableVC)
+        self.navigationItem.backBarButtonItem?.title = "Отмена"
     }
 
     func pagesInit(forMaster master: Master, numberOfWeeksToCreate: Int, firstWeekStartOn: Date) -> [ScheduleTableViewController] {
@@ -34,8 +49,9 @@ class SearchScheduleOfMasterPageViewController: UIPageViewController, UIPageView
         for _ in 1...numberOfWeeksToCreate{
             let schedule = ScheduleTableViewController()
             schedule.WeekStartOn = currentWeekStartOn
-            schedule.masterAppointments = master.appointments
-            schedule.timeTable = master.timeTable
+            schedule.master = master
+//            schedule.master.appointments = master.appointments
+//            schedule.master.timeTable = master.timeTable
             ScheduleVector.append(schedule)
             currentWeekStartOn = calendar.date(byAdding: .day, value: 7, to: currentWeekStartOn)!
         }
