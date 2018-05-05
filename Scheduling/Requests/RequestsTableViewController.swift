@@ -15,7 +15,8 @@ class RequestsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.separatorStyle = .none
+        self.title = "Заявки"
         tableView.register(UINib(nibName: "SalonRequestTableViewCell", bundle: nil), forCellReuseIdentifier: reguestCellIdentifier)
         
         // ================
@@ -58,12 +59,17 @@ class RequestsTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "mm:HH dd.MM.yyyy"
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
+//        cell.headColourView.backgroundColor = blueGamma().biegeColor
+//        cell.colourView.backgroundColor = blueGamma().whiteColor
+        cell.headColourView.backgroundColor = blueGamma().biegeColor
+        cell.colourView.backgroundColor = UIColor.white
         cell.clientNameLabel.text = request.client.name
         cell.clientNumberLabel.text = request.client.phoneNumber
         cell.masterNameLabel.text = request.master.name
+        cell.serviceNameLabel.text = request.serviceName
         cell.timeLabel.text = formatter.string(from: request.time)
         cell.descriptionLabel.text = request.description
-        
+        cell.MakeEffects()
         return cell
     }
 

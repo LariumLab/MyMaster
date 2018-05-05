@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        
+        let gamma = blueGamma()
+//        UITabBar.appearance().tintColor = UIColor.black
+        UITabBar.appearance().barTintColor = gamma.darkBlue
+        UITabBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().backgroundColor = gamma.mediumBlue
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy HH:mm"
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone

@@ -7,6 +7,29 @@
 //
 
 import Foundation
+import UIKit
+
+struct blueGamma {
+//    let whiteColor = UIColor(red:0.93, green:0.93, blue:0.92, alpha:1.0)
+//    let whiteColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
+    let whiteColor = UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)
+
+//    let biegeColor = UIColor(red:0.95, green:0.86, blue:0.80, alpha:1.0)
+    let biegeColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
+    let lightBlue = UIColor(red:0.57, green:0.78, blue:0.76, alpha:1.0)
+    let mediumBlue = UIColor(red:0.27, green:0.70, blue:0.71, alpha:1.0)
+    let darkBlue = UIColor(red:0.07, green:0.19, blue:0.27, alpha:1.0)
+}
+
+struct seaGamma {
+    let darkColor = UIColor(red:0.30, green:0.43, blue:0.50, alpha:1.0)
+    let darkGreen = UIColor(red:0.37, green:0.50, blue:0.54, alpha:1.0)
+    let mediumGreen = UIColor(red:0.43, green:0.58, blue:0.59, alpha:1.0)
+    let brown = UIColor(red:0.60, green:0.55, blue:0.56, alpha:1.0)
+    let darkBiege = UIColor(red:0.78, green:0.70, blue:0.65, alpha:1.0)
+    let mediumBiege = UIColor(red:0.85, green:0.78, blue:0.71, alpha:1.0)
+    let lightBiege = UIColor(red:0.93, green:0.87, blue:0.81, alpha:1.0)
+}
 
 enum ProfileType {
     case salon
