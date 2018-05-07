@@ -50,8 +50,9 @@ class ProfileSalonTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            let ProfileSalonCell = SalonDescriptionTableViewCell()
-            return ProfileSalonCell.CellHeight
+//            let ProfileSalonCell = SalonDescriptionTableViewCell()
+//            return ProfileSalonCell.CellHeight
+            return UITableViewAutomaticDimension
         default:
             return 44
         }
@@ -62,14 +63,38 @@ class ProfileSalonTableViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCellIdentifier, for: indexPath) as! SalonDescriptionTableViewCell
             cell.organizationNameLabel.text = registeredSalon.name
-            cell.descriptionTextView.text = registeredSalon.description
-            cell.telephoneNumberLabel.text = registeredSalon.phoneNumber
-            cell.cityLabel.text = registeredSalon.city
-            cell.fullAdressButton.titleLabel?.text = registeredSalon.adress
+            cell.organizationNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            let attributes = [NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 17)]
+            let AttributedDescr = NSMutableAttributedString(string: "Описание: ", attributes: attributes)
+            AttributedDescr.append(NSAttributedString(string: registeredSalon.description))
+            cell.descriptionLabel.attributedText = AttributedDescr
+//            cell.descriptionLabel.text = "Описание: " + registeredSalon.description
+            let AttributedPhoneNumber = NSMutableAttributedString(string: "Телефон: ", attributes: attributes)
+            AttributedPhoneNumber.append(NSAttributedString(string: registeredSalon.phoneNumber ))
+            cell.telephoneNumberLabel.attributedText = AttributedPhoneNumber
+//            cell.telephoneNumberLabel.text = "Телефон: " + registeredSalon.phoneNumber
+            let AttributedCity = NSMutableAttributedString(string: "Город: ", attributes: attributes)
+            AttributedCity.append(NSAttributedString(string: registeredSalon.city))
+            cell.cityLabel.attributedText = AttributedCity
+//            cell.cityLabel.text = "Город: " + registeredSalon.city
+            let AttributedAdress = NSMutableAttributedString(string: "Полный адрес: ", attributes: attributes)
+            AttributedAdress.append(NSAttributedString(string: registeredSalon.adress))
+            cell.fullAdressLabel.attributedText = AttributedAdress
+//            cell.fullAdressLabel.text = "Полный адрес: " + registeredSalon.adress
+//            cell.MakeEffects(color: blueGamma().biegeColor, radius: 10)
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.biegeColor, radius: 10)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: ListAndAddCellIdentifier, for: indexPath) as! ListAndAddTableViewCell
             cell.initialize(functionType: .addService, currentTableVC: self, listName: "Услуги:")
+            cell.listNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
+//            cell.MakeEffects(viewColor: blueGamma().skyBlue, addButtonColor: blueGamma().darkBlue, radius: 10)
+//            cell.colorView.layer.borderColor = UIColor.lightGray.cgColor
+//            cell.colorView.layer.borderWidth = 1
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 10)
+            cell.addButton.tintColor = gamma.darkBlue
             return cell
         case 2...(registeredSalon.services.count + 2):
             let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCellIdentifier, for: indexPath) as! NameWithDisclosureIndicatorTableViewCell

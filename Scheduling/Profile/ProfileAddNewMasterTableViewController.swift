@@ -52,7 +52,6 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
         segmentedControl.addTarget(self, action: #selector(ProfileAddNewMasterTableViewController.segmentedControlValueChanged), for: .valueChanged)
         updatePositionsOfTrueInSwitchBoolVector()
     }
- // Спросить про Selector. stackoverflow сказал, что надо добавить перед функцией @objc, но почему?
     @objc func segmentedControlValueChanged() {
         tableView.reloadData()
     }
@@ -108,25 +107,37 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.text = currentMaster.name
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: switchCellIdentifier, for: indexPath) as! NameWithSwitchTableViewCell
             cell.nameLabel.text = weekDays[indexPath.row]
             cell.switchOutlet.isOn = switchBoolVector[indexPath.row]
+            cell.switchOutlet.onTintColor = blueGamma().mediumBlue
             cell.cellOwnerVC = self
             cell.cellNumberInSection = indexPath.row
             return cell
         case 2:
+//            segmentedCell.segmentedControlOutlet.backgroundColor = blueGamma().skyBlue
+            segmentedCell.segmentedControlOutlet.tintColor = blueGamma().mediumBlue
             return segmentedCell
         case 3:
             
             if segmentedControl.selectedSegmentIndex == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: standartWorkDayCellIdentifier, for: indexPath) as! SetTimeOfWorkDayTableViewCell
+                let gamma = blueGamma()
+                gamma.makeViewStyle(view: cell.leftTextField, color: gamma.whiteColor, radius: 5)
+                gamma.makeViewStyle(view: cell.rightTextField, color: gamma.whiteColor, radius: 5)
                 return cell
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: differentWorkDayCellIdentiier, for: indexPath) as! SetWorkTimeForDayTableViewCell
                 cell.dayNameLabel.text = weekDays[positionsOfTrueInSwitchBoolVector[indexPath.row]]
+                let gamma = blueGamma()
+                gamma.makeViewStyle(view: cell.timeFromTextField, color: gamma.whiteColor, radius: 5)
+                gamma.makeViewStyle(view: cell.timeToTextField, color: gamma.whiteColor, radius: 5)
+                gamma.makeViewStyle(view: cell.colorView, color: gamma.biegeColor, radius: 5)
                 return cell
             }
         default:

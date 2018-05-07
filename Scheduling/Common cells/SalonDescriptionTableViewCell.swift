@@ -10,11 +10,20 @@ import UIKit
 
 class SalonDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var organizationNameLabel: UILabel!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var telephoneNumberLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var fullAdressButton: UIButton!
-    let CellHeight = CGFloat(253)
+    @IBOutlet weak var fullAdressLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
+    //    let CellHeight = CGFloat(253)
+    
+//    func MakeEffects(color: UIColor, radius: CGFloat) {
+//        colorView.backgroundColor = color
+//        colorView.layer.cornerRadius = radius
+//        colorView.layer.shadowRadius = 5
+//        colorView.layer.shadowOpacity = 0.3
+//        colorView.layer.shadowOffset = CGSize.zero
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

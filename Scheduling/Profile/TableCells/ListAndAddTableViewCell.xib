@@ -19,24 +19,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Список:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpH-1s-uDL">
-                        <rect key="frame" x="16" y="11" width="258" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxx-J1-gGh">
-                        <rect key="frame" x="282" y="11" width="22" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="addAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pvx-r2-AkI"/>
-                        </connections>
-                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-aV-PFA">
+                        <rect key="frame" x="10" y="5" width="300" height="33.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxx-J1-gGh">
+                                <rect key="frame" x="262" y="6" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="An4-ua-L7n"/>
+                                    <constraint firstAttribute="height" constant="22" id="KGD-ra-Lrg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="addAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pvx-r2-AkI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpH-1s-uDL">
+                                <rect key="frame" x="16" y="6" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RpH-1s-uDL" firstAttribute="leading" secondItem="JkF-aV-PFA" secondAttribute="leading" constant="16" id="1X3-Gi-PBt"/>
+                            <constraint firstItem="qxx-J1-gGh" firstAttribute="leading" secondItem="RpH-1s-uDL" secondAttribute="trailing" constant="16" id="Hdb-dR-Nkt"/>
+                            <constraint firstAttribute="trailing" secondItem="qxx-J1-gGh" secondAttribute="trailing" constant="16" id="kch-Ng-u7o"/>
+                            <constraint firstItem="qxx-J1-gGh" firstAttribute="centerY" secondItem="JkF-aV-PFA" secondAttribute="centerY" id="szZ-ZU-O2i"/>
+                            <constraint firstItem="RpH-1s-uDL" firstAttribute="centerY" secondItem="JkF-aV-PFA" secondAttribute="centerY" id="x9j-ul-3DL"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="JkF-aV-PFA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="U3I-FA-Y8w"/>
+                    <constraint firstItem="JkF-aV-PFA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="UsG-ua-yBJ"/>
+                    <constraint firstAttribute="bottom" secondItem="JkF-aV-PFA" secondAttribute="bottom" constant="5" id="YOP-te-8gk"/>
+                    <constraint firstAttribute="trailing" secondItem="JkF-aV-PFA" secondAttribute="trailing" constant="10" id="pms-Mi-d4K"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="addButton" destination="qxx-J1-gGh" id="4Hi-BB-wDq"/>
+                <outlet property="colorView" destination="JkF-aV-PFA" id="Grj-Cx-eUb"/>
                 <outlet property="listNameLabel" destination="RpH-1s-uDL" id="tDF-0K-S6a"/>
             </connections>
         </tableViewCell>

@@ -71,8 +71,9 @@ class SearchSalonTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            let SalonDescCell = SalonDescriptionTableViewCell()
-            return SalonDescCell.CellHeight
+//            let SalonDescCell = SalonDescriptionTableViewCell()
+//            return SalonDescCell.CellHeight
+            return UITableViewAutomaticDimension
         case 1:
             let ServiceCell = SearchServiceInSalonCellTableViewCell()
             return ServiceCell.cellHeight
@@ -86,10 +87,10 @@ class SearchSalonTableViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: salonDescriptionCellIdentifier, for: indexPath) as! SalonDescriptionTableViewCell
             cell.organizationNameLabel.text = currentSalon.name
-            cell.descriptionTextView.text = currentSalon.description
-            cell.telephoneNumberLabel.text = currentSalon.phoneNumber
-            cell.cityLabel.text = currentSalon.city
-            cell.fullAdressButton.titleLabel?.text = currentSalon.adress
+            cell.descriptionLabel.text = "Описание: " + currentSalon.description
+            cell.telephoneNumberLabel.text = "Номер телефона: " + currentSalon.phoneNumber
+            cell.cityLabel.text = "Город: " + currentSalon.city
+            cell.fullAdressLabel.text = "Полный адрес: " + currentSalon.adress
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceCellIdentifier, for: indexPath) as! SearchServiceInSalonCellTableViewCell

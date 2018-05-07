@@ -19,15 +19,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xSW-PW-jOu">
-                        <rect key="frame" x="16" y="7" width="288" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xSW-PW-jOu">
+                        <rect key="frame" x="99.5" y="8" width="121" height="29"/>
                         <segments>
                             <segment title="First"/>
                             <segment title="Second"/>
                         </segments>
                     </segmentedControl>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="xSW-PW-jOu" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="5pu-9Y-dxF"/>
+                    <constraint firstItem="xSW-PW-jOu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Dld-7j-Ujb"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

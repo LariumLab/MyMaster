@@ -47,7 +47,8 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         case 2:
             return "Ценовой диапазон"
         default:
-            return " "
+//            return " "
+            return ""
         }
     }
     
@@ -67,20 +68,52 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceNameCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.text = creatingService.name
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
+//            cell.textField.backgroundColor = blueGamma().whiteColor
+//            cell.textField.layer.cornerRadius = 5
+//            cell.textField.layer.borderColor = UIColor.lightGray.cgColor
+//            cell.textField.layer.borderWidth = 1
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceDescriptionCellIdentifier, for: indexPath) as! DescriptionTableViewCell
             cell.descriptionTextView.text = creatingService.description
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.descriptionTextView, color: gamma.whiteColor, radius: 5)
+//            cell.descriptionTextView.backgroundColor = blueGamma().whiteColor
+//            cell.descriptionTextView.layer.cornerRadius = 5
+//            cell.descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+//            cell.descriptionTextView.layer.borderWidth = 1
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: servicePriceCellIdentifier, for: indexPath) as! PriceTableViewCell
             cell.priceFromTextField.text = creatingService.priceFrom
-            cell.priceToTextField.text = creatingService.priceTo
+            let gamma = blueGamma()
+            gamma.makeViewStyle(view: cell.priceToTextField, color: gamma.whiteColor, radius: 5)
+            gamma.makeViewStyle(view: cell.priceFromTextField, color: gamma.whiteColor, radius: 5)
+//
+//            cell.priceFromTextField.backgroundColor = blueGamma().whiteColor
+//            cell.priceFromTextField.layer.cornerRadius = 5
+//            cell.priceFromTextField.layer.borderColor = UIColor.lightGray.cgColor
+//            cell.priceFromTextField.layer.borderWidth = 1
+           
+//            cell.priceToTextField.text = creatingService.priceTo
+//            cell.priceToTextField.backgroundColor = blueGamma().whiteColor
+//            cell.priceToTextField.layer.cornerRadius = 5
+//            cell.priceToTextField.layer.borderColor = UIColor.lightGray.cgColor
+//            cell.priceToTextField.layer.borderWidth = 1
             return cell
         case 3:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: serviceListNameCellIdentifier, for: indexPath) as! ListAndAddTableViewCell
                 cell.initialize(functionType: .addMaster, currentTableVC: self, listName: "Мастера:")
+//                    blueGamma().biegeColor
+                let gamma = blueGamma()
+                gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 5)
+                cell.addButton.tintColor = gamma.darkBlue
+//                cell.MakeEffects(viewColor: blueGamma().skyBlue, addButtonColor: blueGamma().darkBlue, radius: 5)
+//                cell.colorView.layer.borderColor = UIColor.lightGray.cgColor
+//                cell.colorView.layer.borderWidth = 1
                 return cell
             }
             else{

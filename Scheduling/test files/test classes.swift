@@ -12,13 +12,22 @@ import UIKit
 struct blueGamma {
 //    let whiteColor = UIColor(red:0.93, green:0.93, blue:0.92, alpha:1.0)
 //    let whiteColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
-    let whiteColor = UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)
-
+//    let whiteColor = UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)
+    let whiteColor = UIColor(red:1.00, green:1.00, blue:0.98, alpha:1.0)
+    let skyBlue = UIColor(red:0.78, green:0.95, blue:0.95, alpha:0.8)
 //    let biegeColor = UIColor(red:0.95, green:0.86, blue:0.80, alpha:1.0)
     let biegeColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
     let lightBlue = UIColor(red:0.57, green:0.78, blue:0.76, alpha:1.0)
     let mediumBlue = UIColor(red:0.27, green:0.70, blue:0.71, alpha:1.0)
     let darkBlue = UIColor(red:0.07, green:0.19, blue:0.27, alpha:1.0)
+    
+    
+    func makeViewStyle(view: UIView, color: UIColor, radius: CGFloat) {
+        view.backgroundColor = color
+        view.layer.cornerRadius = radius
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
+    }
 }
 
 struct seaGamma {

@@ -300,39 +300,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buV-Dp-cpR">
-                                <rect key="frame" x="129" y="341" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Войти в аккаунт"/>
-                                <connections>
-                                    <action selector="signIn:" destination="cK3-CM-bZF" eventType="touchUpInside" id="lsr-Ii-dBA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-YP-o7c">
-                                <rect key="frame" x="113" y="379" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Зарегистрироваться"/>
-                                <connections>
-                                    <action selector="register:" destination="cK3-CM-bZF" eventType="touchUpInside" id="Xba-m8-ddz"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIq-uo-c86">
-                                <rect key="frame" x="67" y="205" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Для того, чтобы иметь возможность записываться в салон и добавлять понравившиеся салоны в список избранного, необходимо зарегистрироваться.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-jL-JOz">
+                                <rect key="frame" x="50" y="233.5" width="275" height="200"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIq-uo-c86">
+                                        <rect key="frame" x="0.0" y="5" width="275" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Для того, чтобы иметь возможность записываться в салон и добавлять понравившиеся салоны в список избранного, необходимо зарегистрироваться.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buV-Dp-cpR">
+                                        <rect key="frame" x="79" y="120" width="116" height="30"/>
+                                        <state key="normal" title="Войти в аккаунт"/>
+                                        <connections>
+                                            <action selector="signIn:" destination="cK3-CM-bZF" eventType="touchUpInside" id="lsr-Ii-dBA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-YP-o7c">
+                                        <rect key="frame" x="63" y="165" width="149" height="30"/>
+                                        <state key="normal" title="Зарегистрироваться"/>
+                                        <connections>
+                                            <action selector="register:" destination="cK3-CM-bZF" eventType="touchUpInside" id="Xba-m8-ddz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Y9D-YP-o7c" firstAttribute="top" secondItem="buV-Dp-cpR" secondAttribute="bottom" constant="15" id="2d6-ka-tgF"/>
+                                    <constraint firstItem="buV-Dp-cpR" firstAttribute="top" secondItem="IIq-uo-c86" secondAttribute="bottom" constant="15" id="2qk-ym-Zte"/>
+                                    <constraint firstItem="Y9D-YP-o7c" firstAttribute="centerX" secondItem="jhe-jL-JOz" secondAttribute="centerX" id="E0x-zr-13m"/>
+                                    <constraint firstItem="IIq-uo-c86" firstAttribute="top" secondItem="jhe-jL-JOz" secondAttribute="top" constant="5" id="H46-Nf-eM7"/>
+                                    <constraint firstItem="IIq-uo-c86" firstAttribute="leading" secondItem="jhe-jL-JOz" secondAttribute="leading" id="ObV-eX-YAu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y9D-YP-o7c" secondAttribute="bottom" constant="5" id="gu4-kr-IAr"/>
+                                    <constraint firstAttribute="trailing" secondItem="IIq-uo-c86" secondAttribute="trailing" id="itw-t7-O0d"/>
+                                    <constraint firstItem="buV-Dp-cpR" firstAttribute="centerX" secondItem="jhe-jL-JOz" secondAttribute="centerX" id="meJ-jt-hEM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jhe-jL-JOz" firstAttribute="centerY" secondItem="bJ8-LV-nrT" secondAttribute="centerY" id="4Wv-XE-oGr"/>
+                            <constraint firstItem="w6X-C3-njs" firstAttribute="trailing" secondItem="jhe-jL-JOz" secondAttribute="trailing" constant="50" id="A3U-Ou-L3l"/>
+                            <constraint firstItem="jhe-jL-JOz" firstAttribute="leading" secondItem="w6X-C3-njs" secondAttribute="leading" constant="50" id="NJv-Mo-h1o"/>
+                            <constraint firstItem="jhe-jL-JOz" firstAttribute="centerX" secondItem="bJ8-LV-nrT" secondAttribute="centerX" id="XUc-hv-N2n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w6X-C3-njs"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xtj-wM-l3a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26F-zs-N3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="-763"/>
+            <point key="canvasLocation" x="1965.5999999999999" y="-763.26836581709154"/>
         </scene>
     </scenes>
 </document>

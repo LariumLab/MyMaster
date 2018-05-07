@@ -11,7 +11,9 @@ import UIKit
 class ListAndAddTableViewCell: UITableViewCell {
    
     @IBOutlet weak var listNameLabel: UILabel!
-
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var addButton: UIButton!
+    
     enum AddFunctionType {
         case addService
         case addMaster
@@ -50,12 +52,21 @@ class ListAndAddTableViewCell: UITableViewCell {
 //                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
                 CurrentAddNewServiceVC.navigationController?.pushViewController(addNewMasterTableVC, animated: true)
             }
+            
+            let cancelButton = UIAlertAction(title: "Отмена", style: .default, handler: nil)
             alertC.addAction(addFromListAlertAction)
             alertC.addAction(addNewMasterAlertAction)
+            alertC.addAction(cancelButton)
             CurrentAddNewServiceVC.present(alertC, animated: true, completion: nil)
         default: break
         }
     }
+    
+//    func MakeEffects(viewColor: UIColor, addButtonColor: UIColor, radius: CGFloat ) {
+//        addButton.tintColor = addButtonColor
+//        colorView.layer.cornerRadius = radius
+//        colorView.backgroundColor = viewColor
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

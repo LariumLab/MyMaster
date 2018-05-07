@@ -13,6 +13,7 @@ class SetWorkTimeForDayTableViewCell: UITableViewCell {
     @IBOutlet weak var dayNameLabel: UILabel!
     @IBOutlet weak var timeFromTextField: UITextField!
     @IBOutlet weak var timeToTextField: UITextField!
+    @IBOutlet weak var colorView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

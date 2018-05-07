@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztO-tW-tbd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                        <rect key="frame" x="5" y="0.0" width="310" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66q-me-ggC">
-                                <rect key="frame" x="16" y="10" width="296" height="21"/>
+                                <rect key="frame" x="16" y="10" width="286" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.60006421232876717" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="66q-me-ggC" secondAttribute="bottom" constant="9" id="5pV-w2-Bpe"/>
                             <constraint firstAttribute="height" constant="40" id="P0v-mS-Cdj"/>
@@ -72,14 +72,15 @@
                     <constraint firstAttribute="bottom" secondItem="mnP-V2-Yqv" secondAttribute="bottom" constant="11" id="FW2-TH-fwq"/>
                     <constraint firstItem="mnP-V2-Yqv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ren-AT-brD"/>
                     <constraint firstItem="ztO-tW-tbd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Rzl-Of-6tZ"/>
-                    <constraint firstItem="ztO-tW-tbd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bnf-Cf-cuU"/>
+                    <constraint firstItem="ztO-tW-tbd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="bnf-Cf-cuU"/>
                     <constraint firstAttribute="trailing" secondItem="qgq-i9-CX2" secondAttribute="trailing" constant="16" id="eSW-4t-Nk0"/>
                     <constraint firstItem="qgq-i9-CX2" firstAttribute="top" secondItem="ztO-tW-tbd" secondAttribute="bottom" constant="8" id="vGj-95-9l0"/>
-                    <constraint firstAttribute="trailing" secondItem="ztO-tW-tbd" secondAttribute="trailing" id="vaw-St-FSM"/>
+                    <constraint firstAttribute="trailing" secondItem="ztO-tW-tbd" secondAttribute="trailing" constant="5" id="vaw-St-FSM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="colorView" destination="ztO-tW-tbd" id="g0u-sy-RAs"/>
                 <outlet property="dayNameLabel" destination="66q-me-ggC" id="Y9j-xc-Bpq"/>
                 <outlet property="timeFromTextField" destination="L0U-ic-fPE" id="LIo-gS-BcO"/>
                 <outlet property="timeToTextField" destination="qgq-i9-CX2" id="3ND-S3-XgE"/>
