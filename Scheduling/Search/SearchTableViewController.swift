@@ -38,7 +38,29 @@ class SearchTableViewController: UITableViewController {
         let SalonsInCityVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalonsInCityTable") as! SearchSalonsInCityTableViewController
      //   SalonsInCityVC.salonsInSity = get запрос на сервер
         SalonsInCityVC.city = city
+        
+        DispatchQueue.main.async {
+        let stringURL = "http://localhost:8080/api/getSalonListInCity?city=" + city
+        guard let ruStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+            guard let URLGetSalonListInCity = URL(string: ruStringURL) else {
+                return
+            }
+            URLSession.shared.dataTask(with: URLGetSalonListInCity) { (data, response, error) in
+                guard let data = data else { return }
+                do {
+                    let salonsInCity = try JSONDecoder().decode([SalonPreview].self, from: data)
+                    SalonsInCityVC.salonsInCity = salonsInCity
+                    SalonsInCityVC.view.removeBlurLoader()
+                    SalonsInCityVC.tableView.reloadData()
+                } catch let err {
+                    print(err)
+                }
+                }.resume()
+        }
+        
         self.navigationController?.pushViewController(SalonsInCityVC, animated: true)
+//        self.view.showBlurLoader()
+        SalonsInCityVC.view.showBlurLoader()
     }
 
 }

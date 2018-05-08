@@ -8,6 +8,8 @@
 
 import Foundation
 
+let serverAdr = "http://localhost:8080/"
+
 // MARK: - Common data
 var profileType : ProfileType? = nil
 var nicknames : [String] = []

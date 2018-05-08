@@ -110,6 +110,12 @@ class Salon : Profile{
     
 }
 
+struct SalonPreview: Codable{
+    let customName: String
+    let address: String
+    let ID: UUID
+}
+
 class Client: Profile{
     var appointments: [ClientAppointment]
     

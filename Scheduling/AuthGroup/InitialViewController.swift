@@ -13,14 +13,26 @@ class InitialViewController: UIViewController {
 	
 	var token: SecKey!
     var TabBar: UIViewController = UIViewController()
-	let serverAdr = "http://localhost:8080/"
 
-	
-	
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.view.showBlurLoader()
+        
+        //**********************************************************************************************************//
+        
+        guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+        URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let citiesData = try JSONDecoder().decode([String].self, from: data)
+                cities = citiesData
+            } catch let err {
+                print(err)
+            }
+            }.resume()
+        
+        //**********************************************************************************************************//
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
