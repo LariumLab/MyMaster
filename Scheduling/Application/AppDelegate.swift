@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TestSalon1.addMasterToMastersList(master: MasterKostya)
         Service1.addMaster(master: MasterKostya)
         
-//        cities.append(TestSalon1.city)
+        //cities.append(TestSalon1.city)
         nicknames.append(TestSalon1.nickname)
         Client1.appointments.append(Client1Appointment1)
         
