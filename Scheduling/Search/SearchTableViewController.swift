@@ -39,7 +39,9 @@ class SearchTableViewController: UITableViewController {
      //   SalonsInCityVC.salonsInSity = get запрос на сервер
         SalonsInCityVC.city = city
         
-        DispatchQueue.main.async {
+        //**********************************************************************************************************//
+        
+//        DispatchQueue.main.async {
         let stringURL = "http://localhost:8080/api/getSalonListInCity?city=" + city
         guard let ruStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
             guard let URLGetSalonListInCity = URL(string: ruStringURL) else {
@@ -50,13 +52,17 @@ class SearchTableViewController: UITableViewController {
                 do {
                     let salonsInCity = try JSONDecoder().decode([SalonPreview].self, from: data)
                     SalonsInCityVC.salonsInCity = salonsInCity
-                    SalonsInCityVC.view.removeBlurLoader()
-                    SalonsInCityVC.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        SalonsInCityVC.view.removeBlurLoader()
+                        SalonsInCityVC.tableView.reloadData()
+                    }
                 } catch let err {
                     print(err)
                 }
                 }.resume()
-        }
+//        }
+        
+        //**********************************************************************************************************//
         
         self.navigationController?.pushViewController(SalonsInCityVC, animated: true)
 //        self.view.showBlurLoader()
