@@ -21,6 +21,19 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.view.showBlurLoader()
+        
+        guard  let url = URL(string: serverAdr + "api/getCityList") else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let citiesData = try decoder.decode([String].self, from: data)
+                cities = citiesData
+            } catch let err {
+                print("Err", err)
+            }
+            }.resume()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,7 +72,7 @@ class InitialViewController: UIViewController {
 			}
 			//        present(TabBarC, animated: true, completion: nil)
 			self.TabBar = TabBarC
-			sleep(1)
+			sleep(3)
 			DispatchQueue.main.async {
 				self.view.removeBlurLoader()
 			}

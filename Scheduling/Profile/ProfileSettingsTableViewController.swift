@@ -60,7 +60,9 @@ class ProfileSettingsTableViewController: UITableViewController {
         case 1:
             return "Номер телефона"
         case 2:
-            return "Никнейм"
+            if profileType == ProfileType.salon { return "Никнейм" }
+            else if profileType == ProfileType.client { return "Выход" }
+            else { return " " }
         case 3:
             return "Описание салона"
         case 4:
@@ -86,48 +88,58 @@ class ProfileSettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        let gamma = blueGamma()
+        
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.text = profile.name
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.text = profile.phoneNumber
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 2:
             if profileType == ProfileType.salon {
                 let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
                 let SettingsOfSalon = profile as! Salon
                 cell.textField.text = SettingsOfSalon.nickname
+                gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
                 return cell
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: exitCellIdentifier, for: indexPath) as! NameLabelTableViewCell
                 cell.nameLabel.textAlignment = .center
                 cell.nameLabel.text = "Выйти из аккаунта"
+                cell.nameLabel.textColor = UIColor(red:0.50, green:0.00, blue:0.00, alpha:1.0)
                 return cell
             }
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: descriptionCellIdentifier, for: indexPath) as! DescriptionTableViewCell
             let SettingsOfSalon = profile as! Salon
             cell.descriptionTextView.text = SettingsOfSalon.description
+            gamma.makeViewStyle(view: cell.descriptionTextView, color: gamma.whiteColor, radius: 5)
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             let SettingsOfSalon = profile as! Salon
             cell.textField.text = SettingsOfSalon.city
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
 
             let SettingsOfSalon = profile as! Salon
             cell.textField.text = SettingsOfSalon.adress
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: exitCellIdentifier, for: indexPath) as! NameLabelTableViewCell
             cell.nameLabel.textAlignment = .center
             cell.nameLabel.text = "Выйти из аккаунта"
+            cell.nameLabel.textColor = UIColor(red:0.50, green:0.00, blue:0.00, alpha:1.0)
             return cell
         default:
             return UITableViewCell()

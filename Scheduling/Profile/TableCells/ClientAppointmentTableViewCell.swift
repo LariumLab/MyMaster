@@ -15,8 +15,9 @@ class ClientAppointmentTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var salonNameLabel: UILabel!
     @IBOutlet weak var salonAdressLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
     
-    let CellHeigh = CGFloat(157)
+//    let CellHeigh = CGFloat(157)
     
     override func awakeFromNib() {
         super.awakeFromNib()

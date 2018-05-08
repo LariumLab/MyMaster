@@ -33,8 +33,9 @@ class SearchSalonsInCityTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let salonCell = SearchSalonTableViewCell()
-        return salonCell.cellHeight
+//        let salonCell = SearchSalonTableViewCell()
+//        return salonCell.cellHeight
+        return UITableViewAutomaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +43,7 @@ class SearchSalonsInCityTableViewController: UITableViewController {
         let currentSalon : (String, String)  = salonsInSity[indexPath.row]
         cell.nameLabel.text = currentSalon.0
         cell.adressLabel.text = currentSalon.1
+        let gamma = blueGamma()
         return cell
     }
 

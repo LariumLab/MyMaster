@@ -13,39 +13,47 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="SearchSalonTableViewCell" customModule="Scheduling" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="125" id="KGk-i7-Jjw" customClass="SearchSalonTableViewCell" customModule="Scheduling" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="286" height="69.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="286" height="124.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя салона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-dH-FZn">
-                        <rect key="frame" x="16" y="11" width="262" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKo-hc-q1A">
+                        <rect key="frame" x="16" y="11" width="262" height="103"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя салона" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQy-dH-FZn">
+                                <rect key="frame" x="8" y="8" width="246" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Полный адрес" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-xA-vfq">
+                                <rect key="frame" x="8" y="74.5" width="246" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="cJL-jo-RvJ"/>
+                            <constraint firstItem="IFp-xA-vfq" firstAttribute="top" secondItem="YQy-dH-FZn" secondAttribute="bottom" constant="8" id="EiQ-vd-Psg"/>
+                            <constraint firstItem="IFp-xA-vfq" firstAttribute="top" secondItem="YQy-dH-FZn" secondAttribute="bottom" constant="8" id="Hyy-VJ-UA6"/>
+                            <constraint firstAttribute="trailing" secondItem="YQy-dH-FZn" secondAttribute="trailing" constant="8" id="TVY-vg-n3Z"/>
+                            <constraint firstItem="IFp-xA-vfq" firstAttribute="leading" secondItem="qKo-hc-q1A" secondAttribute="leading" constant="8" id="hRY-sK-b33"/>
+                            <constraint firstAttribute="trailing" secondItem="IFp-xA-vfq" secondAttribute="trailing" constant="8" id="mZe-dh-Exa"/>
+                            <constraint firstItem="YQy-dH-FZn" firstAttribute="leading" secondItem="qKo-hc-q1A" secondAttribute="leading" constant="8" id="q91-bm-xgO"/>
+                            <constraint firstAttribute="bottom" secondItem="IFp-xA-vfq" secondAttribute="bottom" constant="8" id="tWq-kb-xvN"/>
+                            <constraint firstItem="YQy-dH-FZn" firstAttribute="top" secondItem="qKo-hc-q1A" secondAttribute="top" constant="8" id="v9M-Hz-bRV"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полный адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-xA-vfq">
-                        <rect key="frame" x="16" y="40" width="262" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="9PZ-2c-Xw7"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="YQy-dH-FZn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="E1u-Ud-F7S"/>
-                    <constraint firstItem="IFp-xA-vfq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EgC-lv-ZsM"/>
-                    <constraint firstItem="IFp-xA-vfq" firstAttribute="top" secondItem="YQy-dH-FZn" secondAttribute="bottom" constant="8" id="dFu-Cv-8tv"/>
-                    <constraint firstItem="IFp-xA-vfq" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pU1-qt-lQr"/>
-                    <constraint firstItem="YQy-dH-FZn" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pUW-a0-Axu"/>
-                    <constraint firstItem="YQy-dH-FZn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rHF-6O-dhG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qKo-hc-q1A" secondAttribute="bottom" id="3Pd-D0-Wf3"/>
+                    <constraint firstItem="qKo-hc-q1A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="PoU-4R-5ne"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qKo-hc-q1A" secondAttribute="trailing" id="jZW-5G-uXj"/>
+                    <constraint firstItem="qKo-hc-q1A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rEG-LT-Y24"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -53,7 +61,7 @@
                 <outlet property="adressLabel" destination="IFp-xA-vfq" id="w9t-ie-OH7"/>
                 <outlet property="nameLabel" destination="YQy-dH-FZn" id="Y42-4m-0x3"/>
             </connections>
-            <point key="canvasLocation" x="34" y="66"/>
+            <point key="canvasLocation" x="33" y="105.5"/>
         </tableViewCell>
     </objects>
 </document>

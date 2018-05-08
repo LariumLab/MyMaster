@@ -11,7 +11,7 @@ import UIKit
 class SearchSalonTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
-    let cellHeight = CGFloat(70)
+//    let cellHeight = CGFloat(70)
     
     override func awakeFromNib() {
         super.awakeFromNib()

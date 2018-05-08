@@ -59,6 +59,7 @@ class ProfileSalonTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let gamma = blueGamma()
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionCellIdentifier, for: indexPath) as! SalonDescriptionTableViewCell
@@ -80,19 +81,12 @@ class ProfileSalonTableViewController: UITableViewController {
             let AttributedAdress = NSMutableAttributedString(string: "Полный адрес: ", attributes: attributes)
             AttributedAdress.append(NSAttributedString(string: registeredSalon.adress))
             cell.fullAdressLabel.attributedText = AttributedAdress
-//            cell.fullAdressLabel.text = "Полный адрес: " + registeredSalon.adress
-//            cell.MakeEffects(color: blueGamma().biegeColor, radius: 10)
-            let gamma = blueGamma()
             gamma.makeViewStyle(view: cell.colorView, color: gamma.biegeColor, radius: 10)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: ListAndAddCellIdentifier, for: indexPath) as! ListAndAddTableViewCell
             cell.initialize(functionType: .addService, currentTableVC: self, listName: "Услуги:")
             cell.listNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
-//            cell.MakeEffects(viewColor: blueGamma().skyBlue, addButtonColor: blueGamma().darkBlue, radius: 10)
-//            cell.colorView.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.colorView.layer.borderWidth = 1
-            let gamma = blueGamma()
             gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 10)
             cell.addButton.tintColor = gamma.darkBlue
             return cell

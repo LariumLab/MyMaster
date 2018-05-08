@@ -11,8 +11,10 @@ import UIKit
 class ProfileClientDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var listLabel: UILabel!
     
-    let CellHeigh = CGFloat(114)
+//    let CellHeigh = CGFloat(114)
     
     override func awakeFromNib() {
         super.awakeFromNib()

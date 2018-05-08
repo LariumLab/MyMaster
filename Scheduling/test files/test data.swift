@@ -13,7 +13,7 @@ let appTag = "com.Technopark.Scheduling.keys".data(using: .utf8)!
 
 // MARK: - SALON
 
-let TestSalon1 = Salon( name: "Tattoo2000", phoneNumber: "8-800-555-35-35", nickname: "T2000", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2.", services: [])
+let TestSalon1 = Salon( name: "Tattoo2000", phoneNumber: "8-800-555-35-35", nickname: "T2000", description: "Tattoo salon in Moscow. All types off tattoo.", city: "Москва", adress: "Бауманская 666, дом 4, строение 2., вход со двора, подъезд 10, этаж 5", services: [])
 
 let Service1 = Service(name: "Пирсинг", description: "Пирсинг любой сложности. От прокола мочки уха до плоскостного пирсинга. Стаж наших мастеров от 3х лет", masters: [], priceFrom: "500", priceTo: "1200")
 

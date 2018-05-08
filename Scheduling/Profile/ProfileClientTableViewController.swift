@@ -50,27 +50,33 @@ class ProfileClientTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            let descCell = ProfileClientDescriptionTableViewCell()
-            return descCell.CellHeigh
+//            let descCell = ProfileClientDescriptionTableViewCell()
+//            return descCell.CellHeigh
+            return UITableViewAutomaticDimension
         }
         else {
             if appointments.count == 0 {
                 return 44
             }
             else {
-                let appointmentCell = ClientAppointmentTableViewCell()
-                return appointmentCell.CellHeigh
+//                let appointmentCell = ClientAppointmentTableViewCell()
+//                return appointmentCell.CellHeigh
+                return UITableViewAutomaticDimension
             }
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let gamma = blueGamma()
+        
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: profileClientCellIdentifier, for: indexPath) as! ProfileClientDescriptionTableViewCell
             cell.nameLabel.text = registeredClient.name
             cell.phoneNumberLabel.text = registeredClient.phoneNumber
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 15)
+            cell.listLabel.font = UIFont.boldSystemFont(ofSize: 17)
             return cell
         default:
             guard appointments.count != 0 else {
@@ -86,6 +92,7 @@ class ProfileClientTableViewController: UITableViewController {
             cell.dateLabel.text = appointment.timeAndDate
             cell.salonNameLabel.text = appointment.salonName
             cell.salonAdressLabel.text = appointment.salonAdress
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.whiteColor, radius: 15)
             return cell
         }
     }
