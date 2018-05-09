@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */; };
 		F868BB96208E078100D53921 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F868BB95208E078100D53921 /* Keychain.swift */; };
+		F8854AA420A3794E00AF7FE5 /* SalonRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8854AA320A3794E00AF7FE5 /* SalonRegisterViewController.swift */; };
 		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
 		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtrnsions.swift; sourceTree = "<group>"; };
 		F868BB95208E078100D53921 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F8854AA320A3794E00AF7FE5 /* SalonRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonRegisterViewController.swift; sourceTree = "<group>"; };
 		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				F8F129B8206A64AF00AD8594 /* LoginViewController.swift */,
 				F8F129BA206A667B00AD8594 /* RegisterViewController.swift */,
 				F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */,
+				F8854AA320A3794E00AF7FE5 /* SalonRegisterViewController.swift */,
 			);
 			path = AuthGroup;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA1B74BA208DEAD3009A10C8 /* RequestsTableViewController.swift in Sources */,
+				F8854AA420A3794E00AF7FE5 /* SalonRegisterViewController.swift in Sources */,
 				FA9BDE62206DF1550068A86E /* NameWithSwitchTableViewCell.swift in Sources */,
 				FA1B74C1208DEB43009A10C8 /* SalonRequestTableViewCell.swift in Sources */,
 				FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */,
