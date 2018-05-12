@@ -14,16 +14,11 @@ class ProfileViewViewController: UIViewController {
     
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
-//        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
         let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        
-//        loginNavigationC.pushViewController(loginVC, animated: false)
-
-        //        self.dismiss(animated: true, completion: nil)
-        // ВНИМАНИЕ: после добавления проверки токена заменить present на dismiss
-
+        _ = Keychain._delete(key: "userToken")
+        tabBar.viewControllers?.removeAll()
+        self.dismiss(animated: false, completion: nil)
         present(loginNavigationC, animated: true, completion: nil)
-        tabBar.viewControllers?.removeLast() // отсается только поиск
     }
     
     @IBAction func register(_ sender: Any) {

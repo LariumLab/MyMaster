@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
 	
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var login: UITextField!
-	
 	@IBOutlet weak var testLabel: UILabel!
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +50,7 @@ class LoginViewController: UIViewController {
                 case .view:
                     let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
                     TabBarC.viewControllers?.append(ViewProfileNavigationC)
+                    ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
                 }
                 loadData(acc: user)
                 present(TabBarC, animated: false, completion: nil)

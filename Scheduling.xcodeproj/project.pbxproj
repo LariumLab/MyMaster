@@ -190,9 +190,9 @@
 		F8F129B7206A649000AD8594 /* AuthGroup */ = {
 			isa = PBXGroup;
 			children = (
+				F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */,
 				F8F129B8206A64AF00AD8594 /* LoginViewController.swift */,
 				F8F129BA206A667B00AD8594 /* RegisterViewController.swift */,
-				F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */,
 				F8854AA320A3794E00AF7FE5 /* SalonRegisterViewController.swift */,
 			);
 			path = AuthGroup;

@@ -152,14 +152,13 @@ class ProfileSettingsTableViewController: UITableViewController {
             let alertC = UIAlertController(title: "Подтвердите действие", message: "Вы уверены, что хотите выйти из аккаунта?", preferredStyle: .alert)
             let OkAction = UIAlertAction(title: "Выход", style: .destructive) { (alert) in
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
+//                let loginNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
                 let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-                
-                //        self.dismiss(animated: true, completion: nil)
-                // ВНИМАНИЕ: после добавления проверки токена заменить present на dismiss
-                
-                self.present(loginNavigationC, animated: true, completion: nil)
-                tabBar.viewControllers?.removeLast() // отсается только поиск
+
+                _ = Keychain._delete(key: "userToken")
+                self.dismiss(animated: false, completion: nil)
+//                self.present(loginNavigationC, animated: true, completion: nil)
+                tabBar.viewControllers?.removeAll()
             }
     
             let CancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)

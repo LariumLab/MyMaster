@@ -16,13 +16,9 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.view.showBlurLoader()
-<<<<<<< HEAD
-        
-=======
-		
+//        self.view.showBlurLoader()
+
 		//Зачем это здесь?
->>>>>>> f9a6b58b01140e5b8aafb2c5d4c28ec33d8da5be
         //**********************************************************************************************************//
         
         guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
@@ -46,41 +42,59 @@ class InitialViewController: UIViewController {
 			let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
 			
 			// Adding user's token to keychain (if needed)
-			/*
+			
+            /*
 			let key: String = "userToken"
 			let data = "testtoken".data(using: .utf8)!
 			
 			if Keychain.save(key: key, data: data)  == errSecSuccess {
 			print("tokenAdded")
 			}
-			*/
+             */
+            
 			// Now we are checking, if there is some user's token in keychain
 			// if true, we can determine the type of account and then we can present appropriate tabbar
 			
 			let token = Keychain.load(key: "userToken")
 			if token != nil {
-				
-				let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
-				TabBarC.viewControllers?.append(ClientProfileNavigationC)
+				// отправка запроса
+                // то, что ниже - временно
+//                let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
+//                TabBarC.viewControllers?.append(ClientProfileNavigationC)
 				let user = Account(login: "client", password: "client", profileType: .client)
 				loadData(acc: user)
+                switch user.profileType{
+                case .salon:
+                    let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
+                    TabBarC.viewControllers?.append(SalonRequestsNavigationC)
+                    SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
+                    let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
+                    TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                    SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
+                case .client:
+                    let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
+                    TabBarC.viewControllers?.append(ClientProfileNavigationC)
+                    ClientProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
+                case .view:
+                    let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
+                    TabBarC.viewControllers?.append(ViewProfileNavigationC)
+                    ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
+                }
+                self.TabBar = TabBarC
+                self.present(self.TabBar, animated: false, completion: nil)
+                
+			} else { // else we can present the registration view
 				
-			} else { // else we can present the registration view (now it's just a ViewProfileNavigationController)
-				
-				let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
-				ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
-				TabBarC.viewControllers?.append(ViewProfileNavigationC)
-				let user = Account(login: "", password: "", profileType: .view)
-				loadData(acc: user)
-				
+                let registrationNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
+                self.present(registrationNavigationC, animated: false, completion: nil)
 			}
 			//        present(TabBarC, animated: true, completion: nil)
-			self.TabBar = TabBarC
-			sleep(3)
-			DispatchQueue.main.async {
-				self.view.removeBlurLoader()
-			}
-			self.present(self.TabBar, animated: false, completion: nil)
+//            self.TabBar = TabBarC
+//            sleep(1)
+//            DispatchQueue.main.async {
+//                self.view.removeBlurLoader()
+//            }
+//            self.present(self.TabBar, animated: false, completion: nil)
 		}
     }
     

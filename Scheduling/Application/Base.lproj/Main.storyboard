@@ -59,7 +59,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ8-Vh-yqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3367" y="27"/>
+            <point key="canvasLocation" x="-2399" y="66"/>
         </scene>
         <!--Login-->
         <scene sceneID="NGR-ja-52c">
@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWn-zE-iNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2687" y="27"/>
+            <point key="canvasLocation" x="-1719" y="66"/>
         </scene>
         <!--Salon Register View Controller-->
         <scene sceneID="BWL-k4-rnq">
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FH0-QP-bwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1676" y="65.217391304347828"/>
+            <point key="canvasLocation" x="-895" y="440"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="85g-Ym-o1s">
@@ -228,79 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqr-ST-JB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1388" y="739.88005997001505"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Yyp-oQ-qYa">
-            <objects>
-                <viewController id="2SY-CJ-Jdu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Jl-mQ-YaL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ovz-Ki-Qdw">
-                                <rect key="frame" x="66" y="118" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cne-3u-mlW">
-                                <rect key="frame" x="66" y="186" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCd-qU-unk">
-                                <rect key="frame" x="229" y="148" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Вход"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Только посмотреть?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVI-YM-z2c">
-                                <rect key="frame" x="106" y="262" width="163" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y2-LH-VVi">
-                                <rect key="frame" x="117" y="291" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Войти без аккаунта"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Еще нет аккаунта?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAf-OO-G6E">
-                                <rect key="frame" x="113" y="323" width="149" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ca-gS-P8L">
-                                <rect key="frame" x="151" y="352" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Создайте!"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tld-Vv-VOI">
-                                <rect key="frame" x="57" y="419" width="260" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Присоединяйтесь к нашей системе!"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вы владелец салона?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kI-sE-hui">
-                                <rect key="frame" x="101" y="390" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="C4n-bg-AHE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gTr-5o-iqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-708" y="739.88005997001505"/>
+            <point key="canvasLocation" x="-3098" y="66"/>
         </scene>
         <!--Item-->
         <scene sceneID="UMF-yP-0kX">
@@ -327,7 +255,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnR-B7-G9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="1192"/>
+            <point key="canvasLocation" x="570" y="739"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ibb-b2-laS">
@@ -399,11 +327,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfh-Q4-Y1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1697" y="-632"/>
+            <point key="canvasLocation" x="-895" y="-267"/>
         </scene>
         <!--Профиль: Навигация Клиент-->
         <scene sceneID="SSd-yL-M9m">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1Y-bN-ErL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ClientNavigationController" title="Профиль" id="FdA-ah-emx" userLabel="Профиль: Навигация Клиент" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ygU-Ub-7Tu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -413,9 +342,8 @@
                         <segue destination="6xv-sB-aYD" kind="relationship" relationship="rootViewController" id="Rup-pn-LK5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X1Y-bN-ErL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="-244"/>
+            <point key="canvasLocation" x="1052" y="-646"/>
         </scene>
         <!--Профиль: Навигация Салон-->
         <scene sceneID="D7j-FW-QZJ">
@@ -432,11 +360,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bM-Im-6Yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="441"/>
+            <point key="canvasLocation" x="1052" y="48"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="exv-Lb-eth">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYa-fu-YJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ViewProfileNavigationController" title="Профиль" id="0Oc-jd-2bz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uwW-UE-E9D">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -446,19 +375,18 @@
                         <segue destination="t2v-Yb-6kY" kind="relationship" relationship="rootViewController" id="miB-HB-DNz"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tYa-fu-YJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="1129"/>
+            <point key="canvasLocation" x="1052" y="699"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="Y8R-b7-nvh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2is-3I-ma4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileView" id="t2v-Yb-6kY" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9rY-tj-SZt"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2is-3I-ma4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="1128"/>
+            <point key="canvasLocation" x="1695" y="699"/>
         </scene>
         <!--Search-->
         <scene sceneID="oTY-gs-lpg">
@@ -468,17 +396,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4WE-rm-Cl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="-715"/>
+            <point key="canvasLocation" x="534" y="-715"/>
         </scene>
         <!--ProfileClient-->
         <scene sceneID="Euz-RM-cMP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGt-Se-I9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileClient" id="6xv-sB-aYD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ISL-aP-apr"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HGt-Se-I9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="-246"/>
+            <point key="canvasLocation" x="1760" y="-649"/>
         </scene>
         <!--ProfileSalon-->
         <scene sceneID="DKm-bF-ezY">
@@ -488,7 +416,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35t-XS-HB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="441"/>
+            <point key="canvasLocation" x="1763" y="49"/>
         </scene>
     </scenes>
     <resources>
