@@ -39,21 +39,16 @@ class SearchSalonsInCityTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SearchSalonTableViewCell
-<<<<<<< HEAD
-        let currentSalon : (String, String)  = salonsInSity[indexPath.row]
-        cell.nameLabel.text = currentSalon.0
-        cell.adressLabel.text = currentSalon.1
-        let gamma = blueGamma()
-=======
+
         let currentSalon : SalonPreview  = salonsInCity[indexPath.row]
         cell.nameLabel.text = currentSalon.customName
         cell.adressLabel.text = currentSalon.address
->>>>>>> d926b0bac4eb13698d2f29f1d5ba31bf2db0afd0
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SalonVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalon") as! SearchSalonTableViewController
+        
 //        SalonVC.currentSalon = salonsInSity[indexPath.row]
         self.navigationController?.pushViewController(SalonVC, animated: true)
         

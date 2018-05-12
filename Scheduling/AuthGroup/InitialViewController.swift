@@ -18,20 +18,6 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
 		self.view.showBlurLoader()
         
-<<<<<<< HEAD
-        guard  let url = URL(string: serverAdr + "api/getCityList") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let decoder = JSONDecoder()
-                let citiesData = try decoder.decode([String].self, from: data)
-                cities = citiesData
-            } catch let err {
-                print("Err", err)
-            }
-            }.resume()
-        
-=======
         //**********************************************************************************************************//
         
         guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
@@ -47,7 +33,6 @@ class InitialViewController: UIViewController {
         
         //**********************************************************************************************************//
         
->>>>>>> d926b0bac4eb13698d2f29f1d5ba31bf2db0afd0
     }
     
     override func viewDidAppear(_ animated: Bool) {
