@@ -17,7 +17,7 @@ class SearchSalonTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentSalon = TestSalon1 // загрузка
+        //currentSalon = TestSalon1 // загрузка
         
         tableView.register(UINib(nibName: "SalonDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: salonDescriptionCellIdentifier)
         tableView.register(UINib(nibName: "SearchServiceInSalonCellTableViewCell", bundle: nil), forCellReuseIdentifier: serviceCellIdentifier)

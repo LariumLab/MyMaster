@@ -17,7 +17,12 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.view.showBlurLoader()
+<<<<<<< HEAD
         
+=======
+		
+		//Зачем это здесь?
+>>>>>>> f9a6b58b01140e5b8aafb2c5d4c28ec33d8da5be
         //**********************************************************************************************************//
         
         guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }

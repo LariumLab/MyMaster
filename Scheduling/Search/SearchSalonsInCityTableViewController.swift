@@ -50,7 +50,41 @@ class SearchSalonsInCityTableViewController: UITableViewController {
         let SalonVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalon") as! SearchSalonTableViewController
         
 //        SalonVC.currentSalon = salonsInSity[indexPath.row]
-        self.navigationController?.pushViewController(SalonVC, animated: true)
         
+        //**********************************************************************************************************//
+        
+        let salon = salonsInCity[indexPath.row]
+        let salonID = salon.ID
+//        DispatchQueue.main.async {
+            let stringURL = "http://localhost:8080/api/getSalonInfo?salonID=" + salonID.uuidString
+            guard let URLGetSalonListInCity = URL(string: stringURL) else {
+                return
+            }
+            URLSession.shared.dataTask(with: URLGetSalonListInCity) { (data, response, error) in
+                guard let data = data else { return }
+                do {
+                    let salonInfo = try JSONDecoder().decode(SalonInfo.self, from: data)
+                    SalonVC.currentSalon.adress = salon.address
+                    SalonVC.currentSalon.name = salon.customName
+                    SalonVC.currentSalon.ID = salon.ID.uuidString
+                    SalonVC.currentSalon.description = salonInfo.description
+                    SalonVC.currentSalon.phoneNumber = salonInfo.phoneNumber
+                    SalonVC.currentSalon.nickname = salonInfo.nickName
+                    SalonVC.currentSalon.city = self.city
+                    
+                    DispatchQueue.main.async {
+                        SalonVC.view.removeBlurLoader()
+                        SalonVC.tableView.reloadData()
+                    }
+                } catch let err {
+                    print(err)
+                }
+                }.resume()
+//        }
+        
+        //**********************************************************************************************************//
+        
+        self.navigationController?.pushViewController(SalonVC, animated: true)
+        SalonVC.view.showBlurLoader()
     }
 }

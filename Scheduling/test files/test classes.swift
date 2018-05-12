@@ -81,13 +81,15 @@ class Salon : Profile{
     var adress: String
     var services : [Service]
     var masters : [Master] = []
+    var ID : String
     
-    init(name: String, phoneNumber: String, nickname: String, description: String, city: String, adress: String, services: [Service]) {
+    init(name: String, phoneNumber: String, nickname: String, description: String, city: String, adress: String, services: [Service], ID : String) {
         self.nickname = nickname
         self.description = description
         self.city = city
         self.adress = adress
         self.services = services
+        self.ID = ID
         super.init(name: name, phoneNumber: phoneNumber)
     }
     
@@ -97,6 +99,7 @@ class Salon : Profile{
         city = ""
         adress = ""
         services = []
+        ID = ""
         super.init()
     }
     
@@ -114,6 +117,12 @@ struct SalonPreview: Codable{
     let customName: String
     let address: String
     let ID: UUID
+}
+
+struct SalonInfo: Codable{
+    let nickName: String
+    let phoneNumber: String
+    let description: String
 }
 
 class Client: Profile{
