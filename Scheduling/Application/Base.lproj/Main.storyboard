@@ -117,6 +117,9 @@
                                 <rect key="frame" x="107" y="366" width="141" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Войти без аккаунта"/>
+                                <connections>
+                                    <action selector="LoginWithoutRegistration:" destination="90g-55-EAp" eventType="touchUpInside" id="C5P-nx-IzP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Еще нет аккаунта?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-eF-hXG">
                                 <rect key="frame" x="106" y="404" width="163" height="38"/>
@@ -332,7 +335,6 @@
         <!--Профиль: Навигация Клиент-->
         <scene sceneID="SSd-yL-M9m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X1Y-bN-ErL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ClientNavigationController" title="Профиль" id="FdA-ah-emx" userLabel="Профиль: Навигация Клиент" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ygU-Ub-7Tu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -342,6 +344,7 @@
                         <segue destination="6xv-sB-aYD" kind="relationship" relationship="rootViewController" id="Rup-pn-LK5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1Y-bN-ErL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="-646"/>
         </scene>
@@ -365,7 +368,6 @@
         <!--Профиль-->
         <scene sceneID="exv-Lb-eth">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tYa-fu-YJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ViewProfileNavigationController" title="Профиль" id="0Oc-jd-2bz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uwW-UE-E9D">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -375,16 +377,17 @@
                         <segue destination="t2v-Yb-6kY" kind="relationship" relationship="rootViewController" id="miB-HB-DNz"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYa-fu-YJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="699"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="Y8R-b7-nvh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2is-3I-ma4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileView" id="t2v-Yb-6kY" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="9rY-tj-SZt"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2is-3I-ma4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1695" y="699"/>
         </scene>
@@ -401,10 +404,10 @@
         <!--ProfileClient-->
         <scene sceneID="Euz-RM-cMP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HGt-Se-I9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileClient" id="6xv-sB-aYD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ISL-aP-apr"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGt-Se-I9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760" y="-649"/>
         </scene>

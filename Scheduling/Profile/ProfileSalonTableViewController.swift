@@ -28,7 +28,7 @@ class ProfileSalonTableViewController: UITableViewController {
         
         tableView.register(UINib(nibName: "SalonDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: DescriptionCellIdentifier)
         tableView.register(UINib(nibName: "ListAndAddTableViewCell", bundle: nil), forCellReuseIdentifier: ListAndAddCellIdentifier)
-        tableView.register(UINib(nibName: "NameWithDisclosureIndicatorTableViewCell", bundle: nil), forCellReuseIdentifier: ServiceCellIdentifier)
+        tableView.register(UINib(nibName: "NameEditingDisclosureTableViewCell", bundle: nil), forCellReuseIdentifier: ServiceCellIdentifier)
         self.navigationItem.title = registeredSalon.nickname
         self.tabBarController?.title = "Профиль"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Настройки", style: .done, target: self, action: #selector(SettingsButtonSelected))
@@ -91,8 +91,9 @@ class ProfileSalonTableViewController: UITableViewController {
             cell.addButton.tintColor = gamma.darkBlue
             return cell
         case 2...(registeredSalon.services.count + 2):
-            let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCellIdentifier, for: indexPath) as! NameWithDisclosureIndicatorTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCellIdentifier, for: indexPath) as! NameEditingDisclosureTableViewCell
             cell.nameLabel.text = registeredSalon.services[indexPath.row-2].name
+            cell.editLabel.text = "Редактировать"
             return cell
         default:
             let cell = UITableViewCell()

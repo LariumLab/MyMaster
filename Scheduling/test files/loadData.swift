@@ -9,7 +9,7 @@
 import Foundation
 
 let serverAdr = "http://localhost:8080/"
-
+let viewAccount = Account(login: "", password: "", profileType: .view)
 // MARK: - Common data
 var profileType : ProfileType? = nil
 var nicknames : [String] = []

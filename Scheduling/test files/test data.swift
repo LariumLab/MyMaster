@@ -53,7 +53,8 @@ let Client1Appointment1 = ClientAppointment(salonName: TestSalon1.name, serviceN
 
 let salonAccount = Account(login: "salon", password: "salon", profileType: .salon)
 let clientAccount = Account(login: "client", password: "client", profileType: .client)
-let viewAccount = Account(login: "", password: "", profileType: .view)
+// viewAccount перенесен в LoadData
+//let viewAccount = Account(login: "", password: "", profileType: .view)
 
 var users : [Account] = [salonAccount, clientAccount, viewAccount]
 

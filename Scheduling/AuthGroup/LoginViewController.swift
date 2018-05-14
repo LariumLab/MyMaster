@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var login: UITextField!
 	@IBOutlet weak var testLabel: UILabel!
+
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +23,17 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func LoginWithoutRegistration(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
+        TabBarC.viewControllers?.append(ViewProfileNavigationC)
+        ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
+        loadData(acc: viewAccount)
+        present(TabBarC, animated: false, completion: nil)
+        testLabel.text = "OK"
     }
     
 	@IBAction func signIn(_ sender: Any) {
