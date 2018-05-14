@@ -26,6 +26,8 @@
 		FA1B74BC208DEAE7009A10C8 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */; };
 		FA1B74C1208DEB43009A10C8 /* SalonRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */; };
 		FA1B74C2208DEB43009A10C8 /* SalonRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */; };
+		FA1C71E920A9AA3100961484 /* NameEditingDisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C71E720A9AA3100961484 /* NameEditingDisclosureTableViewCell.swift */; };
+		FA1C71EA20A9AA3100961484 /* NameEditingDisclosureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C71E820A9AA3100961484 /* NameEditingDisclosureTableViewCell.xib */; };
 		FA46A6C8207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */; };
 		FA46A6C9207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */; };
 		FA46A6CB207E79860094FF0C /* SearchSalonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */; };
@@ -104,6 +106,8 @@
 		FA1B74BB208DEAE7009A10C8 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
 		FA1B74BF208DEB43009A10C8 /* SalonRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonRequestTableViewCell.swift; sourceTree = "<group>"; };
 		FA1B74C0208DEB43009A10C8 /* SalonRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonRequestTableViewCell.xib; sourceTree = "<group>"; };
+		FA1C71E720A9AA3100961484 /* NameEditingDisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditingDisclosureTableViewCell.swift; sourceTree = "<group>"; };
+		FA1C71E820A9AA3100961484 /* NameEditingDisclosureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameEditingDisclosureTableViewCell.xib; sourceTree = "<group>"; };
 		FA46A6C6207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceInSalonCellTableViewCell.swift; sourceTree = "<group>"; };
 		FA46A6C7207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchServiceInSalonCellTableViewCell.xib; sourceTree = "<group>"; };
 		FA46A6CA207E79860094FF0C /* SearchSalonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSalonTableViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				FA571DF6206684D40078DF9A /* TextFieldTableViewCell.xib */,
 				FA571DFD2066856E0078DF9A /* PriceTableViewCell.swift */,
 				FA571DFE2066856E0078DF9A /* PriceTableViewCell.xib */,
+				FA1C71E720A9AA3100961484 /* NameEditingDisclosureTableViewCell.swift */,
+				FA1C71E820A9AA3100961484 /* NameEditingDisclosureTableViewCell.xib */,
 			);
 			path = "Common cells";
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				FA77C98A20820CC200580352 /* ScheduleTimeTableViewCell.xib in Resources */,
 				FA9BDE63206DF1550068A86E /* NameWithSwitchTableViewCell.xib in Resources */,
 				FA9BDE5F206DEE510068A86E /* NameLabelTableViewCell.xib in Resources */,
+				FA1C71EA20A9AA3100961484 /* NameEditingDisclosureTableViewCell.xib in Resources */,
 				FA46A6C9207E772A0094FF0C /* SearchServiceInSalonCellTableViewCell.xib in Resources */,
 				FA0F43722090D00A00508B8B /* AddRequestDescriptionTableViewCell.xib in Resources */,
 				FAE3C30C208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib in Resources */,
@@ -496,6 +503,7 @@
 				FA9BDE59206C14890068A86E /* ProfileMastersListTableViewController.swift in Sources */,
 				FA9BDE5B206C17220068A86E /* ProfileAddNewMasterTableViewController.swift in Sources */,
 				FA9BDE66206DF2390068A86E /* SegmentedControlTableViewCell.swift in Sources */,
+				FA1C71E920A9AA3100961484 /* NameEditingDisclosureTableViewCell.swift in Sources */,
 				F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */,
 				FA77C98920820CC200580352 /* ScheduleTimeTableViewCell.swift in Sources */,
 				FA52964B207BC09400668FDA /* ProfileSettingsTableViewController.swift in Sources */,

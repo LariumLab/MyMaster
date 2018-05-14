@@ -16,9 +16,10 @@ class SearchSalonTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //currentSalon = TestSalon1 // загрузка
-        
+        // ================
+        //delete
+        currentSalon.services = TestSalon1.services
+        // =================
         tableView.register(UINib(nibName: "SalonDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: salonDescriptionCellIdentifier)
         tableView.register(UINib(nibName: "SearchServiceInSalonCellTableViewCell", bundle: nil), forCellReuseIdentifier: serviceCellIdentifier)
         self.navigationItem.title = currentSalon.nickname
@@ -38,8 +39,6 @@ class SearchSalonTableViewController: UITableViewController {
             ServiceVC.service = selectedService
             self.navigationController?.pushViewController(ServiceVC, animated: true)
         }
-        
-
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,20 +68,11 @@ class SearchSalonTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-//            let SalonDescCell = SalonDescriptionTableViewCell()
-//            return SalonDescCell.CellHeight
-            return UITableViewAutomaticDimension
-        case 1:
-            let ServiceCell = SearchServiceInSalonCellTableViewCell()
-            return ServiceCell.cellHeight
-        default:
-            return 44
-        }
+        return UITableViewAutomaticDimension
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let gamma = blueGamma()
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: salonDescriptionCellIdentifier, for: indexPath) as! SalonDescriptionTableViewCell
@@ -91,12 +81,14 @@ class SearchSalonTableViewController: UITableViewController {
             cell.telephoneNumberLabel.text = "Номер телефона: " + currentSalon.phoneNumber
             cell.cityLabel.text = "Город: " + currentSalon.city
             cell.fullAdressLabel.text = "Полный адрес: " + currentSalon.adress
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 10)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceCellIdentifier, for: indexPath) as! SearchServiceInSalonCellTableViewCell
             cell.serviceNameLabel.text = currentSalon.services[indexPath.row].name
             cell.priceFromLabel.text = currentSalon.services[indexPath.row].priceFrom
             cell.priceToLabel.text = currentSalon.services[indexPath.row].priceTo
+            gamma.makeViewStyle(view: cell.colorView, color: gamma.biegeColor, radius: 10)
             return cell
         default:
             return UITableViewCell()

@@ -1,18 +1,17 @@
 //
-//  WeekDescriptionTableViewCell.swift
+//  NameEditingDisclosureTableViewCell.swift
 //  Scheduling
 //
-//  Created by macbook on 21.04.2018.
+//  Created by macbook on 14.05.2018.
 //  Copyright © 2018 Aksiniya. All rights reserved.
 //
 
 import UIKit
 
-class WeekDescriptionTableViewCell: UITableViewCell {
-    @IBOutlet weak var weekDateLabel: UILabel!
-    @IBOutlet weak var colorView: UIView!
-    let cellHeight = CGFloat(44)
-    
+class NameEditingDisclosureTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var editLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

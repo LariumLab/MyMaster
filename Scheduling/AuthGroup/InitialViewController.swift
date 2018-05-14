@@ -54,8 +54,14 @@ class InitialViewController: UIViewController {
             
 			// Now we are checking, if there is some user's token in keychain
 			// if true, we can determine the type of account and then we can present appropriate tabbar
-			
-			let token = Keychain.load(key: "userToken")
+
+            // =========================
+            // Проблема с удалениес токена - keychain._delete - не работает
+            //            let token = Keychain.load(key: "userToken")
+            var token = Keychain.load(key: "userToken")
+            token = nil
+            // =========================
+            
 			if token != nil {
 				// отправка запроса
                 // то, что ниже - временно

@@ -43,6 +43,8 @@ class SearchSalonsInCityTableViewController: UITableViewController {
         let currentSalon : SalonPreview  = salonsInCity[indexPath.row]
         cell.nameLabel.text = currentSalon.customName
         cell.adressLabel.text = currentSalon.address
+        let gamma = blueGamma()
+        gamma.makeViewStyle(view: cell.colorView, color: gamma.biegeColor, radius: 10)
         return cell
     }
 

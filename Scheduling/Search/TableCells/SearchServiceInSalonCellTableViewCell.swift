@@ -12,7 +12,8 @@ class SearchServiceInSalonCellTableViewCell: UITableViewCell {
     @IBOutlet weak var serviceNameLabel: UILabel!
     @IBOutlet weak var priceToLabel: UILabel!
     @IBOutlet weak var priceFromLabel: UILabel!
-    let cellHeight = CGFloat(128)
+    @IBOutlet weak var colorView: UIView!
+    //    let cellHeight = CGFloat(128)
     
     override func awakeFromNib() {
         super.awakeFromNib()

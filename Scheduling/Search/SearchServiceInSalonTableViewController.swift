@@ -22,7 +22,7 @@ class SearchServiceInSalonTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: ServiceNameCellIdentifier)
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: ServiceDescriptionCellIdentidier)
         tableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: ServicePriceCellIdentifier)
-        tableView.register(UINib(nibName: "NameWithDisclosureIndicatorTableViewCell", bundle: nil), forCellReuseIdentifier: MasterCellIdentifier)
+        tableView.register(UINib(nibName: "NameEditingDisclosureTableViewCell", bundle: nil), forCellReuseIdentifier: MasterCellIdentifier)
         self.title = service.name
     }
 
@@ -45,7 +45,7 @@ class SearchServiceInSalonTableViewController: UITableViewController {
         case 2:
             return "Цена"
         case 3:
-            return "Список мастеров:"
+            return "Мастера:"
         default:
             return ""
         }
@@ -57,8 +57,9 @@ class SearchServiceInSalonTableViewController: UITableViewController {
             let TextFieldCell = TextFieldTableViewCell()
             return TextFieldCell.cellHeight
         case 1:
-            let DescrCell = DescriptionTableViewCell()
-            return DescrCell.CellHeight
+//            let DescrCell = DescriptionTableViewCell()
+//            return DescrCell.CellHeight
+            return UITableViewAutomaticDimension
         case 2:
             let PriceCell = PriceTableViewCell()
             return PriceCell.CellHeight
@@ -82,16 +83,22 @@ class SearchServiceInSalonTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let gamma = blueGamma()
+
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: ServiceNameCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.text = service.name
             cell.textField.isUserInteractionEnabled = false
+            gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: ServiceDescriptionCellIdentidier, for: indexPath) as! DescriptionTableViewCell
             cell.descriptionTextView.text = service.description
             cell.descriptionTextView.isEditable = false
+            cell.descriptionTextView.isScrollEnabled = false
+            cell.descriptionTextView.sizeToFit()
+            gamma.makeViewStyle(view: cell.descriptionTextView, color: gamma.whiteColor, radius: 5)
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: ServicePriceCellIdentifier, for: indexPath) as! PriceTableViewCell
@@ -99,10 +106,13 @@ class SearchServiceInSalonTableViewController: UITableViewController {
             cell.priceFromTextField.isUserInteractionEnabled = false
             cell.priceToTextField.text = service.priceTo
             cell.priceToTextField.isUserInteractionEnabled = false
+            gamma.makeViewStyle(view: cell.priceFromTextField, color: gamma.whiteColor, radius: 5)
+            gamma.makeViewStyle(view: cell.priceToTextField, color: gamma.whiteColor, radius: 5)
             return cell
         case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MasterCellIdentifier, for: indexPath) as! NameWithDisclosureIndicatorTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MasterCellIdentifier, for: indexPath) as! NameEditingDisclosureTableViewCell
             cell.nameLabel.text = service.masters[indexPath.row].name
+            cell.editLabel.text = "Расписание"
             return cell
         default:
             return UITableViewCell()

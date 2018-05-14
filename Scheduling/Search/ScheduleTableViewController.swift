@@ -167,7 +167,9 @@ class ScheduleTableViewController: UITableViewController {
                     width: UIScreen.main.bounds.width,
                     height: CGFloat(AppointmentHeight) ))
                 tableView.addSubview(AppointmentView)
-                AppointmentView.backgroundColor = UIColor(red:0.20, green:0.72, blue:0.55, alpha:0.7)
+//                AppointmentView.backgroundColor = UIColor(red:0.20, green:0.72, blue:0.55, alpha:0.7)
+                AppointmentView.backgroundColor = blueGamma().skyBlue.withAlphaComponent(0.7)
+//                AppointmentView.backgroundColor?.withAlphaComponent(0.7)
             }
             
             CellsHeightsSumBeforeCurrentSection += CGFloat(infoForDays[dayIndex].0) * timeHeight
@@ -196,7 +198,8 @@ class ScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if section > 0 {
-            view.tintColor = UIColor(red:1.00, green:0.51, blue:0.06, alpha:1.0)
+//            view.tintColor = UIColor(red:1.00, green:0.51, blue:0.06, alpha:1.0)
+            view.tintColor = blueGamma().skyBlue
         }
     }
     
@@ -236,6 +239,8 @@ class ScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let gamma = blueGamma()
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM"
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
@@ -246,6 +251,7 @@ class ScheduleTableViewController: UITableViewController {
             let weekEndDate = Calendar.current.date(byAdding: .day, value: 6, to: WeekStartOn)
             let weekEndString = formatter.string(from: weekEndDate!)
             cell.weekDateLabel.text = "Неделя: " + weekStartString + " - " + weekEndString
+            cell.colorView.backgroundColor = gamma.mediumBlue
             return cell
         }
         
@@ -259,12 +265,15 @@ class ScheduleTableViewController: UITableViewController {
                 cell.appointmentsNumberLabel.text = String(appointmentsByDayVector[indexPath.section-1].count)
                 let dayDateString = formatter.string(from: infoForDays[indexPath.section-1].1)
                 cell.dayDateLabel.text = dayDateString
+                cell.leftColorView.backgroundColor = gamma.biegeColor
+                cell.rightColorView.backgroundColor = gamma.mediumBlue
                 return cell
             }
             else {
                let cell = tableView.dequeueReusableCell(withIdentifier: NameLabelCellIdentifier, for: indexPath) as! NameLabelTableViewCell
-                cell.nameLabel.text = "Выходной"
-                cell.backgroundColor = UIColor(ciColor: .red)
+                cell.nameLabel.text = "Выходной" + " - " + formatter.string(from: infoForDays[indexPath.section-1].1)
+                cell.nameLabel.textColor = UIColor.white
+                cell.backgroundColor = gamma.mediumBlue
                 return cell
             }
         }

@@ -14,8 +14,10 @@ class WorkDayDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var appointmentsNumberLabel: UILabel!
     @IBOutlet weak var timeToLabel: UILabel!
     @IBOutlet weak var timeFromLabel: UILabel!
+    @IBOutlet weak var leftColorView: UIView!
+    @IBOutlet weak var rightColorView: UIView!
     
-    let cellHeight = CGFloat(72)
+    let cellHeight = CGFloat(66)
     override func awakeFromNib() {
         super.awakeFromNib()
     }
