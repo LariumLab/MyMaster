@@ -36,13 +36,9 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = cities[indexPath.row]
         let SalonsInCityVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalonsInCityTable") as! SearchSalonsInCityTableViewController
-     //   SalonsInCityVC.salonsInSity = get запрос на сервер
         SalonsInCityVC.city = city
         
-        //**********************************************************************************************************//
-        
-//        DispatchQueue.main.async {
-        let stringURL = "http://localhost:8080/api/getSalonListInCity?city=" + city
+        let stringURL = serverAdr + "api/getSalonListInCity?city=" + city
         guard let ruStringURL = stringURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
             guard let URLGetSalonListInCity = URL(string: ruStringURL) else {
                 return
@@ -60,13 +56,8 @@ class SearchTableViewController: UITableViewController {
                     print(err)
                 }
                 }.resume()
-//        }
-        
-        //**********************************************************************************************************//
         
         self.navigationController?.pushViewController(SalonsInCityVC, animated: true)
-//        self.view.showBlurLoader()
         SalonsInCityVC.view.showBlurLoader()
     }
-
 }

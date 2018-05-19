@@ -66,6 +66,25 @@ class LoginViewController: UIViewController {
                     ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
                 }
                 loadData(acc: user)
+                
+                // ========
+                let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
+                let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
+                guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+                URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+                    guard let data = data else { return }
+                    do {
+                        let citiesData = try JSONDecoder().decode([String].self, from: data)
+                        cities = citiesData
+                        DispatchQueue.main.async {
+                            searchVC.tableView.reloadData()
+                        }
+                    } catch let err {
+                        print(err)
+                    }
+                    }.resume()
+                // ========
+                
                 present(TabBarC, animated: false, completion: nil)
                 testLabel.text = "OK"
             }

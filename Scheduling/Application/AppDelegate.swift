@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let NoteInTable5 = NoteInTable(dateFrom: NoteDate5Start, dateTo: NoteDate5End)
         let NoteInTable6 = NoteInTable(dateFrom: NoteDate6Start, dateTo: NoteDate6End)
         
-        MasterKostya = Master(name: "Костя", timeTable: KostyaTimeTable, appointments: [NoteInTable1, NoteInTable2, NoteInTable3, NoteInTable4, NoteInTable5, NoteInTable6])
+        MasterKostya = Master(name: "Костя", timeTable: [MondayForKostyaTable, TuesdayForKostyaTable, WednesdayForKostyaTable, ThursdayForKostyaTable, FridayForKostyaTable, SaturdayForKostyaTable, SundayForKostyaTable], appointments: [NoteInTable1, NoteInTable2, NoteInTable3, NoteInTable4, NoteInTable5, NoteInTable6])
         
         TestSalon1.addService(service: Service1)
         TestSalon1.addService(service: Service2)

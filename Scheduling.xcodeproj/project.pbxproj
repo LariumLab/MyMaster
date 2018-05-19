@@ -73,6 +73,7 @@
 		FAA11D95207C7A0600B42B66 /* ProfileClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA11D94207C7A0600B42B66 /* ProfileClientTableViewController.swift */; };
 		FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA11D96207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift */; };
 		FAA11D99207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA11D97207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib */; };
+		FAA83E9020B045A500EE105A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA83E8F20B045A500EE105A /* StringExtensions.swift */; };
 		FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE1A82204EB10E00AE14C7 /* test classes.swift */; };
 		FAB9FD7C208EE0F50093AB39 /* ProfileViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9FD7B208EE0F50093AB39 /* ProfileViewViewController.swift */; };
 		FABC54C3208AF1ED00FBF17F /* WeekDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC54C1208AF1ED00FBF17F /* WeekDescriptionTableViewCell.swift */; };
@@ -153,6 +154,7 @@
 		FAA11D94207C7A0600B42B66 /* ProfileClientTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClientTableViewController.swift; sourceTree = "<group>"; };
 		FAA11D96207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		FAA11D97207C88BF00B42B66 /* ClientAppointmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientAppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		FAA83E8F20B045A500EE105A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		FAAE1A82204EB10E00AE14C7 /* test classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test classes.swift"; sourceTree = "<group>"; };
 		FAB9FD7B208EE0F50093AB39 /* ProfileViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewController.swift; sourceTree = "<group>"; };
 		FABC54C1208AF1ED00FBF17F /* WeekDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */,
+				FAA83E8F20B045A500EE105A /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				FABC54C3208AF1ED00FBF17F /* WeekDescriptionTableViewCell.swift in Sources */,
 				FAC1943E20601ED300188BDA /* loadData.swift in Sources */,
 				FA571DFF2066856E0078DF9A /* PriceTableViewCell.swift in Sources */,
+				FAA83E9020B045A500EE105A /* StringExtensions.swift in Sources */,
 				FAA11D98207C88BF00B42B66 /* ClientAppointmentTableViewCell.swift in Sources */,
 				FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */,
 				FA1B74BA208DEAD3009A10C8 /* RequestsTableViewController.swift in Sources */,

@@ -41,7 +41,7 @@ let FridayForKostyaTable = DayInTable(dayName: WeekDays[4], dayOff: false, timeF
 let SaturdayForKostyaTable = DayInTable(dayName: WeekDays[5], dayOff: true, timeFrom: "", timeTo: "")
 let SundayForKostyaTable = DayInTable(dayName: WeekDays[6], dayOff: true, timeFrom: "", timeTo: "")
 
-let KostyaTimeTable = TimeTable(DaysInTable: [MondayForKostyaTable, TuesdayForKostyaTable, WednesdayForKostyaTable, ThursdayForKostyaTable, FridayForKostyaTable, SaturdayForKostyaTable, SundayForKostyaTable])
+//let KostyaTimeTable = TimeTable(DaysInTable: [MondayForKostyaTable, TuesdayForKostyaTable, WednesdayForKostyaTable, ThursdayForKostyaTable, FridayForKostyaTable, SaturdayForKostyaTable, SundayForKostyaTable])
 
 var MasterKostya = Master()
 

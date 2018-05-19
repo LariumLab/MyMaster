@@ -51,14 +51,9 @@ class SearchSalonsInCityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SalonVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchSalon") as! SearchSalonTableViewController
         
-//        SalonVC.currentSalon = salonsInSity[indexPath.row]
-        
-        //**********************************************************************************************************//
-        
         let salon = salonsInCity[indexPath.row]
         let salonID = salon.ID
-//        DispatchQueue.main.async {
-            let stringURL = "http://localhost:8080/api/getSalonInfo?salonID=" + salonID.uuidString
+            let stringURL =  serverAdr + "api/getSalonInfo?salonID=" + salonID.uuidString
             guard let URLGetSalonListInCity = URL(string: stringURL) else {
                 return
             }
@@ -82,10 +77,6 @@ class SearchSalonsInCityTableViewController: UITableViewController {
                     print(err)
                 }
                 }.resume()
-//        }
-        
-        //**********************************************************************************************************//
-        
         self.navigationController?.pushViewController(SalonVC, animated: true)
         SalonVC.view.showBlurLoader()
     }

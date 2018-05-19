@@ -191,10 +191,11 @@ class ClientAppointment{
 
 class Master{
     var name : String
-    var timeTable : TimeTable
+//    var timeTable : TimeTable
+    var timeTable : [DayInTable]
     var appointments : [NoteInTable]
 
-    init(name: String, timeTable: TimeTable, appointments: [NoteInTable]) {
+    init(name: String, /*timeTable: TimeTable, */ timeTable: [DayInTable], appointments: [NoteInTable]) {
         self.name = name
         self.timeTable = timeTable
         self.appointments = appointments
@@ -202,7 +203,8 @@ class Master{
     
     init() {
         name = ""
-        timeTable = TimeTable()
+//        timeTable = TimeTable()
+        timeTable = []
         appointments = []
     }
     
@@ -225,17 +227,17 @@ class NoteInTable : Equatable{
     }
 }
 
-class TimeTable{
-    var DaysInTable : [DayInTable]
-    
-    init(DaysInTable: [DayInTable]) {
-        self.DaysInTable = DaysInTable
-    }
-    
-    init() {
-        DaysInTable = []
-    }
-}
+//class TimeTable{
+//    var DaysInTable : [DayInTable]
+//
+//    init(DaysInTable: [DayInTable]) {
+//        self.DaysInTable = DaysInTable
+//    }
+//
+//    init() {
+//        DaysInTable = []
+//    }
+//}
 
 var WeekDays = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
 

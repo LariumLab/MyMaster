@@ -62,7 +62,7 @@ class ScheduleTableViewController: UITableViewController {
         formatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
         var date : Date = WeekStartOn
     
-        for day in master.timeTable.DaysInTable {
+        for day in master.timeTable {
             let currentInterval : Double
             
             if day.dayOff == false {
@@ -130,7 +130,7 @@ class ScheduleTableViewController: UITableViewController {
         let nameLabelCell = NameLabelTableViewCell()
         let nameLabelHeight = nameLabelCell.cellHeight
         
-        let daysInTable = master.timeTable.DaysInTable
+        let daysInTable = master.timeTable
         var dayIndex = 0
         var CellsHeightsSumBeforeCurrentSection : CGFloat = weekDescriptionHeight
         
@@ -211,7 +211,7 @@ class ScheduleTableViewController: UITableViewController {
         }
         
         if indexPath.row == 0 {
-            if master.timeTable.DaysInTable[indexPath.section-1].dayOff == false {
+            if master.timeTable[indexPath.section-1].dayOff == false {
                 let DayDescr = WorkDayDescriptionTableViewCell()
                 return DayDescr.cellHeight
             }
@@ -255,7 +255,7 @@ class ScheduleTableViewController: UITableViewController {
             return cell
         }
         
-        let currentDay = master.timeTable.DaysInTable[indexPath.section-1]
+        let currentDay = master.timeTable[indexPath.section-1]
 
         if indexPath.row == 0 {
             if currentDay.dayOff == false {
@@ -279,7 +279,7 @@ class ScheduleTableViewController: UITableViewController {
         }
         
         formatter.dateFormat = "HH:mm"
-        let dayStartString : String = master.timeTable.DaysInTable[indexPath.section-1].timeFrom
+        let dayStartString : String = master.timeTable[indexPath.section-1].timeFrom
         let dayStartDate = formatter.date(from: dayStartString)
         let timeForCell = Calendar.current.date(byAdding: .hour, value: ( indexPath.row - 1 ), to: dayStartDate!)
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeCellIdentifier, for: indexPath) as! ScheduleTimeTableViewCell

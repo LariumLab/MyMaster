@@ -8,7 +8,8 @@
 
 import Foundation
 
-let serverAdr = "http://localhost:8080/"
+let dynamicIP = "192.168.1.12"
+let serverAdr = "http://" + dynamicIP + ":8080/"
 let viewAccount = Account(login: "", password: "", profileType: .view)
 // MARK: - Common data
 var profileType : ProfileType? = nil

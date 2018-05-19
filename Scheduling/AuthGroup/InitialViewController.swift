@@ -21,17 +21,19 @@ class InitialViewController: UIViewController {
 		//Зачем это здесь?
         //**********************************************************************************************************//
         
-        guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
-        URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let citiesData = try JSONDecoder().decode([String].self, from: data)
-                cities = citiesData
-            } catch let err {
-                print(err)
-            }
-            }.resume()
-        
+//        let searchVC = UIStoryboard.init(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchCities") as! SearchTableViewController
+//        guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+//        URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+//            guard let data = data else { return }
+//            do {
+//                let citiesData = try JSONDecoder().decode([String].self, from: data)
+//                cities = citiesData
+//                searchVC.tableView.reloadData()
+//            } catch let err {
+//                print(err)
+//            }
+//            }.resume()
+//        
         //**********************************************************************************************************//
         
     }
