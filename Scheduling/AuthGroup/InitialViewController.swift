@@ -45,23 +45,29 @@ class InitialViewController: UIViewController {
 			
 			// Adding user's token to keychain (if needed)
 			
-            /*
-			let key: String = "userToken"
-			let data = "testtoken".data(using: .utf8)!
-			
-			if Keychain.save(key: key, data: data)  == errSecSuccess {
-			print("tokenAdded")
+			let token = Keychain.load(key: "userToken")
+			if token != nil {
+				
+			} else {
+				let key: String = "userToken"
+				let data = "testtoken".data(using: .utf8)!
+				
+				
+				if Keychain.save(key: key, data: data)  == errSecSuccess {
+					print("tokenAdded")
+				}
 			}
-             */
+			
+			
             
 			// Now we are checking, if there is some user's token in keychain
 			// if true, we can determine the type of account and then we can present appropriate tabbar
 
             // =========================
-            // Проблема с удалениес токена - keychain._delete - не работает
+            // Проблема с удалением токена - keychain._delete - не работает
             //            let token = Keychain.load(key: "userToken")
-            var token = Keychain.load(key: "userToken")
-            token = nil
+            //var token = Keychain.load(key: "userToken")
+            //token = nil
             // =========================
             
 			if token != nil {

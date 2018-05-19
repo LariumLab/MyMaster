@@ -32,7 +32,7 @@ class SalonRegisterViewController: UIViewController {
 			guard let URLRegisterSalon = URL(string: serverAdr + "api/salon/signUp?\(loginText)&\(passText)") else { return }
 			URLSession.shared.dataTask(with: URLRegisterSalon) { (data, response, error) in
 				guard let data = data else { return }
-				Keychain.save(key: "userToken", data: data)
+				print(Keychain.save(key: "userToken", data: data))
 				
 			}
 		}
