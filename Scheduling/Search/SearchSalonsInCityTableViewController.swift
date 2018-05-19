@@ -11,7 +11,7 @@ import UIKit
 class SearchSalonsInCityTableViewController: UITableViewController {
     
     var city : String = ""
-    var salonsInCity : [ SalonPreview ] = [ ]
+    var salonsInCity : [ JSONSalonPreview ] = [ ]
     let cellIdentifier = "SearchSalonInCityCell"
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class SearchSalonsInCityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SearchSalonTableViewCell
 
-        let currentSalon : SalonPreview  = salonsInCity[indexPath.row]
+        let currentSalon : JSONSalonPreview  = salonsInCity[indexPath.row]
         cell.nameLabel.text = currentSalon.customName
         cell.adressLabel.text = currentSalon.address
         let gamma = blueGamma()
@@ -53,31 +53,56 @@ class SearchSalonsInCityTableViewController: UITableViewController {
         
         let salon = salonsInCity[indexPath.row]
         let salonID = salon.ID
-            let stringURL =  serverAdr + "api/getSalonInfo?salonID=" + salonID.uuidString
-            guard let URLGetSalonListInCity = URL(string: stringURL) else {
+        
+        let getSalonInfoURL =  serverAdr + "api/getSalonInfo?salonID=" + salonID.uuidString
+        let getSalonServicesURL = serverAdr + "api/getSalonServices?salonID=" + salonID.uuidString
+        
+        guard let URLGetSalonInfo = URL(string: getSalonInfoURL) else {
+                return
+        }
+        guard let URLGetSalonServices = URL(string: getSalonServicesURL) else {
+            return
+        }
+
+        let loadQueue = OperationQueue()
+
+        loadQueue.addOperation {
+            guard let data = try? Data(contentsOf: URLGetSalonInfo) else {
                 return
             }
-            URLSession.shared.dataTask(with: URLGetSalonListInCity) { (data, response, error) in
-                guard let data = data else { return }
-                do {
-                    let salonInfo = try JSONDecoder().decode(SalonInfo.self, from: data)
-                    SalonVC.currentSalon.adress = salon.address
-                    SalonVC.currentSalon.name = salon.customName
-                    SalonVC.currentSalon.ID = salon.ID.uuidString
-                    SalonVC.currentSalon.description = salonInfo.description
-                    SalonVC.currentSalon.phoneNumber = salonInfo.phoneNumber
-                    SalonVC.currentSalon.nickname = salonInfo.nickName
-                    SalonVC.currentSalon.city = self.city
-                    
-                    DispatchQueue.main.async {
-                        SalonVC.view.removeBlurLoader()
-                        SalonVC.tableView.reloadData()
-                    }
-                } catch let err {
-                    print(err)
+            do {
+                let salonInfo = try JSONDecoder().decode(JSONSalonInfo.self, from: data)
+                SalonVC.currentSalon.adress = salon.address
+                SalonVC.currentSalon.name = salon.customName
+                SalonVC.currentSalon.ID = salon.ID.uuidString
+                SalonVC.currentSalon.description = salonInfo.description
+                SalonVC.currentSalon.phoneNumber = salonInfo.phoneNumber
+                SalonVC.currentSalon.nickname = salonInfo.nickName
+                SalonVC.currentSalon.city = self.city
+            } catch let err {
+                print(err)
+            }
+        }
+
+        loadQueue.addOperation {
+            guard let data = try? Data(contentsOf: URLGetSalonServices) else {
+                return
+            }
+            do {
+                let services : [JSONService] = try JSONDecoder().decode([JSONService].self, from: data)
+                for service in services {
+                    let serv : Service = Service(salonID: service.salonID, serviceID: service.serviceID, name: service.name, description: service.description, masters: [], priceFrom: service.priceFrom, priceTo: service.priceTo)
+                    SalonVC.currentSalon.services.append(serv)
                 }
-                }.resume()
+            } catch let err {
+                print(err)
+            }
+        }
+//        self.view.showBlurLoader()
+        loadQueue.waitUntilAllOperationsAreFinished()
+//        self.view.removeBlurLoader()
+        
         self.navigationController?.pushViewController(SalonVC, animated: true)
-        SalonVC.view.showBlurLoader()
+//        SalonVC.view.showBlurLoader()
     }
 }

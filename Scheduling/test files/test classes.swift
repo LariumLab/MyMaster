@@ -113,13 +113,13 @@ class Salon : Profile{
     
 }
 
-struct SalonPreview: Codable{
+struct JSONSalonPreview: Codable{
     let customName: String
     let address: String
     let ID: UUID
 }
 
-struct SalonInfo: Codable{
+struct JSONSalonInfo: Codable{
     let nickName: String
     let phoneNumber: String
     let description: String
@@ -144,13 +144,17 @@ class Client: Profile{
 }
 
 class Service{
+    var salonID : UUID
+    var serviceID : UUID
     var name : String
     var description: String
     var masters : [Master]
     var priceFrom : String
     var priceTo : String
     
-    init(name: String, description: String, masters: [Master], priceFrom : String, priceTo : String) {
+    init(salonID: UUID, serviceID: UUID, name: String, description: String, masters: [Master], priceFrom : String, priceTo : String) {
+        self.salonID = salonID
+        self.serviceID = serviceID
         self.name = name
         self.description = description
         self.masters = masters
@@ -159,6 +163,8 @@ class Service{
     }
     
     init() {
+        salonID = UUID()
+        serviceID = UUID()
         name = ""
         description = ""
         masters = []
@@ -169,6 +175,16 @@ class Service{
     func addMaster(master: Master){
         self.masters.append(master)
     }
+}
+
+struct JSONService: Codable{
+    var salonID : UUID
+    var serviceID : UUID
+//    var masters: [JSONMaster]?
+    var name : String
+    var description: String
+    var priceFrom : String
+    var priceTo : String
 }
 
 class ClientAppointment{
@@ -210,6 +226,22 @@ class Master{
     
     func addAppointment(appointment: NoteInTable){
         self.appointments.append(appointment)
+    }
+}
+
+struct JSONMaster: Codable{
+    let salonID: UUID
+    let masterID: UUID
+    let services: [JSONService]?
+    let name: String
+    let schedule: [JSONDayInTable]
+    
+    public init(salonID: UUID, masterID: UUID, services: [JSONService]?, name: String, schedule: [JSONDayInTable]){
+        self.salonID = salonID
+        self.masterID = masterID
+        self.services = services
+        self.name = name
+        self.schedule = schedule
     }
 }
 
@@ -259,6 +291,20 @@ class DayInTable : Equatable{
                l.dayOff == r.dayOff &&
                l.timeFrom == r.timeFrom &&
                l.timeTo == r.timeTo
+    }
+}
+
+struct JSONDayInTable: Codable{
+    let name: String
+    let isDayOff: Bool
+    let startTime: String
+    let endTime: String
+    
+    public init(name: String, isDayOff: Bool, startTime: String, endTime: String){
+        self.name = name
+        self.isDayOff = isDayOff
+        self.startTime = startTime
+        self.endTime = endTime
     }
 }
 

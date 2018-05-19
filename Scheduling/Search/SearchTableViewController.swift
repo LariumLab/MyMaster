@@ -46,7 +46,7 @@ class SearchTableViewController: UITableViewController {
             URLSession.shared.dataTask(with: URLGetSalonListInCity) { (data, response, error) in
                 guard let data = data else { return }
                 do {
-                    let salonsInCity = try JSONDecoder().decode([SalonPreview].self, from: data)
+                    let salonsInCity = try JSONDecoder().decode([JSONSalonPreview].self, from: data)
                     SalonsInCityVC.salonsInCity = salonsInCity
                     DispatchQueue.main.async {
                         SalonsInCityVC.view.removeBlurLoader()
