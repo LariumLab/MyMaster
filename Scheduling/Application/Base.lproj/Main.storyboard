@@ -158,10 +158,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-uN-ace">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-uN-ace">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sns-tf-Vm4">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sns-tf-Vm4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Никнейм" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSJ-H9-pwv">
@@ -197,17 +197,28 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sns-tf-Vm4" secondAttribute="trailing" id="Gow-d0-v4V"/>
+                                    <constraint firstItem="sns-tf-Vm4" firstAttribute="leading" secondItem="gnZ-uN-ace" secondAttribute="leading" id="lzr-vh-5lI"/>
+                                    <constraint firstItem="sns-tf-Vm4" firstAttribute="top" secondItem="gnZ-uN-ace" secondAttribute="top" id="yeu-IR-iFC"/>
+                                    <constraint firstAttribute="bottom" secondItem="sns-tf-Vm4" secondAttribute="bottom" id="yf8-MH-agL"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gnZ-uN-ace" firstAttribute="width" secondItem="Rxh-fp-i1M" secondAttribute="width" id="HNZ-2j-hRa"/>
+                            <constraint firstItem="gnZ-uN-ace" firstAttribute="bottom" secondItem="yc3-0X-QQZ" secondAttribute="bottom" id="Qdb-Gi-gNK"/>
                             <constraint firstItem="gnZ-uN-ace" firstAttribute="height" secondItem="Rxh-fp-i1M" secondAttribute="height" id="RcN-zQ-aeu"/>
+                            <constraint firstItem="gnZ-uN-ace" firstAttribute="top" secondItem="Rxh-fp-i1M" secondAttribute="top" id="VyE-L6-XIC"/>
                             <constraint firstItem="sns-tf-Vm4" firstAttribute="width" secondItem="Rxh-fp-i1M" secondAttribute="width" id="YP3-80-A98"/>
                             <constraint firstItem="sns-tf-Vm4" firstAttribute="height" secondItem="Rxh-fp-i1M" secondAttribute="height" id="Zvw-zn-rtv"/>
+                            <constraint firstItem="gnZ-uN-ace" firstAttribute="trailing" secondItem="yc3-0X-QQZ" secondAttribute="trailing" id="es4-eH-mB9"/>
+                            <constraint firstItem="gnZ-uN-ace" firstAttribute="leading" secondItem="yc3-0X-QQZ" secondAttribute="leading" id="ziU-iv-mmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yc3-0X-QQZ"/>
                     </view>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="login" destination="FSJ-H9-pwv" id="7nU-y0-JZR"/>
                         <outlet property="password" destination="XTx-5U-UBi" id="xjJ-LC-xNx"/>
@@ -280,9 +291,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byc-M8-xSL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSc-H6-vMN">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSc-H6-vMN">
                                         <rect key="frame" x="0.0" y="-35" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-Vb-qpS">
                                                 <rect key="frame" x="155" y="185" width="60" height="21"/>
@@ -338,12 +348,23 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="wSc-H6-vMN" firstAttribute="leading" secondItem="Byc-M8-xSL" secondAttribute="leading" id="4IJ-pn-vNy"/>
+                                    <constraint firstAttribute="bottom" secondItem="wSc-H6-vMN" secondAttribute="bottom" id="51i-l8-gkW"/>
+                                    <constraint firstAttribute="trailing" secondItem="wSc-H6-vMN" secondAttribute="trailing" id="Ehq-qn-LAL"/>
+                                    <constraint firstItem="wSc-H6-vMN" firstAttribute="top" secondItem="Byc-M8-xSL" secondAttribute="top" id="pFp-Sy-cPE"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Byc-M8-xSL" firstAttribute="width" secondItem="QaR-KA-ol4" secondAttribute="width" id="6ga-Uq-WyE"/>
                             <constraint firstItem="Byc-M8-xSL" firstAttribute="height" secondItem="QaR-KA-ol4" secondAttribute="height" id="IZW-Ak-rHI"/>
+                            <constraint firstItem="wSc-H6-vMN" firstAttribute="width" secondItem="QaR-KA-ol4" secondAttribute="width" id="aPn-Zy-ixD"/>
+                            <constraint firstItem="Byc-M8-xSL" firstAttribute="top" secondItem="QaR-KA-ol4" secondAttribute="top" id="buh-1j-kun"/>
+                            <constraint firstItem="Byc-M8-xSL" firstAttribute="trailing" secondItem="nRq-G8-Dtb" secondAttribute="trailing" id="fTU-nM-x7Z"/>
+                            <constraint firstItem="Byc-M8-xSL" firstAttribute="leading" secondItem="nRq-G8-Dtb" secondAttribute="leading" id="g3M-XZ-01A"/>
+                            <constraint firstItem="Byc-M8-xSL" firstAttribute="bottom" secondItem="nRq-G8-Dtb" secondAttribute="bottom" id="lr9-P5-aTM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nRq-G8-Dtb"/>
                     </view>
