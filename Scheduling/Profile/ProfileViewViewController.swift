@@ -15,7 +15,8 @@ class ProfileViewViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
         let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        _ = Keychain._delete(key: "userToken")
+        let debug = Keychain.delete(key: "userToken")
+		print(debug)
         tabBar.viewControllers?.removeAll()
         self.dismiss(animated: false, completion: nil)
         present(loginNavigationC, animated: true, completion: nil)

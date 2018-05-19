@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 	
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var login: UITextField!
-	@IBOutlet weak var testLabel: UILabel!
+
 
     
 	override func viewDidLoad() {
@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
         ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
         loadData(acc: viewAccount)
         present(TabBarC, animated: false, completion: nil)
-        testLabel.text = "OK"
     }
     
 	@IBAction func signIn(_ sender: Any) {
@@ -86,10 +85,6 @@ class LoginViewController: UIViewController {
                 // ========
                 
                 present(TabBarC, animated: false, completion: nil)
-                testLabel.text = "OK"
-            }
-            else {
-                testLabel.text = "Fail"
             }
         }
 	}
