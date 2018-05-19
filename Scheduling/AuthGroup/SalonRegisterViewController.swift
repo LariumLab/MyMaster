@@ -33,8 +33,11 @@ class SalonRegisterViewController: UIViewController {
 			URLSession.shared.dataTask(with: URLRegisterSalon) { (data, response, error) in
 				guard let data = data else { return }
 				print(Keychain.save(key: "userToken", data: data))
-				
 			}
+		} else {
+			let alert = UIAlertController(title: "Пароли не совпадают", message: "Проверьте правильность ввода пароля", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+			self.present(alert, animated: true)
 		}
 	}
 	

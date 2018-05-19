@@ -30,6 +30,21 @@ class RegisterViewController: UIViewController {
 //        if (users[login.text!] == nil && (password.text! == passwordConfirmation.text!)) {
 //            users[login.text!] = password.text!
 //        }
+		if login.text!.isValid(regex: .phone) {
+			if password.text == passwordConfirmation.text {
+				//SEND REQ TO SERV AND GET TOKEN
+			} else {
+				//PASSWORD ARE NOT EQUAL TO PASSCONFIRNATION
+				let alert = UIAlertController(title: "Пароли не совпадают", message: "Проверьте правильность ввода пароля", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+				self.present(alert, animated: true)
+			}
+		} else {
+			// PHONE IS NOT PHONE
+			let alert = UIAlertController(title: "Неправильный номер", message: "Проверьте правильность ввода номера телефона", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+			self.present(alert, animated: true)
+		}
 	}
 	
     /*
