@@ -9,7 +9,7 @@
 import UIKit
 
 class ListAndAddTableViewCell: UITableViewCell {
-   
+    
     @IBOutlet weak var listNameLabel: UILabel!
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var addButton: UIButton!
@@ -43,13 +43,14 @@ class ListAndAddTableViewCell: UITableViewCell {
             
             let addFromListAlertAction = UIAlertAction(title: "Добавить из списка", style: .default) { (alert) in
                 let MastersListTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileMastersList") as! ProfileMastersListTableViewController
-//                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
+                //                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
                 CurrentAddNewServiceVC.navigationController?.pushViewController(MastersListTableVC, animated: true)
             }
             let addNewMasterAlertAction = UIAlertAction(title: "Создать нового", style: .default) { (alert) in
                 
                 let addNewMasterTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileAddNewMaster") as! ProfileAddNewMasterTableViewController
-//                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
+                //                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
+                addNewMasterTableVC.salonID = CurrentAddNewServiceVC.creatingService.salonID
                 CurrentAddNewServiceVC.navigationController?.pushViewController(addNewMasterTableVC, animated: true)
             }
             
@@ -62,20 +63,20 @@ class ListAndAddTableViewCell: UITableViewCell {
         }
     }
     
-//    func MakeEffects(viewColor: UIColor, addButtonColor: UIColor, radius: CGFloat ) {
-//        addButton.tintColor = addButtonColor
-//        colorView.layer.cornerRadius = radius
-//        colorView.backgroundColor = viewColor
-//    }
+    //    func MakeEffects(viewColor: UIColor, addButtonColor: UIColor, radius: CGFloat ) {
+    //        addButton.tintColor = addButtonColor
+    //        colorView.layer.cornerRadius = radius
+    //        colorView.backgroundColor = viewColor
+    //    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

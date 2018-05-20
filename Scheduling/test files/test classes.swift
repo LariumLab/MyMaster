@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 struct blueGamma {
-//    let whiteColor = UIColor(red:0.93, green:0.93, blue:0.92, alpha:1.0)
-//    let whiteColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
-//    let whiteColor = UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)
+    //    let whiteColor = UIColor(red:0.93, green:0.93, blue:0.92, alpha:1.0)
+    //    let whiteColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
+    //    let whiteColor = UIColor(red:1.00, green:0.98, blue:0.98, alpha:1.0)
     let whiteColor = UIColor(red:1.00, green:1.00, blue:0.98, alpha:1.0)
     let skyBlue = UIColor(red:0.78, green:0.95, blue:0.95, alpha:0.8)
-//    let biegeColor = UIColor(red:0.95, green:0.86, blue:0.80, alpha:1.0)
+    //    let biegeColor = UIColor(red:0.95, green:0.86, blue:0.80, alpha:1.0)
     let biegeColor = UIColor(red:1.00, green:0.96, blue:0.94, alpha:1.0)
     let lightBlue = UIColor(red:0.57, green:0.78, blue:0.76, alpha:1.0)
     let mediumBlue = UIColor(red:0.27, green:0.70, blue:0.71, alpha:1.0)
@@ -47,7 +47,7 @@ enum ProfileType {
 }
 
 class Account{
-
+    
     var login : String
     var password : String
     var profileType : ProfileType
@@ -180,7 +180,7 @@ class Service{
 struct JSONService: Codable{
     var salonID : UUID
     var serviceID : UUID
-//    var masters: [JSONMaster]?
+    //    var masters: [JSONMaster]?
     var name : String
     var description: String
     var priceFrom : String
@@ -207,10 +207,10 @@ class ClientAppointment{
 
 class Master{
     var name : String
-//    var timeTable : TimeTable
+    //    var timeTable : TimeTable
     var timeTable : [DayInTable]
     var appointments : [NoteInTable]
-
+    
     init(name: String, /*timeTable: TimeTable, */ timeTable: [DayInTable], appointments: [NoteInTable]) {
         self.name = name
         self.timeTable = timeTable
@@ -219,7 +219,7 @@ class Master{
     
     init() {
         name = ""
-//        timeTable = TimeTable()
+        //        timeTable = TimeTable()
         timeTable = []
         appointments = []
     }
@@ -243,6 +243,11 @@ struct JSONMaster: Codable{
         self.name = name
         self.schedule = schedule
     }
+}
+
+struct JSONMasterInfo: Codable{
+    let name : String
+    let schedule: [JSONDayInTable]
 }
 
 class NoteInTable : Equatable{
@@ -288,9 +293,9 @@ class DayInTable : Equatable{
     
     static func == (l: DayInTable, r: DayInTable) -> Bool{
         return l.dayName == r.dayName &&
-               l.dayOff == r.dayOff &&
-               l.timeFrom == r.timeFrom &&
-               l.timeTo == r.timeTo
+            l.dayOff == r.dayOff &&
+            l.timeFrom == r.timeFrom &&
+            l.timeTo == r.timeTo
     }
 }
 

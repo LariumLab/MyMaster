@@ -23,6 +23,7 @@ class NameWithSwitchTableViewCell: UITableViewCell {
                 tvc.switchBoolVector[cellNumberInSection] = true
             }
             tvc.updatePositionsOfTrueInSwitchBoolVector()
+            tvc.startAndEndTextFields = []
             tvc.tableView.reloadData()
         }
     }
@@ -33,10 +34,10 @@ class NameWithSwitchTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
