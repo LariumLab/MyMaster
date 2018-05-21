@@ -13,6 +13,7 @@
 		F8EC03BB208BADF5003B5CB0 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */; };
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
 		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
+		FA07D6F020B2C3D800D10ADE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07D6EF20B2C3D800D10ADE /* UIViewControllerExtensions.swift */; };
 		FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */; };
 		FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A02041B2D5000BA2F5 /* Main.storyboard */; };
 		FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		F8EC03BA208BADF5003B5CB0 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA07D6EF20B2C3D800D10ADE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		FA0C84972041B2D5000BA2F5 /* Scheduling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0C84A12041B2D5000BA2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				F85AF2B22091EB7D009387BD /* UIViewExtrnsions.swift */,
 				FAA83E8F20B045A500EE105A /* StringExtensions.swift */,
+				FA07D6EF20B2C3D800D10ADE /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */,
 				FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */,
 				FA46A6CB207E79860094FF0C /* SearchSalonTableViewController.swift in Sources */,
+				FA07D6F020B2C3D800D10ADE /* UIViewControllerExtensions.swift in Sources */,
 				FA571DFB206685110078DF9A /* DescriptionTableViewCell.swift in Sources */,
 				FA571E07206686740078DF9A /* NameWithDisclosureIndicatorTableViewCell.swift in Sources */,
 				F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */,

@@ -9,8 +9,6 @@
 import UIKit
 import Foundation
 
-
-
 extension UIView{
 	func showBlurLoader(){
 		let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)

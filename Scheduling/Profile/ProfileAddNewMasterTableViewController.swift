@@ -54,6 +54,14 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
                     present(alertC, animated: true, completion: nil)
                     return
                 }
+                
+                if startT >= endT {
+                    let alertC = UIAlertController(title: "Ошибка при создании мастера", message: "Одно из полей \"время начала рабочего дня\" больше или равно полю \"время окончения рабочего дня\"", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                    alertC.addAction(okAction)
+                    present(alertC, animated: true, completion: nil)
+                    return
+                }
             }
             
             let JSONDay = JSONDayInTable(name: day, isDayOff: switchBoolVector[dayI], startTime: startT, endTime: endT)
@@ -128,6 +136,8 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
         
         let createMasterButton = UIBarButtonItem(title: "Создать", style: .done, target: self, action: #selector(SaveMasterButton))
         navigationItem.rightBarButtonItem = createMasterButton
