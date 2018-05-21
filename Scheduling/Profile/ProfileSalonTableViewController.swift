@@ -93,7 +93,9 @@ class ProfileSalonTableViewController: UITableViewController {
         case 2...(registeredSalon.services.count + 2):
             let cell = tableView.dequeueReusableCell(withIdentifier: ServiceCellIdentifier, for: indexPath) as! NameEditingDisclosureTableViewCell
             cell.nameLabel.text = registeredSalon.services[indexPath.row-2].name
-            cell.editLabel.text = "Редактировать"
+            // =========
+            cell.editLabel.text = ""
+            cell.accessoryType = .none
             return cell
         default:
             let cell = UITableViewCell()
@@ -101,12 +103,12 @@ class ProfileSalonTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row >= 2 {
-            let addNewServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
-            addNewServiceVC.creatingService = registeredSalon.services[indexPath.row-2]
-            self.navigationController?.pushViewController(addNewServiceVC, animated: true)
-        }
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        if indexPath.row >= 2 {
+//            let addNewServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
+//            addNewServiceVC.creatingService = registeredSalon.services[indexPath.row-2]
+//            self.navigationController?.pushViewController(addNewServiceVC, animated: true)
+//        }
+//    }
 }

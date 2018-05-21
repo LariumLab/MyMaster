@@ -8,7 +8,7 @@
 
 import Foundation
 
-let dynamicIP = "192.168.1.12"
+let dynamicIP = "192.168.0.102"
 let serverAdr = "http://" + dynamicIP + ":8080/"
 let viewAccount = Account(login: "", password: "", profileType: .view)
 // MARK: - Common data
@@ -19,8 +19,8 @@ var cities : [String] = [] // необходимо добавить удален
 
 // MARK: - Salon data if profileType == true
 var salon = Salon()
-var servicesList : [Service] = []
-var mastersList : [Master] = []
+//var servicesList : [Service] = []
+//var mastersList : [Master] = []
 
 // MARK: - CLient data if profileType == false
 var client = Client()
@@ -32,8 +32,8 @@ func loadData(acc: Account){
     switch acc.profileType {
     case .salon:
         salon = TestSalon1  // ЗАГРУЗКА - запрос логин/пароль, ответ - салон
-        servicesList = salon.services
-        mastersList = salon.masters
+//        servicesList = salon.services
+//        mastersList = salon.masters
         profileType = ProfileType.salon
     case .client:
         client = Client1 // аналогично

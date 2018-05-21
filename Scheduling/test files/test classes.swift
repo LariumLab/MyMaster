@@ -106,20 +106,27 @@ class Salon : Profile{
     func addService(service: Service){
         self.services.append(service)
     }
-    
+
     func addMasterToMastersList(master: Master){
         masters.append(master)
     }
-    
 }
 
-struct JSONSalonPreview: Codable{
+struct JSONCreateSalonInfo: Codable {
+    let customName: String
+    let phoneNumber: String
+    let description: String
+    let city: String
+    let address: String
+}
+
+struct JSONSalonPreview: Codable {
     let customName: String
     let address: String
     let ID: UUID
 }
 
-struct JSONSalonInfo: Codable{
+struct JSONSalonInfo: Codable {
     let nickName: String
     let phoneNumber: String
     let description: String
@@ -174,6 +181,27 @@ class Service{
     
     func addMaster(master: Master){
         self.masters.append(master)
+    }
+}
+
+struct JSONCreateServiceInfo : Encodable {
+    let name : String
+    let description: String
+    let priceFrom : String
+    let priceTo : String
+
+    init(){
+        self.name = ""
+        self.description = ""
+        self.priceFrom = ""
+        self.priceTo = ""
+    }
+    
+    init(name:String, description: String, priceFrom: String, priceTo: String){
+        self.name = name
+        self.description = description
+        self.priceFrom = priceFrom
+        self.priceTo = priceTo
     }
 }
 
@@ -300,17 +328,19 @@ class DayInTable : Equatable{
 }
 
 struct JSONDayInTable: Codable{
+    var masterID: UUID?
     let name: String
     let isDayOff: Bool
     let startTime: String
     let endTime: String
+    let order: Int
     
-    public init(name: String, isDayOff: Bool, startTime: String, endTime: String){
-        self.name = name
-        self.isDayOff = isDayOff
-        self.startTime = startTime
-        self.endTime = endTime
-    }
+//    public init(name: String, isDayOff: Bool, startTime: String, endTime: String){
+//        self.name = name
+//        self.isDayOff = isDayOff
+//        self.startTime = startTime
+//        self.endTime = endTime
+//    }
 }
 
 class SalonRequest {

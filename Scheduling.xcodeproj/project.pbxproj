@@ -14,6 +14,9 @@
 		F8F129B9206A64AF00AD8594 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129B8206A64AF00AD8594 /* LoginViewController.swift */; };
 		F8F129BB206A667B00AD8594 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F129BA206A667B00AD8594 /* RegisterViewController.swift */; };
 		FA07D6F020B2C3D800D10ADE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07D6EF20B2C3D800D10ADE /* UIViewControllerExtensions.swift */; };
+		FA07D6F320B2D63A00D10ADE /* ClientRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07D6F220B2D63A00D10ADE /* ClientRegisterTableViewController.swift */; };
+		FA07D6F720B2D72C00D10ADE /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07D6F520B2D72C00D10ADE /* ButtonTableViewCell.swift */; };
+		FA07D6F820B2D72C00D10ADE /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA07D6F620B2D72C00D10ADE /* ButtonTableViewCell.xib */; };
 		FA0C849B2041B2D5000BA2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */; };
 		FA0C84A22041B2D5000BA2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A02041B2D5000BA2F5 /* Main.storyboard */; };
 		FA0C84A42041B2D7000BA2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0C84A32041B2D7000BA2F5 /* Assets.xcassets */; };
@@ -84,6 +87,7 @@
 		FAE3C30B208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3C309208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift */; };
 		FAE3C30C208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE3C30A208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib */; };
 		FAE829CD20964DE700D34DB7 /* CreateRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE829CC20964DE700D34DB7 /* CreateRequestTableViewController.swift */; };
+		FAFF867920B2FA0C006BC03E /* SalonRegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF867820B2FA0C006BC03E /* SalonRegisterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,9 @@
 		F8F129B8206A64AF00AD8594 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8F129BA206A667B00AD8594 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA07D6EF20B2C3D800D10ADE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		FA07D6F220B2D63A00D10ADE /* ClientRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRegisterTableViewController.swift; sourceTree = "<group>"; };
+		FA07D6F520B2D72C00D10ADE /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		FA07D6F620B2D72C00D10ADE /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		FA0C84972041B2D5000BA2F5 /* Scheduling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0C849A2041B2D5000BA2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0C84A12041B2D5000BA2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +173,7 @@
 		FAE3C309208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDayDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		FAE3C30A208243E7006C7783 /* WorkDayDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkDayDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		FAE829CC20964DE700D34DB7 /* CreateRequestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestTableViewController.swift; sourceTree = "<group>"; };
+		FAFF867820B2FA0C006BC03E /* SalonRegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonRegisterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +212,20 @@
 				F8F129B8206A64AF00AD8594 /* LoginViewController.swift */,
 				F8F129BA206A667B00AD8594 /* RegisterViewController.swift */,
 				F8854AA320A3794E00AF7FE5 /* SalonRegisterViewController.swift */,
+				FA07D6F220B2D63A00D10ADE /* ClientRegisterTableViewController.swift */,
+				FAFF867820B2FA0C006BC03E /* SalonRegisterTableViewController.swift */,
+				FA07D6F420B2D70E00D10ADE /* TableCells */,
 			);
 			path = AuthGroup;
+			sourceTree = "<group>";
+		};
+		FA07D6F420B2D70E00D10ADE /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA07D6F520B2D72C00D10ADE /* ButtonTableViewCell.swift */,
+				FA07D6F620B2D72C00D10ADE /* ButtonTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		FA0C848E2041B2D4000BA2F5 = {
@@ -436,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8A23E4206A865B000C4EEA /* SalonDescriptionTableViewCell.xib in Resources */,
+				FA07D6F820B2D72C00D10ADE /* ButtonTableViewCell.xib in Resources */,
 				FA571DF8206684D40078DF9A /* TextFieldTableViewCell.xib in Resources */,
 				FA9BDE67206DF2390068A86E /* SegmentedControlTableViewCell.xib in Resources */,
 				FA0C84A72041B2D7000BA2F5 /* LaunchScreen.storyboard in Resources */,
@@ -475,6 +496,7 @@
 			files = (
 				FAE3C30B208243E7006C7783 /* WorkDayDescriptionTableViewCell.swift in Sources */,
 				F85AF2B32091EB7D009387BD /* UIViewExtrnsions.swift in Sources */,
+				FAFF867920B2FA0C006BC03E /* SalonRegisterTableViewController.swift in Sources */,
 				FA77C986208209AF00580352 /* ScheduleTableViewController.swift in Sources */,
 				FA655337207E6F3500171326 /* SearchSalonTableViewCell.swift in Sources */,
 				FA8A23E6206A8C18000C4EEA /* ProfileSalonTableViewController.swift in Sources */,
@@ -492,6 +514,7 @@
 				FA487BF1206E45A4008B87C4 /* SetWorkTimeForDayTableViewCell.swift in Sources */,
 				FA655334207E591F00171326 /* SearchSalonsInCityTableViewController.swift in Sources */,
 				FA77C97E207FA9EF00580352 /* SearchServiceInSalonTableViewController.swift in Sources */,
+				FA07D6F320B2D63A00D10ADE /* ClientRegisterTableViewController.swift in Sources */,
 				FA9BDE6A206DF6120068A86E /* SetTimeOfWorkDayTableViewCell.swift in Sources */,
 				FAAE1A83204EB10E00AE14C7 /* test classes.swift in Sources */,
 				FA0F43752090D0A100508B8B /* AddRequestTableViewCell.swift in Sources */,
@@ -505,6 +528,7 @@
 				F8854AA420A3794E00AF7FE5 /* SalonRegisterViewController.swift in Sources */,
 				FA9BDE62206DF1550068A86E /* NameWithSwitchTableViewCell.swift in Sources */,
 				FA1B74C1208DEB43009A10C8 /* SalonRequestTableViewCell.swift in Sources */,
+				FA07D6F720B2D72C00D10ADE /* ButtonTableViewCell.swift in Sources */,
 				FA571DF7206684D40078DF9A /* TextFieldTableViewCell.swift in Sources */,
 				FADADAFF2066CBAB00956F15 /* ProfileAddNewServiceTableViewController.swift in Sources */,
 				FA571E032066862A0078DF9A /* ListAndAddTableViewCell.swift in Sources */,

@@ -42,15 +42,43 @@ class ListAndAddTableViewCell: UITableViewCell {
             let CurrentAddNewServiceVC = self.currentTableVC as!ProfileAddNewServiceTableViewController
             
             let addFromListAlertAction = UIAlertAction(title: "Добавить из списка", style: .default) { (alert) in
+                
                 let MastersListTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileMastersList") as! ProfileMastersListTableViewController
-                //                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
+                
+                let getMastersListURL = serverAdr + "api/getSalonMasters?salonID=" + "4ad6b313-3026-43f8-99df-b969cdc1d95d"
+                    // salon.ID
+                guard let URLgetMastersList = URL(string: getMastersListURL) else {
+                    return
+                }
+                URLSession.shared.dataTask(with: URLgetMastersList) { (data, response, error) in
+                    guard let data = data else { return }
+                    do {
+                        let mastersList : [JSONMaster] = try JSONDecoder().decode([JSONMaster].self, from: data)
+                        for master in mastersList {
+                            MastersListTableVC.mastersList.append( (master.name, master.masterID.uuidString) )
+                        }
+                                                
+                        DispatchQueue.main.async {
+                            MastersListTableVC.view.removeBlurLoader()
+                            MastersListTableVC.tableView.reloadData()
+                        }
+                    } catch let err {
+                        print(err)
+                    }
+                    }.resume()
+                
                 CurrentAddNewServiceVC.navigationController?.pushViewController(MastersListTableVC, animated: true)
+                MastersListTableVC.view.showBlurLoader()
+                
+                //                MastersListTableVC.currentService = CurrentAddNewServiceVC.creatingService
+//                CurrentAddNewServiceVC.navigationController?.pushViewController(MastersListTableVC, animated: true)
             }
             let addNewMasterAlertAction = UIAlertAction(title: "Создать нового", style: .default) { (alert) in
                 
                 let addNewMasterTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileAddNewMaster") as! ProfileAddNewMasterTableViewController
                 //                addNewMasterTableVC.currentServce = CurrentAddNewServiceVC.creatingService
-                addNewMasterTableVC.salonID = CurrentAddNewServiceVC.creatingService.salonID
+                addNewMasterTableVC.salonID =
+                    CurrentAddNewServiceVC.salonID
                 CurrentAddNewServiceVC.navigationController?.pushViewController(addNewMasterTableVC, animated: true)
             }
             

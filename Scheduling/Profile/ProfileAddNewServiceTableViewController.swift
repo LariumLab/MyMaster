@@ -10,7 +10,86 @@ import UIKit
 
 class ProfileAddNewServiceTableViewController: UITableViewController {
 
-    var creatingService = Service()
+    @objc func addService() {
+        let name = nameTextField.text!
+        let descriptionServ = descriptionTextView.text!
+        let priceFrom = priceFromTextField.text!
+        let priceTo = priceToTextField.text!
+        
+        if name.isEmpty || descriptionServ.isEmpty || priceFrom.isEmpty || priceTo.isEmpty  {
+            // ALERT
+        }
+        
+        let sendServiceInfoURL = serverAdr + "api/salon/addService?token=" + "5411aa4b553a4fd6331dbe9bb7f5abc6"
+        //Keychain.load(key: "userToken")
+        
+        let salonInfo = JSONCreateServiceInfo(name: name, description: descriptionServ, priceFrom: priceFrom, priceTo: priceTo)
+        let salonInfoInJSON = try? JSONEncoder().encode(salonInfo)
+        
+        guard let URLsendServiceInfo = URL(string: sendServiceInfoURL) else {
+            return
+        }
+        
+        guard salonInfoInJSON != nil  else {
+            return
+        }
+        
+        var requestSendSalonInfo = URLRequest(url: URLsendServiceInfo)
+        requestSendSalonInfo.httpMethod = "POST"
+        requestSendSalonInfo.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        requestSendSalonInfo.httpBody = salonInfoInJSON
+        
+        let task1 = URLSession.shared.dataTask(with: requestSendSalonInfo){ data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            print("RESPONSE")
+            print(response ?? "response")
+            
+            let serviceID = String(data: data, encoding: .utf8)
+            
+            for master in self.mastersIDAndName {
+                var setMastertiServiceURL = serverAdr + "/api/salon/addMasterToService?token="
+                    //Keychain.load(key: "userToken")
+                    setMastertiServiceURL += "5411aa4b553a4fd6331dbe9bb7f5abc6"
+                    setMastertiServiceURL += "&serviceID="
+                    setMastertiServiceURL += serviceID!
+                    setMastertiServiceURL += "&masterID="
+                    setMastertiServiceURL += master.1
+                
+                guard let URLsetMastertiService = URL(string: setMastertiServiceURL) else {
+                    return
+                }
+                var requestSetupMastersToService = URLRequest(url: URLsetMastertiService)
+                requestSetupMastersToService.httpMethod = "POST"
+                
+                let task2 = URLSession.shared.dataTask(with: requestSendSalonInfo){ data, response, error in
+                    guard let data = data, error == nil else {
+                        print(error?.localizedDescription ?? "No data")
+                        return
+                    }
+                    print("RESPONSE")
+                    print(response ?? "response")
+                    
+                }
+                task2.resume()
+            }
+            
+        }
+        task1.resume()
+    }
+    
+    var nameTextField = UITextField()
+    var descriptionTextView = UITextView()
+    var priceFromTextField = UITextField()
+    var priceToTextField = UITextField()
+    
+//    var creatingService = Service()
+//    var crService = JSONCreateSalonInfo()
+    
+    var mastersIDAndName : [(String, String)] = [] // (name, ID)
+    var salonID = UUID()
     
     let serviceNameCellIdentifier = "AddServiceNameCell"
     let serviceDescriptionCellIdentifier = "AddServiceDescriptionCell"
@@ -21,6 +100,9 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let createServiceButton = UIBarButtonItem(title: "Создать", style: .done, target: self, action: #selector(addService))
+        navigationItem.rightBarButtonItem = createServiceButton
+        
         tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: serviceNameCellIdentifier)
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: serviceDescriptionCellIdentifier)
         tableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: servicePriceCellIdentifier)
@@ -32,6 +114,10 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        print(mastersIDAndName)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,7 +143,7 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         case 0...2:
             return 1
         case 3:
-            return creatingService.masters.count + 1
+            return mastersIDAndName.count + 1
         default:
             return 0
         }
@@ -67,58 +153,40 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceNameCellIdentifier, for: indexPath) as! TextFieldTableViewCell
-            cell.textField.text = creatingService.name
+            cell.textField.text = ""
             let gamma = blueGamma()
             gamma.makeViewStyle(view: cell.textField, color: gamma.whiteColor, radius: 5)
-//            cell.textField.backgroundColor = blueGamma().whiteColor
-//            cell.textField.layer.cornerRadius = 5
-//            cell.textField.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.textField.layer.borderWidth = 1
+            nameTextField = cell.textField
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceDescriptionCellIdentifier, for: indexPath) as! DescriptionTableViewCell
-            cell.descriptionTextView.text = creatingService.description
+            cell.descriptionTextView.text = ""
             let gamma = blueGamma()
             gamma.makeViewStyle(view: cell.descriptionTextView, color: gamma.whiteColor, radius: 5)
-//            cell.descriptionTextView.backgroundColor = blueGamma().whiteColor
-//            cell.descriptionTextView.layer.cornerRadius = 5
-//            cell.descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.descriptionTextView.layer.borderWidth = 1
+            descriptionTextView = cell.descriptionTextView
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: servicePriceCellIdentifier, for: indexPath) as! PriceTableViewCell
-            cell.priceFromTextField.text = creatingService.priceFrom
+            cell.priceFromTextField.text = ""
             let gamma = blueGamma()
             gamma.makeViewStyle(view: cell.priceToTextField, color: gamma.whiteColor, radius: 5)
             gamma.makeViewStyle(view: cell.priceFromTextField, color: gamma.whiteColor, radius: 5)
-//
-//            cell.priceFromTextField.backgroundColor = blueGamma().whiteColor
-//            cell.priceFromTextField.layer.cornerRadius = 5
-//            cell.priceFromTextField.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.priceFromTextField.layer.borderWidth = 1
-           
-//            cell.priceToTextField.text = creatingService.priceTo
-//            cell.priceToTextField.backgroundColor = blueGamma().whiteColor
-//            cell.priceToTextField.layer.cornerRadius = 5
-//            cell.priceToTextField.layer.borderColor = UIColor.lightGray.cgColor
-//            cell.priceToTextField.layer.borderWidth = 1
+            priceFromTextField = cell.priceFromTextField
+            priceToTextField = cell.priceToTextField
             return cell
         case 3:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: serviceListNameCellIdentifier, for: indexPath) as! ListAndAddTableViewCell
                 cell.initialize(functionType: .addMaster, currentTableVC: self, listName: "Мастера:")
-//                    blueGamma().biegeColor
                 let gamma = blueGamma()
                 gamma.makeViewStyle(view: cell.colorView, color: gamma.skyBlue, radius: 5)
                 cell.addButton.tintColor = gamma.darkBlue
-//                cell.MakeEffects(viewColor: blueGamma().skyBlue, addButtonColor: blueGamma().darkBlue, radius: 5)
-//                cell.colorView.layer.borderColor = UIColor.lightGray.cgColor
-//                cell.colorView.layer.borderWidth = 1
+
                 return cell
             }
             else{
             let cell = tableView.dequeueReusableCell(withIdentifier: serviceMasterInListCellIdentifier, for: indexPath) as! NameWithDisclosureIndicatorTableViewCell
-            cell.nameLabel.text = creatingService.masters[indexPath.row-1].name
+            cell.nameLabel.text = mastersIDAndName[indexPath.row-1].0
                 return cell
             }
         default:
