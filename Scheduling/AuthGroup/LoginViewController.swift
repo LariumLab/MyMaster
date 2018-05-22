@@ -10,19 +10,87 @@ import UIKit
 
 class LoginViewController: UIViewController {
 	
-	@IBOutlet weak var password: UITextField!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var password: UITextField!
 	@IBOutlet weak var login: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var justViewLabel: UILabel!
+    @IBOutlet weak var justViewButton: UIButton!
+    @IBOutlet weak var createClientLabel: UILabel!
+    @IBOutlet weak var createClientButton: UIButton!
+    @IBOutlet weak var createSalonLabel: UILabel!
+    @IBOutlet weak var createSalonButton: UIButton!
+    
+    func setConstraints() {
+        
+        let textFields : [UITextField] = [login, password]
+        var buttons : [UIButton] = [justViewButton, createClientButton, createSalonButton]
+        var labels : [UILabel] = [justViewLabel, createClientLabel, createSalonLabel]
+        
+        login.translatesAutoresizingMaskIntoConstraints = false
+        password.translatesAutoresizingMaskIntoConstraints = false
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        justViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        justViewButton.translatesAutoresizingMaskIntoConstraints = false
+        createClientLabel.translatesAutoresizingMaskIntoConstraints = false
+        createClientButton.translatesAutoresizingMaskIntoConstraints = false
+        createSalonLabel.translatesAutoresizingMaskIntoConstraints = false
+        createSalonButton.translatesAutoresizingMaskIntoConstraints = false
 
+        let verticalConstraintForLogin = NSLayoutConstraint(item: login, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 50)
+        let verticalConstraintForPass = NSLayoutConstraint(item: password, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: login, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 25)
+        view.addConstraints([verticalConstraintForLogin, verticalConstraintForPass])
+        
+        for textField in textFields {
+            let horizontalConstraint = NSLayoutConstraint(item: textField, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+            let widthConstraint = NSLayoutConstraint(item: textField, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width )
+            view.addConstraints([horizontalConstraint, widthConstraint])
+        }
+        
+        // signin
+        let verticalConstraintForSignIn = NSLayoutConstraint(item: signInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: password, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 25)
+        let horizontalConstraintForSignIn = NSLayoutConstraint(item: signInButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let widthConstraintForSignIn = NSLayoutConstraint(item: signInButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width )
+        view.addConstraints([verticalConstraintForSignIn ,horizontalConstraintForSignIn, widthConstraintForSignIn])
 
+        // JustViewLabel
+        let verticalConstraintForJustView = NSLayoutConstraint(item: justViewLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: signInButton, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
+        let horizontalConstraintForJustView = NSLayoutConstraint(item: justViewLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let widthConstraintForJustView = NSLayoutConstraint(item: justViewLabel, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width )
+        view.addConstraints([verticalConstraintForJustView ,horizontalConstraintForJustView, widthConstraintForJustView])
+        
+        updateViewConstraints()
+        
+        for i in 0...2 {
+            
+            let verticalConstraintButton = NSLayoutConstraint(item: buttons[i], attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: labels[i], attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 10)
+            let widthConstraintButton = NSLayoutConstraint(item: buttons[i], attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width)
+            let horizontalConstraintButton = NSLayoutConstraint(item: buttons[i], attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+            
+            view.addConstraints([verticalConstraintButton, horizontalConstraintButton, widthConstraintButton])
+            
+            if i == 2 {
+                continue
+            }
+            
+            let verticalConstraintLabel = NSLayoutConstraint(item: labels[i+1], attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttons[i], attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 25)
+            let widthConstraintLabel = NSLayoutConstraint(item: labels[i+1], attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width)
+            let horizontalConstraintLabel = NSLayoutConstraint(item: labels[i+1], attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+            view.addConstraints([verticalConstraintLabel, horizontalConstraintLabel, widthConstraintLabel])
+        }
+        
+        updateViewConstraints()
+        
+    }
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
+        setConstraints()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func LoginWithoutRegistration(_ sender: UIButton) {

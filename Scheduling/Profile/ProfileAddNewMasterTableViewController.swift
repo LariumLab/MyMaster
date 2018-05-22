@@ -64,14 +64,16 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
                 }
             }
             
-            let JSONDay = JSONDayInTable(name: day, isDayOff: switchBoolVector[dayI], startTime: startT, endTime: endT)
+            let JSONDay = JSONDayInTable(masterID: nil, name: day, isDayOff: switchBoolVector[dayI], startTime: startT, endTime: endT, order: dayI)
+//                JSONDayInTable(name: day, isDayOff: switchBoolVector[dayI], startTime: startT, endTime: endT)
             schedule.append(JSONDay)
             dayI += 1
         }
         
         let createdMasterInfo = JSONMasterInfo(name: name, schedule: schedule)
         let data = try? JSONEncoder().encode(createdMasterInfo)
-        let postMasterInfoURL =  serverAdr + "api/salon/addNewMaster?token=" + String(data: Keychain.load(key: "userToken")!, encoding: .utf8)!
+        let postMasterInfoURL =  serverAdr + "api/salon/addNewMaster?token=" + "S37b0b78dc4dd4087e141c9a82406c33d"
+            //String(data: Keychain.load(key: "userToken")!, encoding: .utf8)!
         let URLPostMasterInfo = URL(string: postMasterInfoURL)
         guard ( URLPostMasterInfo != nil ) && ( data != nil ) else {
             return
@@ -79,6 +81,7 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
         
         var request = URLRequest(url: URLPostMasterInfo!)
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = data
         //===
         print(String(data: data!, encoding: .utf8)!)
