@@ -44,7 +44,6 @@ class InitialViewController: UIViewController {
             
 			if token != nil {
                 let stringProfileType = String(data: Keychain.load(key: "profileType")!, encoding: .utf8)
-                
                 let profileTypeInChar = stringProfileType?.prefix(1)
                 
                 switch profileTypeInChar {

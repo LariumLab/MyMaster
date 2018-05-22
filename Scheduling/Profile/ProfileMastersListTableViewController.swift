@@ -39,6 +39,7 @@ class ProfileMastersListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let CreateServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
         CreateServiceVC.mastersIDAndName.append( mastersList[indexPath.row])
+        print(CreateServiceVC.nameTextField.text)
         self.navigationController?.viewControllers.removeLast()
 //        let CreateServiceVC = self.navigationController?.viewControllers.last as! ProfileAddNewServiceTableViewController
 //        CreateServiceVC.mastersIDAndName.append( mastersList[indexPath.row])

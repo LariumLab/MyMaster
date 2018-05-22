@@ -59,7 +59,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ8-Vh-yqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2399" y="66"/>
+            <point key="canvasLocation" x="-3382" y="65"/>
         </scene>
         <!--Логин-->
         <scene sceneID="NGR-ja-52c">
@@ -69,86 +69,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lx-un-HKG">
-                                <rect key="frame" x="16" y="137" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-GR-OHW">
-                                <rect key="frame" x="16" y="187" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-GS-5Ag">
-                                <rect key="frame" x="141" y="450" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Создайте!"/>
-                                <connections>
-                                    <segue destination="CST-gb-U8c" kind="push" id="bnG-LE-XRu"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Только посмотреть?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-Ta-wa4">
-                                <rect key="frame" x="96" y="327" width="163" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlk-mC-vku">
-                                <rect key="frame" x="107" y="366" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Войти без аккаунта"/>
-                                <connections>
-                                    <action selector="LoginWithoutRegistration:" destination="90g-55-EAp" eventType="touchUpInside" id="C5P-nx-IzP"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Еще нет аккаунта?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-eF-hXG">
-                                <rect key="frame" x="106" y="404" width="163" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вы владелец салона?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BA-nj-ecG">
-                                <rect key="frame" x="96" y="488" width="173" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSw-HI-Kae">
-                                <rect key="frame" x="111" y="534" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Присоединяйтесь!"/>
-                                <connections>
-                                    <segue destination="MzK-ug-K8K" kind="push" id="qgx-YS-vpS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zes-zg-UO5">
-                                <rect key="frame" x="170" y="225" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Вход"/>
-                                <connections>
-                                    <action selector="signIn:" destination="90g-55-EAp" eventType="touchUpInside" id="B7T-IM-NLb"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibc-aN-Pbj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRz-TN-qak">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lx-un-HKG">
+                                                <rect key="frame" x="16" y="18" width="343" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3i9-GR-OHW">
+                                                <rect key="frame" x="16" y="56" width="343" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Только посмотреть?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pd-Ta-wa4">
+                                                <rect key="frame" x="106" y="165" width="163" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rlk-mC-vku">
+                                                <rect key="frame" x="117" y="211" width="141" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Войти без аккаунта"/>
+                                                <connections>
+                                                    <action selector="LoginWithoutRegistration:" destination="90g-55-EAp" eventType="touchUpInside" id="C5P-nx-IzP"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Еще нет аккаунта?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-eF-hXG">
+                                                <rect key="frame" x="106" y="249" width="163" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вы владелец салона?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BA-nj-ecG">
+                                                <rect key="frame" x="101" y="308" width="173" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSw-HI-Kae">
+                                                <rect key="frame" x="120" y="354" width="134" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Присоединяйтесь!"/>
+                                                <connections>
+                                                    <segue destination="MzK-ug-K8K" kind="push" id="qgx-YS-vpS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-GS-5Ag">
+                                                <rect key="frame" x="151" y="281" width="73" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Создайте!"/>
+                                                <connections>
+                                                    <segue destination="CST-gb-U8c" kind="push" id="bnG-LE-XRu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zes-zg-UO5">
+                                                <rect key="frame" x="168" y="126" width="40" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Вход"/>
+                                                <connections>
+                                                    <action selector="signIn:" destination="90g-55-EAp" eventType="touchUpInside" id="B7T-IM-NLb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jRz-TN-qak" secondAttribute="bottom" id="1gV-QO-1tA"/>
+                                    <constraint firstAttribute="trailing" secondItem="jRz-TN-qak" secondAttribute="trailing" id="33u-9S-R1z"/>
+                                    <constraint firstItem="jRz-TN-qak" firstAttribute="top" secondItem="ibc-aN-Pbj" secondAttribute="top" id="eo4-Ic-L5i"/>
+                                    <constraint firstItem="jRz-TN-qak" firstAttribute="leading" secondItem="ibc-aN-Pbj" secondAttribute="leading" id="poS-NU-ZYN"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jRz-TN-qak" firstAttribute="width" secondItem="l8W-Dl-0w6" secondAttribute="width" id="D7Y-tS-bc2"/>
+                            <constraint firstItem="zWi-GF-nvT" firstAttribute="trailing" secondItem="ibc-aN-Pbj" secondAttribute="trailing" id="SRL-5v-Iay"/>
+                            <constraint firstItem="ibc-aN-Pbj" firstAttribute="leading" secondItem="zWi-GF-nvT" secondAttribute="leading" id="bGA-7N-8uN"/>
+                            <constraint firstItem="jRz-TN-qak" firstAttribute="height" secondItem="l8W-Dl-0w6" secondAttribute="height" priority="250" id="by5-he-kmT"/>
+                            <constraint firstItem="ibc-aN-Pbj" firstAttribute="top" secondItem="l8W-Dl-0w6" secondAttribute="top" id="sp1-tx-Mmh"/>
+                            <constraint firstItem="zWi-GF-nvT" firstAttribute="bottom" secondItem="ibc-aN-Pbj" secondAttribute="bottom" id="xFb-fN-fVD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zWi-GF-nvT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Логин" id="RAw-xZ-Iz9"/>
+                    <navigationItem key="navigationItem" title="Логин" id="wd3-qR-l6P"/>
                     <connections>
+                        <outlet property="contentView" destination="jRz-TN-qak" id="l8x-64-V0I"/>
+                        <outlet property="createClientButton" destination="9bv-GS-5Ag" id="HIc-cH-BLF"/>
+                        <outlet property="createClientLabel" destination="xej-eF-hXG" id="w6B-9i-h48"/>
+                        <outlet property="createSalonButton" destination="MSw-HI-Kae" id="R7V-Ef-I4Z"/>
+                        <outlet property="createSalonLabel" destination="3BA-nj-ecG" id="n7y-FZ-X2Q"/>
+                        <outlet property="justViewButton" destination="Rlk-mC-vku" id="RHw-dU-DuM"/>
+                        <outlet property="justViewLabel" destination="1pd-Ta-wa4" id="KUA-c3-Gvx"/>
                         <outlet property="login" destination="8lx-un-HKG" id="fkh-X9-Zls"/>
                         <outlet property="password" destination="3i9-GR-OHW" id="3iT-7M-vQm"/>
+                        <outlet property="signInButton" destination="Zes-zg-UO5" id="9cc-9f-hLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWn-zE-iNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1719.2" y="65.217391304347828"/>
+            <point key="canvasLocation" x="-2650.4000000000001" y="63.418290854572717"/>
         </scene>
         <!--Salon Register Table View Controller-->
         <scene sceneID="xh6-zU-u1s">
@@ -254,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqr-ST-JB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3098" y="66"/>
+            <point key="canvasLocation" x="-4081" y="65"/>
         </scene>
         <!--Item-->
         <scene sceneID="UMF-yP-0kX">
