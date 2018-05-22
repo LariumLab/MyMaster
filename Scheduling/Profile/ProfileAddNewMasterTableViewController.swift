@@ -137,7 +137,7 @@ class ProfileAddNewMasterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround()
+        //self.hideKeyboardWhenTappedAround()
         
         let createMasterButton = UIBarButtonItem(title: "Создать", style: .done, target: self, action: #selector(SaveMasterButton))
         navigationItem.rightBarButtonItem = createMasterButton
