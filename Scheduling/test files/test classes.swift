@@ -117,9 +117,16 @@ struct JSONSalonPreview: Codable {
 }
 
 struct JSONSalonInfo: Codable {
+//    let nickName: String
+//    let phoneNumber: String
+//    let description: String
     let nickName: String
     let phoneNumber: String
     let description: String
+    let salonID: String
+    let city: String
+    let address: String
+    let customName: String
 }
 
 class Client: Profile{
