@@ -17,7 +17,19 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
         let priceTo = priceToTextField.text!
         
         if name.isEmpty || descriptionServ.isEmpty || priceFrom.isEmpty || priceTo.isEmpty  {
-            // ALERT
+            let alertC = UIAlertController(title: "Ошибка", message: "Все поля должны быть заполнены", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            self.present(alertC, animated: true, completion: nil)
+            return
+        }
+        
+        if priceFrom > priceTo {
+            let alertC = UIAlertController(title: "Неправильный ценовой диапазон", message: "Цена \"От\" больше, чем цена \"До\"", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            self.present(alertC, animated: true, completion: nil)
+            return
         }
         
         let sendServiceInfoURL = serverAdr + "api/salon/addService?token=" + "5411aa4b553a4fd6331dbe9bb7f5abc6"
