@@ -9,7 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-	
+
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var password: UITextField!
 	@IBOutlet weak var login: UITextField!
@@ -74,6 +75,30 @@ class LoginViewController: UIViewController {
     
 	@IBAction func signIn(_ sender: Any) {
 
+        self.view.showBlurLoader()
+        
+        
+        // ========
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
+        let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
+        guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+        URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let citiesData = try JSONDecoder().decode([String].self, from: data)
+                cities = citiesData
+                DispatchQueue.main.async {
+                    searchVC.tableView.reloadData()
+                }
+            } catch let err {
+                print(err)
+            }
+            }.resume()
+        // ========
+        
+        
         if (login.text?.isEmpty)! && (password.text?.isEmpty)! {
             let alertC = UIAlertController(title: "Ошибка", message: "Поле \"логин\" или \"пароль\" пустое", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
@@ -82,64 +107,175 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let loginAndPassURL = serverAdr + "api/"
+        let loginAndPassURL = serverAdr + "api/signIn?login=" + login.text! + "&password=" + password.text!
         let URLloginAndPass = URL(string: loginAndPassURL)
         
+        guard URLloginAndPass != nil else {
+            // FUNC
+            print("Error when try get URL")
+            return
+        }
         
+        var request = URLRequest(url: URLloginAndPass!)
+        request.httpMethod = "POST"
         
-        
-        
-        
-        for user in users {
-            if user.login == login.text && user.password == password.text {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard data != nil, error == nil else {
+                print("Error when try to load data")
+                print(error?.localizedDescription ?? "No data")
+                let alertC = UIAlertController(title: "Ошибка", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                alertC.addAction(okAction)
+                self.present(alertC, animated: true, completion: nil )
+                return
+            }
+            
+            let httpResponse = response as? HTTPURLResponse
+            guard httpResponse?.statusCode != 400 else {
+                print(httpResponse?.statusCode)
+                self.view.removeBlurLoader()
+
+                let alertC = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                alertC.addAction(okAction)
+                self.present(alertC, animated: true, completion: nil )
                 
-                switch user.profileType{
-                case .salon:
+                return
+            }
+            
+            let token = data
+            self.loadProfile(token: token!)
+        }
+        task.resume()
+        
+    }
+    
+    func loadProfile(token: Data){
+        let tokenInString = String(data: token, encoding: .utf8)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+
+        let profileTypeInChar = tokenInString!.prefix(1)
+        switch profileTypeInChar {
+        case "S":
+            let loadedSalon = Salon()
+            
+            let getSalonIdURL = serverAdr + "api/salon/getSalonID?token=" + tokenInString!
+            let URLgetSalonID = URL(string: getSalonIdURL)
+            
+            guard URLgetSalonID != nil else {
+                // FUNC
+                return
+            }
+            
+            let request = URLRequest(url: URLgetSalonID!)
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data, error == nil else {
+                    print("Error when try to load data")
+                    print(error?.localizedDescription ?? "No data")
+                    let alertC = UIAlertController(title: "Ошибка", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                    alertC.addAction(okAction)
+                    self.present(alertC, animated: true, completion: nil )
+                    return
+                }
+                
+                let salonIDInString = String(data: data, encoding: .utf8)
+                
+                let getSalonInfoURL =  serverAdr + "api/getSalonInfo?salonID=" + salonIDInString!
+                let getSalonServicesURL = serverAdr + "api/getSalonServices?salonID=" + salonIDInString!
+
+                guard let URLGetSalonInfo = URL(string: getSalonInfoURL) else {
+                    return
+                }
+                guard let URLGetSalonServices = URL(string: getSalonServicesURL) else {
+                    return
+                }
+                
+                let loadGroup = DispatchGroup()
+                loadGroup.enter()
+                guard let data1 = try? Data(contentsOf: URLGetSalonInfo) else {
+                    return
+                }
+                do {
+                    let salonInfo = try JSONDecoder().decode(JSONSalonInfo.self, from: data1)
+                    loadedSalon.adress = salon.adress
+                    loadedSalon.name = salon.name
+                    loadedSalon.ID = salon.ID
+                    loadedSalon.description = salonInfo.description
+                    loadedSalon.phoneNumber = salonInfo.phoneNumber
+                    loadedSalon.nickname = salonInfo.nickName
+                    loadedSalon.city = salonInfo.city
+                } catch let err {
+                    print(err)
+                }
+                loadGroup.leave()
+                
+                
+                loadGroup.enter()
+                guard let data2 = try? Data(contentsOf: URLGetSalonServices) else {
+                    return
+                }
+                do {
+                    let services : [JSONService] = try JSONDecoder().decode([JSONService].self, from: data2)
+                    for service in services {
+                        let serv : Service = Service(salonID: service.salonID, serviceID: service.serviceID, name: service.name, description: service.description, masters: [], priceFrom: service.priceFrom, priceTo: service.priceTo)
+                        loadedSalon.services.append(serv)
+                    }
+                } catch let err {
+                    print(err)
+                }
+                loadGroup.leave()
+                
+                
+                loadGroup.notify(queue: .main) {
                     let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
                     TabBarC.viewControllers?.append(SalonRequestsNavigationC)
                     SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
                     let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
-                TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                    TabBarC.viewControllers?.append(SalonProfileNavigationC)
                     SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
-                case .client:
-                    let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
-                    TabBarC.viewControllers?.append(ClientProfileNavigationC)
-                    ClientProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
-                case .view:
-                    let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
-                    TabBarC.viewControllers?.append(ViewProfileNavigationC)
-                    ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
+                    
+                    _ = Keychain.save(key: "userToken", data: token)
+//                    self.TabBar = TabBarC
+                    salon = loadedSalon
+                    self.view.removeBlurLoader()
+                    self.present(TabBarC, animated: false, completion: nil)
                 }
-                loadData(acc: user)
-                
-                // ========
-                
-                
-                
-                // ========
-                let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
-                let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
-                guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
-                URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
-                    guard let data = data else { return }
-                    do {
-                        let citiesData = try JSONDecoder().decode([String].self, from: data)
-                        cities = citiesData
-                        DispatchQueue.main.async {
-                            searchVC.tableView.reloadData()
-                        }
-                    } catch let err {
-                        print(err)
-                    }
-                    }.resume()
-                // ========
-                
-                present(TabBarC, animated: false, completion: nil)
+                    
+            }.resume()
+            
+        case "C":
+            let loadedClient = Client()
+            
+            let LoadClientDataURL = serverAdr + "api/"
+            let URLLoadClientData = URL(string: LoadClientDataURL)
+            
+            guard URLLoadClientData != nil else {
+                break
             }
+            
+            let task = URLSession.shared.dataTask(with: URLLoadClientData!) { (data, response, error) in
+                guard let data = data, error == nil else {
+                    print("Error when try to load data")
+                    print(error?.localizedDescription ?? "No data")
+                    let alertC = UIAlertController(title: "Ошибка при создании аккаунта", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                    alertC.addAction(okAction)
+                    self.present(alertC, animated: true, completion: nil )
+                    return
+                }
+                
+            }
+            
+            return
+        default:
+            print("Find error when try to pull acc type")
+            break
         }
-	}
+    }
     
     func setConstraints() {
         
