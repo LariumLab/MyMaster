@@ -21,6 +21,106 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var createSalonLabel: UILabel!
     @IBOutlet weak var createSalonButton: UIButton!
     
+    var showRegisterController : Bool = false
+    
+	override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        setConstraints()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if showRegisterController == true {
+            let createClientVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateClientAccount") as! ClientRegisterTableViewController
+            createClientVC.loginVC = self
+            self.navigationController?.pushViewController(createClientVC, animated: true)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func LoginWithoutRegistration(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController") as! UINavigationController
+        TabBarC.viewControllers?.append(ViewProfileNavigationC)
+        ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
+        let profileVC = ViewProfileNavigationC.viewControllers.last as! ProfileViewViewController
+        profileVC.loginVC = self
+//        profileVC.loginVC = self
+        loadData(acc: viewAccount)
+        present(TabBarC, animated: false, completion: nil)
+    }
+    
+	@IBAction func signIn(_ sender: Any) {
+
+        if (login.text?.isEmpty)! && (password.text?.isEmpty)! {
+            let alertC = UIAlertController(title: "Ошибка", message: "Поле \"логин\" или \"пароль\" пустое", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            present(alertC, animated: true, completion: nil)
+            return
+        }
+        
+        
+        
+        
+        
+        
+        
+        for user in users {
+            if user.login == login.text && user.password == password.text {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+                
+                switch user.profileType{
+                case .salon:
+                    let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
+                    TabBarC.viewControllers?.append(SalonRequestsNavigationC)
+                    SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
+                    let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
+                TabBarC.viewControllers?.append(SalonProfileNavigationC)
+                    SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
+                case .client:
+                    let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
+                    TabBarC.viewControllers?.append(ClientProfileNavigationC)
+                    ClientProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
+                case .view:
+                    let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
+                    TabBarC.viewControllers?.append(ViewProfileNavigationC)
+                    ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
+                }
+                loadData(acc: user)
+                
+                // ========
+                
+                
+                
+                // ========
+                let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
+                let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
+                guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+                URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+                    guard let data = data else { return }
+                    do {
+                        let citiesData = try JSONDecoder().decode([String].self, from: data)
+                        cities = citiesData
+                        DispatchQueue.main.async {
+                            searchVC.tableView.reloadData()
+                        }
+                    } catch let err {
+                        print(err)
+                    }
+                    }.resume()
+                // ========
+                
+                present(TabBarC, animated: false, completion: nil)
+            }
+        }
+	}
+    
     func setConstraints() {
         
         let textFields : [UITextField] = [login, password]
@@ -36,7 +136,7 @@ class LoginViewController: UIViewController {
         createClientButton.translatesAutoresizingMaskIntoConstraints = false
         createSalonLabel.translatesAutoresizingMaskIntoConstraints = false
         createSalonButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         let verticalConstraintForLogin = NSLayoutConstraint(item: login, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 50)
         let verticalConstraintForPass = NSLayoutConstraint(item: password, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: login, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 25)
         view.addConstraints([verticalConstraintForLogin, verticalConstraintForPass])
@@ -52,7 +152,7 @@ class LoginViewController: UIViewController {
         let horizontalConstraintForSignIn = NSLayoutConstraint(item: signInButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         let widthConstraintForSignIn = NSLayoutConstraint(item: signInButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: (2/3)*UIScreen.main.bounds.width )
         view.addConstraints([verticalConstraintForSignIn ,horizontalConstraintForSignIn, widthConstraintForSignIn])
-
+        
         // JustViewLabel
         let verticalConstraintForJustView = NSLayoutConstraint(item: justViewLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: signInButton, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
         let horizontalConstraintForJustView = NSLayoutConstraint(item: justViewLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: contentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
@@ -80,83 +180,7 @@ class LoginViewController: UIViewController {
         }
         
         updateViewConstraints()
-        
     }
-    
-	override func viewDidLoad() {
-        super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        setConstraints()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func LoginWithoutRegistration(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
-        TabBarC.viewControllers?.append(ViewProfileNavigationC)
-        ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
-        loadData(acc: viewAccount)
-        present(TabBarC, animated: false, completion: nil)
-    }
-    
-	@IBAction func signIn(_ sender: Any) {
-//        if users[login.text!] != nil && users[login.text!] == password.text! {
-//            testLabel.text = "OK"
-//            let TabBarC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-//                present(TabBarC, animated: false, completion: nil)
-//        }
-
-        for user in users {
-            if user.login == login.text && user.password == password.text {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let TabBarC = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-                
-                switch user.profileType{
-                case .salon:
-                    let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
-                    TabBarC.viewControllers?.append(SalonRequestsNavigationC)
-                    SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
-                    let SalonProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonNavigationController") as! UINavigationController
-                TabBarC.viewControllers?.append(SalonProfileNavigationC)
-                    SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
-                case .client:
-                    let ClientProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ClientNavigationController")
-                    TabBarC.viewControllers?.append(ClientProfileNavigationC)
-                    ClientProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
-                case .view:
-                    let ViewProfileNavigationC = storyboard.instantiateViewController(withIdentifier: "ViewProfileNavigationController")
-                    TabBarC.viewControllers?.append(ViewProfileNavigationC)
-                    ViewProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile") , tag: 2)
-                }
-                loadData(acc: user)
-                
-                // ========
-                let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
-                let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
-                guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
-                URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
-                    guard let data = data else { return }
-                    do {
-                        let citiesData = try JSONDecoder().decode([String].self, from: data)
-                        cities = citiesData
-                        DispatchQueue.main.async {
-                            searchVC.tableView.reloadData()
-                        }
-                    } catch let err {
-                        print(err)
-                    }
-                    }.resume()
-                // ========
-                
-                present(TabBarC, animated: false, completion: nil)
-            }
-        }
-	}
-    
     
 	/*
     // MARK: - Navigation

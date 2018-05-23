@@ -27,9 +27,9 @@ class RequestsTableViewController: UITableViewController {
         let date2 = formatter.date(from: "16:00 18.04.2018")
         let date3 = formatter.date(from: "13:00 19.04.2018")
 
-        let salonRequest1 = SalonRequest(client: Client1, serviceName: "Tattoo", master: MasterKostya, time: date1!, description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-        let salonRequest2 = SalonRequest(client: Client1, serviceName: "Piersing", master: MasterKostya, time: date2!, description: "bbbbbbbbbbbbb")
-        let salonRequest3 = SalonRequest(client: Client1, serviceName: "Dreadlocks", master: MasterKostya, time: date3!, description: "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+        let salonRequest1 = SalonRequest(client: Client1, serviceName: "Tattoo", master: MasterKostya, time: date1!, description: "Демонстрация поддержки многострочных комметнариев к заявкам. Например: Здравствуйте, я бы хотела сделать запись на тату к мастеру из вашего салона, у меня уже есть эскиз, но мне нужна консультация, чтобы разобраться, сколько это будет стоить и возможно ли реализовать то, что я хочу.")
+        let salonRequest2 = SalonRequest(client: Client1, serviceName: "Piersing", master: MasterKostya, time: date2!, description: "Демонстрация поддержки короткого комментария")
+        let salonRequest3 = SalonRequest(client: Client1, serviceName: "Dreadlocks", master: MasterKostya, time: date3!, description: "")
         testRequests = [salonRequest1, salonRequest2, salonRequest3]
         // ================
 

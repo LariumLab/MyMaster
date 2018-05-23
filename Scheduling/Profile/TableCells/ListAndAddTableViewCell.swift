@@ -44,6 +44,7 @@ class ListAndAddTableViewCell: UITableViewCell {
             let addFromListAlertAction = UIAlertAction(title: "Добавить из списка", style: .default) { (alert) in
                 
                 let MastersListTableVC = storyboard.instantiateViewController(withIdentifier: "ProfileMastersList") as! ProfileMastersListTableViewController
+                MastersListTableVC.addServiceTVC = CurrentAddNewServiceVC
                 
                 let getMastersListURL = serverAdr + "api/getSalonMasters?salonID=" + "4ad6b313-3026-43f8-99df-b969cdc1d95d"
                     // salon.ID

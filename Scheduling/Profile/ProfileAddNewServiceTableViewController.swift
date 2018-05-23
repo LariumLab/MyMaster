@@ -113,10 +113,6 @@ class ProfileAddNewServiceTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        print(mastersIDAndName)
-    }
     
     // MARK: - Table view data source
 

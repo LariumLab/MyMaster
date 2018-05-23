@@ -48,11 +48,13 @@ class InitialViewController: UIViewController {
                 
                 switch profileTypeInChar {
                 case "S":
-                    
                     let loadedSalon = Salon()
-                    
+
+                    // ===== ИСПРАВИТЬ АДРЕС
                     let salonInfoURL = serverAdr + "/api" + String(data: token!, encoding: .utf8)!
                     let salonServicesURL = serverAdr + "/api" + String(data: token!, encoding: .utf8)!
+                    // =======
+                    
                     let URLSalonInfo = URL(string: salonInfoURL)
                     let URLSalonServices = URL(string: salonServicesURL)
                     
@@ -161,16 +163,4 @@ class InitialViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

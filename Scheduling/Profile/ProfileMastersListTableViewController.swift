@@ -12,6 +12,7 @@ class ProfileMastersListTableViewController: UITableViewController {
 
 //    var currentService = Service()
     let cellIdentifier = "MasterListCell"
+    var addServiceTVC : ProfileAddNewServiceTableViewController?
     var mastersList : [ (String, String) ] = [] // (name, masterID)
     
     override func viewDidLoad() {
@@ -37,9 +38,10 @@ class ProfileMastersListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let CreateServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
-        CreateServiceVC.mastersIDAndName.append( mastersList[indexPath.row])
-        print(CreateServiceVC.nameTextField.text)
+//        let CreateServiceVC = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileAddService") as! ProfileAddNewServiceTableViewController
+//        CreateServiceVC.mastersIDAndName.append( mastersList[indexPath.row])
+//        print(CreateServiceVC.nameTextField.text)
+        addServiceTVC?.mastersIDAndName.append(mastersList[indexPath.row])
         self.navigationController?.viewControllers.removeLast()
 //        let CreateServiceVC = self.navigationController?.viewControllers.last as! ProfileAddNewServiceTableViewController
 //        CreateServiceVC.mastersIDAndName.append( mastersList[indexPath.row])
