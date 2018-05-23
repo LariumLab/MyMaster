@@ -9,21 +9,25 @@
 import UIKit
 
 class ProfileViewViewController: UIViewController {
-
-    @IBAction func signIn(_ sender: Any) {
     
+    var loginVC : LoginViewController?
+    
+    @IBAction func signIn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginNavigationC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationC") as! UINavigationController
         let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        let debug = Keychain.delete(key: "userToken")
-		print(debug)
+//        let debug = Keychain.delete(key: "userToken")
+//        print(debug)
         tabBar.viewControllers?.removeAll()
         self.dismiss(animated: false, completion: nil)
-        present(loginNavigationC, animated: true, completion: nil)
     }
     
     @IBAction func register(_ sender: Any) {
-    
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        tabBar.viewControllers?.removeAll()
+        self.dismiss(animated: false, completion: nil)
+        guard loginVC != nil else {return}
+        loginVC!.showRegisterController = true
     }
     
     override func viewDidLoad() {
@@ -36,16 +40,5 @@ class ProfileViewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -30,16 +30,6 @@ struct blueGamma {
     }
 }
 
-struct seaGamma {
-    let darkColor = UIColor(red:0.30, green:0.43, blue:0.50, alpha:1.0)
-    let darkGreen = UIColor(red:0.37, green:0.50, blue:0.54, alpha:1.0)
-    let mediumGreen = UIColor(red:0.43, green:0.58, blue:0.59, alpha:1.0)
-    let brown = UIColor(red:0.60, green:0.55, blue:0.56, alpha:1.0)
-    let darkBiege = UIColor(red:0.78, green:0.70, blue:0.65, alpha:1.0)
-    let mediumBiege = UIColor(red:0.85, green:0.78, blue:0.71, alpha:1.0)
-    let lightBiege = UIColor(red:0.93, green:0.87, blue:0.81, alpha:1.0)
-}
-
 enum ProfileType {
     case salon
     case client

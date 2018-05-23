@@ -26,19 +26,46 @@ class SalonRegisterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         tableView.register(UINib(nibName: "TextFieldTableViewCell", bundle: nil), forCellReuseIdentifier: textFieldCellIdentifier)
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: descrtiptionCellIdentifer)
         tableView.register(UINib(nibName: "ButtonTableViewCell", bundle: nil), forCellReuseIdentifier: buttonCellIdentifirer)
-
     }
 
     @objc func sendNickNameAndPass() {
+        
         let phoneNumber = phoneNumberTextField.text!
         let salonName = salonNameTextField.text!
         let descriptionForSalon = descriptionTextView.text!
         let city = cityTextField.text!
         let fullAdress = fullAdressTextField.text!
+        
+        let oneOfFieldsIsEmpty = (nicknameTextField.text?.isEmpty)! || (passwordTextField1.text?.isEmpty)! || (passwordTextField2.text?.isEmpty)! || salonName.isEmpty || descriptionForSalon.isEmpty || phoneNumber.isEmpty || city.isEmpty || fullAdress.isEmpty
+        
+        guard !oneOfFieldsIsEmpty else {
+            let alertC = UIAlertController(title: "Ошибка", message: "Все поля должны быть заполнены", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            self.present(alertC, animated: true, completion: nil)
+            return
+        }
+        
+        guard (phoneNumber.isValid(regex: .phone)) else {
+            let alertC = UIAlertController(title: "Неправильный номер", message: "Проверьте правильность ввода номера телефона", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            self.present(alertC, animated: true, completion: nil)
+            return
+        }
+        
+        guard passwordTextField1.text! == passwordTextField2.text! else {
+            let alertC = UIAlertController(title: "Пароли не совпадают", message: "Проверьте правильность ввода пароля", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertC.addAction(okAction)
+            self.present(alertC, animated: true, completion: nil)
+            return
+        }
         
         let nicknameAndPassURL = serverAdr + "api/salon/signUp?nickName=" + nicknameTextField.text! + "&password=" + passwordTextField1.text!
         let URLNickNameAndPass = URL(string: nicknameAndPassURL)
@@ -50,26 +77,42 @@ class SalonRegisterTableViewController: UITableViewController {
             return
         }
         
-        let JSONString = String(data: createdSalonInfoInJSON!, encoding: .utf8)!
+//        let JSONString = String(data: createdSalonInfoInJSON!, encoding: .utf8)!
 
         var requestNicknameAndPass = URLRequest(url: URLNickNameAndPass!)
         requestNicknameAndPass.httpMethod = "POST"
         requestNicknameAndPass.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        requestNicknameAndPass.httpBody = JSONString.data(using: .utf8)
-        
-//        createdSalonInfoInJSON
+        requestNicknameAndPass.httpBody = createdSalonInfoInJSON
+//        requestNicknameAndPass.httpBody = JSONString.data(using: .utf8)
         
         let sendNicknameAndPassTask = URLSession.shared.dataTask(with: requestNicknameAndPass) { data, response, error in
+            
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                let alertC = UIAlertController(title: "Такой никнейм уже существует", message: "Придумайте другой никнейм и попробуйте ещё раз", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                alertC.addAction(okAction)
+                self.present(alertC, animated: true, completion: nil )
+                self.view.removeBlurLoader()
                 return
             }
-            print("RESPONSE")
-            print(response ?? "response")
+            
+            let alertVC = UIAlertController(title: "Ура!", message: "Регистрация прошла успешно", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+            alertVC.addAction(okAction)
+            self.present(alertVC, animated: true, completion: nil)
+            self.view.removeBlurLoader()
+            
+            // ========
+            DispatchQueue.main.async {
+                self.navigationController?.viewControllers.removeLast()
+            }
+            // ========
             
 //            let salonToken = String(data: data, encoding: .utf8)
         }
         sendNicknameAndPassTask.resume()
+        self.view.showBlurLoader()
     }
     
     @objc func sendInfo() {
@@ -153,28 +196,36 @@ class SalonRegisterTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
+            cell.textField.placeholder = "Введите никнейм"
             nicknameTextField = cell.textField
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
+            cell.textField.placeholder = "Введите название салона"
             salonNameTextField = cell.textField
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: descrtiptionCellIdentifer, for: indexPath) as! DescriptionTableViewCell
             cell.descriptionTextView.text = ""
+            cell.descriptionTextView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+            cell.descriptionTextView.layer.borderWidth = 1
+            cell.descriptionTextView.layer.cornerRadius = 5
             descriptionTextView = cell.descriptionTextView
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
             cell.textField.keyboardType = .phonePad
+            cell.textField.placeholder = "Номер телефона для записей"
             phoneNumberTextField = cell.textField
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
+            cell.textField.placeholder = "Введите город, в котором находится салон"
             cityTextField = cell.textField
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
+            cell.textField.placeholder = "Введите полный адрес салона"
             fullAdressTextField = cell.textField
             return cell
         case 6:
@@ -189,6 +240,7 @@ class SalonRegisterTableViewController: UITableViewController {
             return cell
         case 8:
             let cell = tableView.dequeueReusableCell(withIdentifier: buttonCellIdentifirer, for: indexPath) as! ButtonTableViewCell
+            cell.button.setTitle("Зарегистрироваться", for: .normal)
             goButton = cell.button
             goButton.addTarget(self, action: #selector(sendNickNameAndPass), for: .touchDown)
             return cell
@@ -196,50 +248,4 @@ class SalonRegisterTableViewController: UITableViewController {
             return UITableViewCell()
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
