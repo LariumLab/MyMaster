@@ -24,7 +24,7 @@ class ProfileSalonTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registeredSalon = salon
+//        registeredSalon = salon
         
         tableView.register(UINib(nibName: "SalonDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: DescriptionCellIdentifier)
         tableView.register(UINib(nibName: "ListAndAddTableViewCell", bundle: nil), forCellReuseIdentifier: ListAndAddCellIdentifier)

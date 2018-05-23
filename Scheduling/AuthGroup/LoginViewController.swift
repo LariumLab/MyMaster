@@ -50,7 +50,25 @@ class LoginViewController: UIViewController {
         let profileVC = ViewProfileNavigationC.viewControllers.last as! ProfileViewViewController
         profileVC.loginVC = self
 //        profileVC.loginVC = self
-        loadData(acc: viewAccount)
+//        loadData(acc: viewAccount)
+        profileType = ProfileType.view
+        
+        let searchNavigationC = TabBarC.viewControllers?.first as! UINavigationController
+        let searchVC = searchNavigationC.viewControllers.first as! SearchTableViewController
+        guard  let URLGetCityList = URL(string: serverAdr + "api/getCityList") else { return }
+        URLSession.shared.dataTask(with: URLGetCityList) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let citiesData = try JSONDecoder().decode([String].self, from: data)
+                cities = citiesData
+                DispatchQueue.main.async {
+                    searchVC.tableView.reloadData()
+                }
+            } catch let err {
+                print(err)
+            }
+            }.resume()
+        
         present(TabBarC, animated: false, completion: nil)
     }
     
@@ -64,6 +82,8 @@ class LoginViewController: UIViewController {
             return
         }
         
+        let loginAndPassURL = serverAdr + "api/"
+        let URLloginAndPass = URL(string: loginAndPassURL)
         
         
         

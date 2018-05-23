@@ -160,10 +160,19 @@ class ClientRegisterTableViewController: UITableViewController {
         request.httpMethod = "POST"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                
-                let alertC = UIAlertController(title: "Ошибка при создании аккаунта", message: "Скорее всего, такой номер уже есть в базе", preferredStyle: .alert)
+                let alertC = UIAlertController(title: "Ошибка при создании аккаунта", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                alertC.addAction(okAction)
+                self.present(alertC, animated: true, completion: nil )
+                return
+            }
+            
+            let httpResponse = response as? HTTPURLResponse
+            guard httpResponse?.statusCode != 409 else {
+                let alertC = UIAlertController(title: "Ошибка при создании аккаунта", message: "Такой номер телефона уже есть в базе", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
                 alertC.addAction(okAction)
                 self.present(alertC, animated: true, completion: nil )
@@ -171,13 +180,14 @@ class ClientRegisterTableViewController: UITableViewController {
                 self.view.removeBlurLoader()
                 return
             }
-//            _ = Keychain.save(key: "userToken", data: data)
             
+//            _ = Keychain.save(key: "userToken", data: data)
+            self.view.removeBlurLoader()
+
             let alertVC = UIAlertController(title: "Ура!", message: "Регистрация прошла успешно", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
             alertVC.addAction(okAction)
             self.present(alertVC, animated: true, completion: nil)
-            self.view.removeBlurLoader()
             
             // ========
             DispatchQueue.main.async {
@@ -185,7 +195,7 @@ class ClientRegisterTableViewController: UITableViewController {
             }
             // ========
         }
-        task.resume()
         self.view.showBlurLoader()
+        task.resume()
     }
 }
