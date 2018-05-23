@@ -189,11 +189,11 @@ class ClientRegisterTableViewController: UITableViewController {
             alertVC.addAction(okAction)
             self.present(alertVC, animated: true, completion: nil)
             
-            // ========
-            DispatchQueue.main.async {
-                self.navigationController?.viewControllers.removeLast()
-            }
-            // ========
+            self.navigationController?.viewControllers.removeLast()
+
+//            DispatchQueue.main.async {
+//                self.navigationController?.viewControllers.removeLast()
+//            }
         }
         self.view.showBlurLoader()
         task.resume()

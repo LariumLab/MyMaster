@@ -89,6 +89,15 @@ class SalonRegisterTableViewController: UITableViewController {
             
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
+                let alertC = UIAlertController(title: "Ошибка при создании аккаунта", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
+                alertC.addAction(okAction)
+                self.present(alertC, animated: true, completion: nil )
+                return
+            }
+            
+            let httpResponse = response as? HTTPURLResponse
+            guard httpResponse?.statusCode != 409 else {
                 let alertC = UIAlertController(title: "Такой никнейм уже существует", message: "Придумайте другой никнейм и попробуйте ещё раз", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
                 alertC.addAction(okAction)
@@ -103,11 +112,12 @@ class SalonRegisterTableViewController: UITableViewController {
             self.present(alertVC, animated: true, completion: nil)
             self.view.removeBlurLoader()
             
-            // ========
-            DispatchQueue.main.async {
-                self.navigationController?.viewControllers.removeLast()
-            }
-            // ========
+            
+            self.navigationController?.viewControllers.removeLast()
+
+//            DispatchQueue.main.async {
+//                self.navigationController?.viewControllers.removeLast()
+//            }
             
 //            let salonToken = String(data: data, encoding: .utf8)
         }
