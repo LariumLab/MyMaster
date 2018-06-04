@@ -240,12 +240,12 @@ class SalonRegisterTableViewController: UITableViewController {
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
-             cell.textField.textContentType = UITextContentType.password
+            cell.textField.isSecureTextEntry = true
             passwordTextField1 = cell.textField
             return cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCellIdentifier, for: indexPath) as! TextFieldTableViewCell
-            cell.textField.textContentType = UITextContentType.password
+            cell.textField.isSecureTextEntry = true
             passwordTextField2 = cell.textField
             return cell
         case 8:

@@ -112,6 +112,7 @@ class LoginViewController: UIViewController {
         
         guard URLloginAndPass != nil else {
             // FUNC
+            self.view.removeBlurLoader()
             print("Error when try get URL")
             return
         }
@@ -121,6 +122,7 @@ class LoginViewController: UIViewController {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard data != nil, error == nil else {
+                self.view.removeBlurLoader()
                 print("Error when try to load data")
                 print(error?.localizedDescription ?? "No data")
                 let alertC = UIAlertController(title: "Ошибка", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
@@ -132,9 +134,9 @@ class LoginViewController: UIViewController {
             
             let httpResponse = response as? HTTPURLResponse
             guard httpResponse?.statusCode != 400 else {
+                self.view.removeBlurLoader()
                 print(httpResponse?.statusCode)
                 self.view.removeBlurLoader()
-
                 let alertC = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)
                 alertC.addAction(okAction)
@@ -165,6 +167,8 @@ class LoginViewController: UIViewController {
             let URLgetSalonID = URL(string: getSalonIdURL)
             
             guard URLgetSalonID != nil else {
+                self.view.removeBlurLoader()
+
                 // FUNC
                 return
             }
@@ -173,6 +177,7 @@ class LoginViewController: UIViewController {
             
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 guard let data = data, error == nil else {
+                    self.view.removeBlurLoader()
                     print("Error when try to load data")
                     print(error?.localizedDescription ?? "No data")
                     let alertC = UIAlertController(title: "Ошибка", message: "Ошибка при подключении к серверу", preferredStyle: .alert)
@@ -188,15 +193,18 @@ class LoginViewController: UIViewController {
                 let getSalonServicesURL = serverAdr + "api/getSalonServices?salonID=" + salonIDInString!
 
                 guard let URLGetSalonInfo = URL(string: getSalonInfoURL) else {
+                    self.view.removeBlurLoader()
                     return
                 }
                 guard let URLGetSalonServices = URL(string: getSalonServicesURL) else {
+                    self.view.removeBlurLoader()
                     return
                 }
                 
                 let loadGroup = DispatchGroup()
                 loadGroup.enter()
                 guard let data1 = try? Data(contentsOf: URLGetSalonInfo) else {
+                    self.view.removeBlurLoader()
                     return
                 }
                 do {
@@ -231,6 +239,9 @@ class LoginViewController: UIViewController {
                 
                 
                 loadGroup.notify(queue: .main) {
+                    profileType = ProfileType.salon
+                    salon = loadedSalon
+                    
                     let SalonRequestsNavigationC = storyboard.instantiateViewController(withIdentifier: "SalonRequestsNavigationController")
                     TabBarC.viewControllers?.append(SalonRequestsNavigationC)
                     SalonRequestsNavigationC.tabBarItem = UITabBarItem(title: "Заявки", image: #imageLiteral(resourceName: "requests") , tag: 2)
@@ -238,9 +249,8 @@ class LoginViewController: UIViewController {
                     TabBarC.viewControllers?.append(SalonProfileNavigationC)
                     SalonProfileNavigationC.tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profile"), tag: 3)
                     
-                    _ = Keychain.save(key: "userToken", data: token)
+//                    _ = Keychain.save(key: "userToken", data: token)
 //                    self.TabBar = TabBarC
-                    salon = loadedSalon
                     self.view.removeBlurLoader()
                     self.present(TabBarC, animated: false, completion: nil)
                 }

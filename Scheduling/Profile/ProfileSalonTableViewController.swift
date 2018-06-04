@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileSalonTableViewController: UITableViewController {
     
-    var registeredSalon = Salon() // Загрузка, load data
+    var registeredSalon = salon // Загрузка, load data
     
     let DescriptionCellIdentifier = "SalonDescriptionCell"
     let ListAndAddCellIdentifier = "ProfileSalonListAndAddCell"

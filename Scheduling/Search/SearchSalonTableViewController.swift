@@ -18,7 +18,7 @@ class SearchSalonTableViewController: UITableViewController {
         super.viewDidLoad()
         // ================
         //delete
-//        currentSalon.services = TestSalon1.services
+        currentSalon.services = TestSalon1.services
         // =================
         tableView.register(UINib(nibName: "SalonDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: salonDescriptionCellIdentifier)
         tableView.register(UINib(nibName: "SearchServiceInSalonCellTableViewCell", bundle: nil), forCellReuseIdentifier: serviceCellIdentifier)

@@ -11,7 +11,6 @@ import UIKit
 class ProfileAddNewMasterTableViewController: UITableViewController {
     
     @objc func SaveMasterButton() {
-        
         if (nameTextField.text?.isEmpty)! {
             let alertC = UIAlertController(title: "Ошибка при создании мастера", message: "Поле \"ФИО мастера\" не заполнено", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ок", style: .cancel, handler: nil)

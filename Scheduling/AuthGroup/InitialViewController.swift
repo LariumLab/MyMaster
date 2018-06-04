@@ -25,7 +25,7 @@ class InitialViewController: UIViewController {
 			
 			// Adding user's token to keychain (if needed)
 			
-			let token = Keychain.load(key: "userToken")
+            var token = Keychain.load(key: "userToken")
 
 //            if token != nil {
 //
@@ -41,6 +41,13 @@ class InitialViewController: UIViewController {
             
 			// Now we are checking, if there is some user's token in keychain
 			// if true, we can determine the type of account and then we can present appropriate tabbar
+            
+            
+            
+            token = nil
+            
+            
+            
             
 			if token != nil {
                 let stringProfileType = String(data: Keychain.load(key: "profileType")!, encoding: .utf8)
